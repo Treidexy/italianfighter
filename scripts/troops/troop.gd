@@ -1,5 +1,5 @@
 class_name Troop
-extends Node2D
+extends CharacterBody2D
 
 @export var stat: Stat = preload("res://stats/troops/tung/tung_norm.tres");
 var hp: float;

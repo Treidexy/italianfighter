@@ -1,5 +1,6 @@
-extends CharacterBody2D
+extends Node
 
+@export var BODY: CharacterBody2D;
 @export var TROOP: Troop;
 
 func _physics_process(delta: float) -> void:
@@ -7,8 +8,8 @@ func _physics_process(delta: float) -> void:
 	var dy = Input.get_axis("up", "down");
 	var d = Vector2(dx, dy).normalized();
 	
-	velocity = d * TROOP.stat.SPEED;
-	move_and_slide();
+	BODY.velocity = d * TROOP.stat.SPEED;
+	BODY.move_and_slide();
 
  
 func _input(event: InputEvent) -> void:
