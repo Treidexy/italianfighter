@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TungStat" load_steps=2 format=3 uid="uid://bn14glurtnv42"]
+
+[ext_resource type="Script" uid="uid://lvksivvqp37k" path="res://scripts/troops/tung/tung_stat.gd" id="1_v46ol"]
+
+[resource]
+script = ExtResource("1_v46ol")
+kb = 0.0
+SPEED = 50.0
+MAX_HP = 800.0
+metadata/_custom_type_script = "uid://lvksivvqp37k"

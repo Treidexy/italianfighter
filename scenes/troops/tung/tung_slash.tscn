@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://wx1yp6pm3m18"]
+
+[ext_resource type="Script" uid="uid://cr4k35vtsl71e" path="res://scripts/troops/tung/tung_slash.gd" id="1_6hsx7"]
+[ext_resource type="Texture2D" uid="uid://f5ltou2le1wf" path="res://assets/troops/tung/tung_slash.png" id="2_jpwkj"]
+
+[node name="MainProjectile" type="Area2D"]
+script = ExtResource("1_6hsx7")
+metadata/_custom_type_script = "uid://cr4k35vtsl71e"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.40625, 0.71875)
+polygon = PackedVector2Array(0, -44.5217, 12.3077, -44.5217, 51.6923, -33.3913, 68.9231, -23.6522, 78.7692, -8.34783, 78.7692, 5.56522, 71.3846, 19.4783, 59.0769, 29.2174, 34.4615, 38.9565, 12.3077, 43.1304, 0, 43.1304)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16, 6.77626e-21)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_jpwkj")
