@@ -15,3 +15,5 @@ polygon = PackedVector2Array(0, -44.5217, 12.3077, -44.5217, 51.6923, -33.3913, 
 position = Vector2(16, 6.77626e-21)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_jpwkj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
