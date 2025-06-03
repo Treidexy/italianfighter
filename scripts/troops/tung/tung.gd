@@ -13,7 +13,7 @@ func main(dir: Vector2):
 	proj.rotation = dir.angle();
 
 func zuper(dir: Vector2):
-	var proj: TungSlash = THROW.instantiate();
+	var proj: TungThrow = THROW.instantiate();
 	get_tree().current_scene.add_child(proj);
 	proj.FATHER = self;
 	proj.LIFE = 3.0;

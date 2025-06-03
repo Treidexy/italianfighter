@@ -5,6 +5,7 @@
 
 [node name="TungSlash" type="CharacterBody2D"]
 input_pickable = true
+motion_mode = 1
 script = ExtResource("1_6hsx7")
 metadata/_custom_type_script = "uid://cr4k35vtsl71e"
 
