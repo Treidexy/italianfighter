@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cf8nvevksle2l"]
+
+[ext_resource type="Script" uid="uid://6s6hs2t1pqpa" path="res://scripts/troops/tung/tung_throw.gd" id="1_xognq"]
+[ext_resource type="Texture2D" uid="uid://coowfp3wkp7h0" path="res://assets/troops/tung/tung_throw.png" id="2_xognq"]
+
+[node name="TungThrow" type="CharacterBody2D"]
+input_pickable = true
+script = ExtResource("1_xognq")
+metadata/_custom_type_script = "uid://6s6hs2t1pqpa"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.40625, 0.71875)
+polygon = PackedVector2Array(0, -44.5217, 39.3846, -44.5217, 54.1538, -32, 71.3846, -19.4783, 78.7692, -6.95652, 78.7692, 6.95652, 71.3846, 20.8696, 54.1538, 32, 39.3846, 44.5217, 0, 44.5217, -29.5385, 20.8696, -39.3846, 5.56522, -39.3846, -8.34783, -32, -20.8696)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, 6.77626e-21)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_xognq")

@@ -1,4 +1,5 @@
 class_name TungStat
 extends Stat
 
-@export var kb: float;
+@export var KB: float;
+var THROW_SPEED: float;

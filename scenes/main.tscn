@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://can3foucqf1xq"]
+[gd_scene load_steps=4 format=3 uid="uid://can3foucqf1xq"]
 
 [ext_resource type="PackedScene" uid="uid://gkkaaufyce68" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://cf8nvevksle2l" path="res://scenes/troops/tung/tung_throw.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="4_jyhfs"]
 
 [node name="Node2D" type="Node2D"]
@@ -20,12 +21,25 @@ action_right = "right"
 action_up = "up"
 action_down = "down"
 
-[node name="AimStick" parent="CanvasLayer" instance=ExtResource("4_jyhfs")]
-offset_left = 852.0
-offset_top = -300.0
-offset_right = 1152.0
-offset_bottom = 0.0
-action_left = "aim_left"
-action_right = "aim_right"
-action_up = "aim_up"
-action_down = "aim_down"
+[node name="MainStick" parent="CanvasLayer" instance=ExtResource("4_jyhfs")]
+offset_left = 851.0
+offset_top = -426.0
+offset_right = 1151.0
+offset_bottom = -126.0
+action_left = "aim_main_left"
+action_right = "aim_main_right"
+action_up = "aim_main_up"
+action_down = "aim_main_down"
+
+[node name="SuperStick" parent="CanvasLayer" instance=ExtResource("4_jyhfs")]
+offset_left = 541.0
+offset_top = -298.0
+offset_right = 841.0
+offset_bottom = 2.0
+action_left = "aim_super_left"
+action_right = "aim_super_right"
+action_up = "aim_super_up"
+action_down = "aim_super_down"
+
+[node name="TungThrow" parent="." instance=ExtResource("3_sugp2")]
+position = Vector2(-108, -10)
