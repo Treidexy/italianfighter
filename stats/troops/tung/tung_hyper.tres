@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="TungStat" load_steps=2 format=3 uid="uid://c5t683uuwpwvq"]
+
+[ext_resource type="Script" uid="uid://lvksivvqp37k" path="res://scripts/troops/tung/tung_stat.gd" id="1_a28y0"]
+
+[resource]
+script = ExtResource("1_a28y0")
+KB = 0.0
+THROW_SPEED = 180.0
+MAIN_DAMAGE = 0.0
+SUPER_DAMAGE = 0.0
+SPEED = 80.0
+MAX_HP = 800.0
+MAIN_COOLDOWN = 0.25
+MAIN_RELOAD = 1.0
+MAX_AMMO = 3
+MAX_SUPER_CHARGE = 0
+MAX_HYPER_CHARGE = 0
+HYPER_DURATION = 0
+metadata/_custom_type_script = "uid://lvksivvqp37k"

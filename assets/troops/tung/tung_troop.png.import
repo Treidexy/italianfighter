@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cwwv4dlu1cm50"
-path="res://.godot/imported/tung.png-f0092f7b0adb3ddc45b338023842ac67.ctex"
+path="res://.godot/imported/tung_troop.png-e6e8ffdc8c42cfa2d6a77b962c3d55c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/troops/tung/tung.png"
-dest_files=["res://.godot/imported/tung.png-f0092f7b0adb3ddc45b338023842ac67.ctex"]
+source_file="res://assets/troops/tung/tung_troop.png"
+dest_files=["res://.godot/imported/tung_troop.png-e6e8ffdc8c42cfa2d6a77b962c3d55c2.ctex"]
 
 [params]
 

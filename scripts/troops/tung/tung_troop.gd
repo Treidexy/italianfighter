@@ -1,23 +1,28 @@
-class_name Tung
+class_name TungTroop
 extends Troop
 
 @export var SLASH: PackedScene = preload("res://scenes/troops/tung/tung_slash.tscn");
 @export var THROW: PackedScene = preload("res://scenes/troops/tung/tung_throw.tscn");
 
 func main(dir: Vector2):
+	super(dir);
 	var proj: TungSlash = SLASH.instantiate();
-	get_tree().current_scene.add_child(proj);
 	proj.FATHER = self;
-	proj.LIFE = 0.3;
+	proj.life = 0.3;
 	proj.position = position;
 	proj.rotation = dir.angle();
+	if stat is TungStat:
+		proj.damage = stat.MAIN_DAMAGE;
+	get_tree().current_scene.add_child(proj);
 
 func zuper(dir: Vector2):
+	super(dir);
 	var proj: TungThrow = THROW.instantiate();
-	get_tree().current_scene.add_child(proj);
 	proj.FATHER = self;
-	proj.LIFE = 3.0;
+	proj.life = 3.0;
 	proj.position = position;
 	proj.rotation = dir.angle();
 	if stat is TungStat:
 		proj.velocity = dir * stat.THROW_SPEED;
+		proj.damage = stat.SUPER_DAMAGE;
+	get_tree().current_scene.add_child(proj);

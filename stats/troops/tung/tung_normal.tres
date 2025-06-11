@@ -4,7 +4,13 @@
 
 [resource]
 script = ExtResource("1_v46ol")
-kb = 0.0
+KB = 0.0
+THROW_SPEED = 180.0
 SPEED = 50.0
 MAX_HP = 800.0
+MAIN_COOLDOWN = 0.25
+MAIN_RELOAD = 1.0
+MAX_AMMO = 3
+MAX_SUPER_CHARGE = 0
+MAX_HYPER_CHARGE = 0
 metadata/_custom_type_script = "uid://lvksivvqp37k"

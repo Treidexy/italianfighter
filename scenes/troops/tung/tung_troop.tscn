@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://gkkaaufyce68"]
+
+[ext_resource type="Texture2D" uid="uid://d27d4fmny001g" path="res://assets/circle.png" id="1_g2els"]
+[ext_resource type="Resource" uid="uid://bn14glurtnv42" path="res://stats/troops/tung/tung_normal.tres" id="2_ykhc8"]
+[ext_resource type="Resource" uid="uid://c5t683uuwpwvq" path="res://stats/troops/tung/tung_hyper.tres" id="3_ax80a"]
+[ext_resource type="Texture2D" uid="uid://cwwv4dlu1cm50" path="res://assets/troops/tung/tung_troop.png" id="3_qlg0r"]
+[ext_resource type="Script" uid="uid://bxnfh3aap2eps" path="res://scripts/troops/tung/tung_troop.gd" id="4_qlg0r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
+
+[node name="TungTroop" type="CharacterBody2D" node_paths=PackedStringArray("AMMO_LABEL")]
+motion_mode = 1
+script = ExtResource("4_qlg0r")
+NORMAL_STAT = ExtResource("2_ykhc8")
+HYPER_STAT = ExtResource("3_ax80a")
+AMMO_LABEL = NodePath("Ammo")
+metadata/_custom_type_script = "uid://bxnfh3aap2eps"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_g2els")
+
+[node name="CircleSprite" type="Sprite2D" parent="."]
+position = Vector2(3.8743e-07, 2.38419e-07)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_g2els")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-8, 3, 0, -5, 5, 2)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(1, 4.76837e-07)
+scale = Vector2(0.2375, 0.240625)
+texture = ExtResource("3_qlg0r")
+
+[node name="Ammo" type="RichTextLabel" parent="."]
+offset_left = -12.0
+offset_top = -29.0
+offset_right = 24.0
+offset_bottom = -6.0
+text = "0/0"

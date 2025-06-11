@@ -1,5 +1,5 @@
 class_name Player
-extends CharacterBody2D
+extends Node
 
 @export var TROOP: Troop;
 var main_dir := Vector2(0, 0);
@@ -10,8 +10,8 @@ func _physics_process(delta: float) -> void:
 	var dy = Input.get_axis("up", "down");
 	var d = Vector2(dx, dy).normalized();
 	
-	velocity = d * TROOP.stat.SPEED;
-	move_and_slide();
+	TROOP.velocity = d * TROOP.stat.SPEED;
+	TROOP.move_and_slide();
 	
 	# because on mouseUp event, joystick is reset before we can read it :(
 	var x := Input.get_axis('aim_main_left', 'aim_main_right')
@@ -23,7 +23,12 @@ func _physics_process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed() == false:
-		if main_dir.length() > 0:
+		if main_dir.length() > 0 and TROOP.can_main():
 			TROOP.main(main_dir);
-		if super_dir.length() > 0:
+		if super_dir.length() > 0 and TROOP.can_super():
 			TROOP.zuper(super_dir);
+
+
+func _on_button_pressed() -> void:
+	if TROOP.can_hyper():
+		TROOP.hyper();
