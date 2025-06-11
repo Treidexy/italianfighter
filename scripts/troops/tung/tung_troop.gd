@@ -16,7 +16,7 @@ func main(dir: Vector2):
 	get_tree().current_scene.add_child(proj);
 
 func zuper(dir: Vector2):
-	super(dir);
+	super(dir);	
 	var proj: TungThrow = THROW.instantiate();
 	proj.FATHER = self;
 	proj.life = 3.0;

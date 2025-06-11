@@ -21,4 +21,8 @@ func _physics_process(delta: float) -> void:
 		rotation = (FATHER.position - position).angle();
 		velocity = velocity.length() * (FATHER.position - position).normalized();
 		if position.distance_to(FATHER.position) < die_dist:
-			queue_free();
+			die();
+
+func die():
+	super();
+	FATHER.in_super = false;

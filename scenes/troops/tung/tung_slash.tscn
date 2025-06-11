@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://f5ltou2le1wf" path="res://assets/troops/tung/tung_slash.png" id="2_jpwkj"]
 
 [node name="TungSlash" type="Area2D"]
+collision_layer = 2
 script = ExtResource("1_6hsx7")
 metadata/_custom_type_script = "uid://cr4k35vtsl71e"
 
@@ -15,3 +16,5 @@ polygon = PackedVector2Array(0, -44.5217, 12.3077, -44.5217, 51.6923, -33.3913, 
 position = Vector2(16, 6.77626e-21)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_jpwkj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

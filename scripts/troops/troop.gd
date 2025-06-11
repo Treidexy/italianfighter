@@ -3,19 +3,21 @@ extends CharacterBody2D
 
 @export var NORMAL_STAT: Stat;
 @export var HYPER_STAT: Stat;
-@export var AMMO_LABEL: RichTextLabel;
+@export var AMMO_BAR: ProgressBar;
+@export var HEALTH_BAR: ProgressBar;
+@export var SUPER_INDICATOR: Node;
 
 var stat: Stat;
 var hp: float;
-var in_super: bool;
-var in_hyper: bool;
+var in_super: bool = false;
+var in_hyper: bool = false;
 
 var _main_cooldown: float;
 var _main_reload: float;
 var _main_ammo: int;
 
-var _super_charge: float;
-var _hyper_charge: float;
+var _super_charge: float = 0;
+var _hyper_charge: float = 0;
 var _hyper_life: float;
 
 ###
@@ -27,6 +29,7 @@ func main(dir: Vector2):
 	_main_ammo -= 1;
 func zuper(dir: Vector2):
 	in_super = true;
+	SUPER_INDICATOR.visible = false;
 func hyper():
 	stat = HYPER_STAT;
 	in_hyper = true;
@@ -42,7 +45,12 @@ func end_hyper():
 func inflict(projectile: Projectile, troop: Troop):
 	_super_charge += projectile.damage;
 	_hyper_charge += projectile.damage;
+	if can_super():
+		SUPER_INDICATOR.visible = true;
 func exflict(projectile: Projectile):
+	if hp <= 0:
+		die();
+func die():
 	pass
 
 ###
@@ -58,10 +66,21 @@ func _ready() -> void:
 	stat = NORMAL_STAT;
 	_main_cooldown = stat.MAIN_COOLDOWN;
 	hp = stat.MAX_HP;
+	# todo: actually stylize
+	var sb = StyleBoxFlat.new();
+	sb.bg_color = Color(255, 0, 0);
+	HEALTH_BAR.add_theme_stylebox_override("fill", sb);
+	
+	var sb1 = StyleBoxFlat.new();
+	sb1.bg_color = Color(255, 255, 0);
+	AMMO_BAR.add_theme_stylebox_override("fill", sb1);
 
-func _physics_process(delta: float) -> void:
-	AMMO_LABEL.text = str(_main_ammo) + '/' + str(stat.MAX_AMMO)
-	_main_cooldown -= delta;
+func _physics_process(delta: float) -> void:	
+	HEALTH_BAR.value = hp / stat.MAX_HP;
+	AMMO_BAR.value = (_main_ammo + 1 - _main_reload / stat.MAIN_RELOAD) / stat.MAX_AMMO;
+	
+	if _main_cooldown > 0:
+		_main_cooldown -= delta;
 	if _main_ammo < stat.MAX_AMMO:
 		_main_reload -= delta;
 		if _main_reload < 0:

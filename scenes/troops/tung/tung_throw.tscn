@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://coowfp3wkp7h0" path="res://assets/troops/tung/tung_throw.png" id="2_xognq"]
 
 [node name="TungThrow" type="Area2D"]
+collision_layer = 2
 script = ExtResource("1_xognq")
 metadata/_custom_type_script = "uid://6s6hs2t1pqpa"
 

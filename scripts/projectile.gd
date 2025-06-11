@@ -11,15 +11,17 @@ var damage: float = 0;
 
 func hit(troop: Troop):
 	FATHER.inflict(self, troop);
-	troop.exflict(self);
 	troop.hp -= damage;
+	troop.exflict(self);
+func die():
+	queue_free();
 
 ###
 
 func _physics_process(delta: float) -> void:
 	life -= delta;
 	if life < 0:
-		queue_free();
+		die();
 	#velocity = VEL;
 	position += velocity * delta;
 
