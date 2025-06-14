@@ -8,7 +8,7 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
 
-[node name="TungTroop" type="CharacterBody2D" node_paths=PackedStringArray("AMMO_BAR", "HEALTH_BAR", "SUPER_INDICATOR")]
+[node name="TungTroop" type="CharacterBody2D" node_paths=PackedStringArray("AMMO_BAR", "HEALTH_BAR", "CAN_SUPER_INDICATOR", "IN_SUPER_INDICATOR", "CAN_HYPER_INDICATOR", "IN_HYPER_INDICATOR")]
 collision_mask = 2
 motion_mode = 1
 script = ExtResource("4_qlg0r")
@@ -16,7 +16,10 @@ NORMAL_STAT = ExtResource("2_ykhc8")
 HYPER_STAT = ExtResource("3_ax80a")
 AMMO_BAR = NodePath("AmmoBar")
 HEALTH_BAR = NodePath("HealthBar")
-SUPER_INDICATOR = NodePath("Polygon2D")
+CAN_SUPER_INDICATOR = NodePath("CanSuperIndicator")
+IN_SUPER_INDICATOR = NodePath("InSuperIndicator")
+CAN_HYPER_INDICATOR = NodePath("CanHyperIndicator")
+IN_HYPER_INDICATOR = NodePath("InHyperIndicator")
 metadata/_custom_type_script = "uid://bxnfh3aap2eps"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -27,7 +30,25 @@ position = Vector2(3.8743e-07, 2.38419e-07)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_g2els")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
+[node name="InHyperIndicator" type="Polygon2D" parent="."]
+visible = false
+position = Vector2(0, -2)
+color = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-8, 3, 3, 8, 5, 2)
+
+[node name="CanHyperIndicator" type="Polygon2D" parent="."]
+visible = false
+position = Vector2(0, 2)
+color = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-8, 3, 0, -5, 5, 2)
+
+[node name="InSuperIndicator" type="Polygon2D" parent="."]
+visible = false
+position = Vector2(0, -5)
+color = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-8, 3, 3, 9, 5, 2)
+
+[node name="CanSuperIndicator" type="Polygon2D" parent="."]
 visible = false
 color = Color(1, 1, 0, 1)
 polygon = PackedVector2Array(-8, 3, 0, -5, 5, 2)

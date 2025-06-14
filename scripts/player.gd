@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void:
 	super_dir = Vector2(x, y).normalized();
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.is_pressed() == false:
+	if event is InputEventMouseButton or event is InputEventScreenTouch and event.is_pressed() == false:
 		if main_dir.length() > 0 and TROOP.can_main():
 			TROOP.main(main_dir);
 		if super_dir.length() > 0 and TROOP.can_super():

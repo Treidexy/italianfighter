@@ -5,7 +5,10 @@ extends CharacterBody2D
 @export var HYPER_STAT: Stat;
 @export var AMMO_BAR: ProgressBar;
 @export var HEALTH_BAR: ProgressBar;
-@export var SUPER_INDICATOR: Node;
+@export var CAN_SUPER_INDICATOR: Node;
+@export var IN_SUPER_INDICATOR: Node;
+@export var CAN_HYPER_INDICATOR: Node;
+@export var IN_HYPER_INDICATOR: Node;
 
 var stat: Stat;
 var hp: float;
@@ -29,7 +32,6 @@ func main(dir: Vector2):
 	_main_ammo -= 1;
 func zuper(dir: Vector2):
 	in_super = true;
-	SUPER_INDICATOR.visible = false;
 func hyper():
 	stat = HYPER_STAT;
 	in_hyper = true;
@@ -45,8 +47,6 @@ func end_hyper():
 func inflict(projectile: Projectile, troop: Troop):
 	_super_charge += projectile.damage;
 	_hyper_charge += projectile.damage;
-	if can_super():
-		SUPER_INDICATOR.visible = true;
 func exflict(projectile: Projectile):
 	if hp <= 0:
 		die();
@@ -78,6 +78,10 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:	
 	HEALTH_BAR.value = hp / stat.MAX_HP;
 	AMMO_BAR.value = (_main_ammo + 1 - _main_reload / stat.MAIN_RELOAD) / stat.MAX_AMMO;
+	CAN_SUPER_INDICATOR.visible = can_super();
+	IN_SUPER_INDICATOR.visible = in_super;
+	CAN_HYPER_INDICATOR.visible = can_hyper();
+	IN_HYPER_INDICATOR.visible = in_hyper;
 	
 	if _main_cooldown > 0:
 		_main_cooldown -= delta;

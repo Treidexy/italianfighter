@@ -21,30 +21,45 @@ action_up = "up"
 action_down = "down"
 
 [node name="MainStick" parent="CanvasLayer" instance=ExtResource("4_jyhfs")]
-offset_left = 851.0
-offset_top = -426.0
-offset_right = 1151.0
-offset_bottom = -126.0
+anchors_preset = 3
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -300.0
+offset_top = -435.0
+offset_right = 0.0
+offset_bottom = -135.0
+grow_horizontal = 0
 action_left = "aim_main_left"
 action_right = "aim_main_right"
 action_up = "aim_main_up"
 action_down = "aim_main_down"
 
 [node name="SuperStick" parent="CanvasLayer" instance=ExtResource("4_jyhfs")]
-offset_left = 541.0
-offset_top = -298.0
-offset_right = 841.0
-offset_bottom = 2.0
+anchors_preset = 3
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -590.0
+offset_top = -300.0
+offset_right = -290.0
+offset_bottom = 0.0
+grow_horizontal = 0
 action_left = "aim_super_left"
 action_right = "aim_super_right"
 action_up = "aim_super_up"
 action_down = "aim_super_down"
 
 [node name="Button" type="Button" parent="CanvasLayer"]
-offset_left = 866.0
-offset_top = 499.0
-offset_right = 988.0
-offset_bottom = 620.0
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -274.0
+offset_top = -161.0
+offset_right = -152.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
 text = "h"
 
 [node name="Player" type="Node" parent="." node_paths=PackedStringArray("TROOP")]
@@ -64,6 +79,6 @@ position = Vector2(105, 77)
 position = Vector2(103, -65)
 
 [node name="DummyTroop4" parent="." instance=ExtResource("4_tbgi4")]
-position = Vector2(-124, 78)
+position = Vector2(-140, -42)
 
 [connection signal="pressed" from="CanvasLayer/Button" to="Player" method="_on_button_pressed"]

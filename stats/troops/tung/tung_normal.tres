@@ -15,5 +15,5 @@ MAIN_RELOAD = 1.0
 MAX_AMMO = 3
 MAX_SUPER_CHARGE = 6000
 MAX_HYPER_CHARGE = 20000
-HYPER_DURATION = 0
+HYPER_DURATION = 8
 metadata/_custom_type_script = "uid://lvksivvqp37k"

@@ -25,4 +25,4 @@ func _physics_process(delta: float) -> void:
 
 func die():
 	super();
-	FATHER.in_super = false;
+	FATHER.end_super();
