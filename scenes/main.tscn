@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://can3foucqf1xq"]
+[gd_scene load_steps=7 format=3 uid="uid://can3foucqf1xq"]
 
 [ext_resource type="PackedScene" uid="uid://gkkaaufyce68" path="res://scenes/troops/tung/tung_troop.tscn" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://dt13r06u87fib" path="res://addons/virtual_joystick/textures/joystick_tip_arrows.png" id="2_tbgi4"]
 [ext_resource type="Script" uid="uid://bmr36mnhgd4ds" path="res://scripts/player.gd" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://by2muutbj07bm" path="res://scenes/troops/dummy_troop.tscn" id="4_tbgi4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tefeu"]
+radius = 50.0
 
 [node name="Node2D" type="Node2D"]
 
@@ -48,19 +52,10 @@ action_right = "aim_super_right"
 action_up = "aim_super_up"
 action_down = "aim_super_down"
 
-[node name="Button" type="Button" parent="CanvasLayer"]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -274.0
-offset_top = -161.0
-offset_right = -152.0
-offset_bottom = -40.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "h"
+[node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(887, 491)
+texture_normal = ExtResource("2_tbgi4")
+shape = SubResource("CircleShape2D_tefeu")
 
 [node name="Player" type="Node" parent="." node_paths=PackedStringArray("TROOP")]
 script = ExtResource("3_jyhfs")
@@ -81,4 +76,4 @@ position = Vector2(103, -65)
 [node name="DummyTroop4" parent="." instance=ExtResource("4_tbgi4")]
 position = Vector2(-140, -42)
 
-[connection signal="pressed" from="CanvasLayer/Button" to="Player" method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TouchScreenButton" to="Player" method="_on_button_pressed"]

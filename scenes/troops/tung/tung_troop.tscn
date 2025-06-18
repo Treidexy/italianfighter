@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d27d4fmny001g" path="res://assets/circle.png" id="1_g2els"]
 [ext_resource type="Resource" uid="uid://bn14glurtnv42" path="res://stats/troops/tung/tung_normal.tres" id="2_ykhc8"]
-[ext_resource type="Resource" uid="uid://c5t683uuwpwvq" path="res://stats/troops/tung/tung_hyper.tres" id="3_ax80a"]
+[ext_resource type="Resource" uid="uid://bl48do2mri5p6" path="res://stats/troops/tung/tung_hyper.tres" id="3_ax80a"]
 [ext_resource type="Texture2D" uid="uid://cwwv4dlu1cm50" path="res://assets/troops/tung/tung_troop.png" id="3_qlg0r"]
 [ext_resource type="Script" uid="uid://bxnfh3aap2eps" path="res://scripts/troops/tung/tung_troop.gd" id="4_qlg0r"]
 

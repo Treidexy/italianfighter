@@ -1,10 +1,26 @@
-[gd_scene load_steps=7 format=3 uid="uid://by2muutbj07bm"]
+[gd_scene load_steps=8 format=3 uid="uid://by2muutbj07bm"]
 
 [ext_resource type="Script" uid="uid://i84pw8ci1i0j" path="res://scripts/troops/dummy_troop.gd" id="1_4xt8r"]
 [ext_resource type="Resource" uid="uid://bn14glurtnv42" path="res://stats/troops/tung/tung_normal.tres" id="2_k7ln2"]
-[ext_resource type="Resource" uid="uid://c5t683uuwpwvq" path="res://stats/troops/tung/tung_hyper.tres" id="3_qrojd"]
+[ext_resource type="Script" uid="uid://lvksivvqp37k" path="res://scripts/troops/tung/tung_stat.gd" id="3_4xt8r"]
 [ext_resource type="Texture2D" uid="uid://d27d4fmny001g" path="res://assets/circle.png" id="4_iackj"]
 [ext_resource type="Texture2D" uid="uid://cbcsy41riot3k" path="res://assets/troops/dummy.png" id="5_4xt8r"]
+
+[sub_resource type="Resource" id="Resource_q2h5t"]
+script = ExtResource("3_4xt8r")
+KB = 0.0
+THROW_SPEED = 180.0
+MAIN_DAMAGE = 0.0
+SUPER_DAMAGE = 0.0
+SPEED = 80.0
+MAX_HP = 800.0
+MAIN_COOLDOWN = 0.25
+MAIN_RELOAD = 1.0
+MAX_AMMO = 3
+MAX_SUPER_CHARGE = 0
+MAX_HYPER_CHARGE = 0
+HYPER_DURATION = 0
+metadata/_custom_type_script = "uid://lvksivvqp37k"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
 
@@ -13,7 +29,7 @@ collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_4xt8r")
 NORMAL_STAT = ExtResource("2_k7ln2")
-HYPER_STAT = ExtResource("3_qrojd")
+HYPER_STAT = SubResource("Resource_q2h5t")
 AMMO_BAR = NodePath("AmmoBar")
 HEALTH_BAR = NodePath("HealthBar")
 CAN_SUPER_INDICATOR = NodePath("CanSuperIndicator")
