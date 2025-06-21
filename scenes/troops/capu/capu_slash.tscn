@@ -1,12 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://bnyjet4c0d84r"]
+[gd_scene load_steps=3 format=3 uid="uid://bnyjet4c0d84r"]
 
+[ext_resource type="Script" uid="uid://ce43hm0hlndkb" path="res://scripts/troops/capu/capu_slash.gd" id="1_a1mlo"]
 [ext_resource type="Texture2D" uid="uid://0m8v7e6mcb8v" path="res://assets/troops/capu/capu_slash.png" id="1_qiix6"]
 
-[node name="Node2D" type="Node2D"]
+[node name="CapuSlash" type="Area2D"]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_a1mlo")
+metadata/_custom_type_script = "uid://ce43hm0hlndkb"
 
 [node name="CapuSlash" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_qiix6")
 
-[node name="CapuSlash2" type="Sprite2D" parent="."]
-scale = Vector2(-1, 1)
-texture = ExtResource("1_qiix6")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.4, 0.4)
+polygon = PackedVector2Array(0, 0, -57, -57, -36, -73, -14, -79, 15, -79, 38, -70, 58, -57, 75, -30, 80, -4, 77, 25, 63, 51, 42, 69, 20, 77, 0, 80)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

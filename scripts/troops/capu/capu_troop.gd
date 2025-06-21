@@ -1,30 +1,28 @@
 class_name CapuTroop
 extends Troop
 
-@export var SLASH: PackedScene = preload("res://scenes/troops/tung/tung_slash.tscn");
-@export var THROW: PackedScene = preload("res://scenes/troops/tung/tung_throw.tscn");
+@export var SLASH: PackedScene = preload("res://scenes/troops/capu/capu_slash.tscn");
 
 func main(dir: Vector2):
 	super(dir);
-	var proj: TungSlash = SLASH.instantiate();
-	proj.FATHER = self;
-	proj.life = 0.3;
-	proj.position = position;
-	proj.rotation = dir.angle();
-	if stat is TungStat:
-		proj.damage = stat.MAIN_DAMAGE;
-		proj.kb = stat.KB;
-	get_tree().current_scene.add_child(proj);
-
-func zuper(dir: Vector2):
-	super(dir);	
-	var proj: TungThrow = THROW.instantiate();
-	proj.FATHER = self;
-	proj.life = 3.0;
-	proj.position = position;
-	proj.rotation = dir.angle();
-	if stat is TungStat:
-		proj.velocity = dir * stat.THROW_SPEED;
-		proj.damage = stat.SUPER_DAMAGE;
-		proj.kb = stat.KB;
-	get_tree().current_scene.add_child(proj);
+	if stat is CapuStat:
+		var pos = position + dir * stat.DASH_DIST;
+		velocity = dir * stat.DASH_DIST;
+		move_and_slide();
+		
+		var proj1: CapuSlash = SLASH.instantiate();
+		proj1.FATHER = self;
+		proj1.life = 0.3;
+		proj1.position = position;
+		proj1.rotation = dir.angle();
+		proj1.damage = stat.MAIN_HALF_DAMAGE;
+		get_tree().current_scene.add_child(proj1);
+		
+		var proj2: CapuSlash = SLASH.instantiate();
+		proj2.FATHER = self;
+		proj2.life = 0.3;
+		proj2.position = position;
+		proj2.rotation = dir.angle();
+		proj2.scale.y = -1;
+		proj2.damage = stat.MAIN_HALF_DAMAGE;
+		get_tree().current_scene.add_child(proj2);

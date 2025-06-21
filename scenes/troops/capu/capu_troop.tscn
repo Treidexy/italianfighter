@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bobaid84s3dpw"]
+[gd_scene load_steps=6 format=3 uid="uid://bobaid84s3dpw"]
 
 [ext_resource type="Script" uid="uid://b512w8g2gj5nl" path="res://scripts/troops/capu/capu_troop.gd" id="1_pngg7"]
-[ext_resource type="Resource" uid="uid://bn14glurtnv42" path="res://stats/troops/tung/tung_normal.tres" id="2_h1bfb"]
-[ext_resource type="Resource" uid="uid://bl48do2mri5p6" path="res://stats/troops/tung/tung_hyper.tres" id="3_vl156"]
+[ext_resource type="Resource" uid="uid://vpkrhyjylyct" path="res://stats/capu/capu_norm.tres" id="2_d5wf6"]
 [ext_resource type="PackedScene" uid="uid://dw6selja8rroc" path="res://scenes/troops/troop_ui.tscn" id="4_6h6eu"]
 [ext_resource type="Texture2D" uid="uid://dk740qg7nxwtw" path="res://assets/troops/capu/capu.png" id="5_pngg7"]
 
@@ -12,8 +11,8 @@
 collision_mask = 6
 motion_mode = 1
 script = ExtResource("1_pngg7")
-NORMAL_STAT = ExtResource("2_h1bfb")
-HYPER_STAT = ExtResource("3_vl156")
+NORMAL_STAT = ExtResource("2_d5wf6")
+HYPER_STAT = ExtResource("2_d5wf6")
 UI = NodePath("TroopUi")
 metadata/_custom_type_script = "uid://b512w8g2gj5nl"
 
