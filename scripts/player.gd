@@ -6,6 +6,9 @@ var main_dir := Vector2(0, 0);
 var super_dir := Vector2(0, 0);
 
 func _physics_process(delta: float) -> void:
+	if not TROOP.can_move():
+		return;
+	
 	var dx = Input.get_axis("left", "right");
 	var dy = Input.get_axis("up", "down");
 	var d = Vector2(dx, dy).normalized();

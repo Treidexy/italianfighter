@@ -14,6 +14,8 @@ var stat: Stat;
 var hp: float;
 var in_super: bool = false;
 var in_hyper: bool = false;
+var in_snare: bool = false;
+var in_silence: bool = false;
 
 var _main_cooldown: float;
 var _main_reload: float;
@@ -44,10 +46,12 @@ func end_hyper():
 	_hyper_charge = 0;
 	stat = NORMAL_STAT;
 
-func inflict(projectile: Projectile, troop: Troop):
-	_super_charge += projectile.damage;
-	_hyper_charge += projectile.damage;
-func exflict(projectile: Projectile):
+func inflict(gluon, troop: Troop):
+	if gluon is Projectile:
+		_super_charge += gluon.damage;
+		_hyper_charge += gluon.damage;
+func exflict(gluon):
+	hp -= gluon.damage;
 	if hp <= 0:
 		die();
 func die():
@@ -55,12 +59,14 @@ func die():
 
 ###
 
+func can_move() -> bool:
+	return not in_snare;
 func can_main() -> bool:
-	return _main_ammo > 0 and _main_cooldown <= 0;
+	return not in_silence and _main_ammo > 0 and _main_cooldown <= 0;
 func can_super() -> bool:
-	return not in_super and _super_charge >= stat.MAX_SUPER_CHARGE;
+	return not in_silence and not in_super and _super_charge >= stat.MAX_SUPER_CHARGE;
 func can_hyper() -> bool:
-	return not in_hyper and _hyper_charge >= stat.MAX_HYPER_CHARGE;
+	return not in_silence and not in_hyper and _hyper_charge >= stat.MAX_HYPER_CHARGE;
 
 func _ready() -> void:
 	stat = NORMAL_STAT;

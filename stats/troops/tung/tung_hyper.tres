@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_a28y0")
-KB = 0.0
+KB = 200.0
 THROW_SPEED = 180.0
 MAIN_DAMAGE = 1500.0
 SUPER_DAMAGE = 1000.0

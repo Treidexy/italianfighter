@@ -13,6 +13,7 @@ func main(dir: Vector2):
 	proj.rotation = dir.angle();
 	if stat is TungStat:
 		proj.damage = stat.MAIN_DAMAGE;
+		proj.kb = stat.KB;
 	get_tree().current_scene.add_child(proj);
 
 func zuper(dir: Vector2):
@@ -25,4 +26,5 @@ func zuper(dir: Vector2):
 	if stat is TungStat:
 		proj.velocity = dir * stat.THROW_SPEED;
 		proj.damage = stat.SUPER_DAMAGE;
+		proj.kb = stat.KB;
 	get_tree().current_scene.add_child(proj);

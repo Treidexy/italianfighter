@@ -1,17 +1,29 @@
 class_name Projectile
 extends Area2D
+# impl Gluon
 
 var FATHER: Troop;
 var life: float = 6.9;
 var velocity: Vector2;
 
+var kb: float = 0;
 var damage: float = 0;
 
 ###
 
 func hit(troop: Troop):
 	FATHER.inflict(self, troop);
-	troop.hp -= damage;
+	#troop.hp -= damage; # troop.exflict deals w ts
+	if kb > 0:
+		var d = troop.position - position;
+		# bc nga godot has no fking .set-length()
+		d = d.normalized() * (1 / sqrt(d.length()) * kb);
+		var curse = KbCurse.new();
+		curse.force = d;
+		curse.FATHER = FATHER;
+		curse.VICTIM = troop;
+		curse.life = 0.5;
+		get_tree().root.add_child(curse);
 	troop.exflict(self);
 func die():
 	queue_free();
