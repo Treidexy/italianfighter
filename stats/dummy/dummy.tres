@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Stat" load_steps=2 format=3 uid="uid://drm0rcesgaxg2"]
+
+[ext_resource type="Script" uid="uid://dwg4s2jpctthw" path="res://scripts/stat.gd" id="1_u74bh"]
+
+[resource]
+script = ExtResource("1_u74bh")
+SPEED = 0.0
+MAX_HP = 10000.0
+MAIN_COOLDOWN = 0.0
+MAIN_RELOAD = 0.0
+MAX_AMMO = 0
+MAX_SUPER_CHARGE = 0
+MAX_HYPER_CHARGE = 0
+HYPER_DURATION = 0
+metadata/_custom_type_script = "uid://dwg4s2jpctthw"

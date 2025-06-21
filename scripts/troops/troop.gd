@@ -3,12 +3,7 @@ extends CharacterBody2D
 
 @export var NORMAL_STAT: Stat;
 @export var HYPER_STAT: Stat;
-@export var AMMO_BAR: ProgressBar;
-@export var HEALTH_BAR: ProgressBar;
-@export var CAN_SUPER_INDICATOR: Node;
-@export var IN_SUPER_INDICATOR: Node;
-@export var CAN_HYPER_INDICATOR: Node;
-@export var IN_HYPER_INDICATOR: Node;
+@export var UI: TroopUi;
 
 var stat: Stat;
 var hp: float;
@@ -75,19 +70,19 @@ func _ready() -> void:
 	# todo: actually stylize
 	var sb = StyleBoxFlat.new();
 	sb.bg_color = Color(255, 0, 0);
-	HEALTH_BAR.add_theme_stylebox_override("fill", sb);
+	UI.HEALTH_BAR.add_theme_stylebox_override("fill", sb);
 	
 	var sb1 = StyleBoxFlat.new();
 	sb1.bg_color = Color(255, 255, 0);
-	AMMO_BAR.add_theme_stylebox_override("fill", sb1);
+	UI.AMMO_BAR.add_theme_stylebox_override("fill", sb1);
 
 func _physics_process(delta: float) -> void:	
-	HEALTH_BAR.value = hp / stat.MAX_HP;
-	AMMO_BAR.value = (_main_ammo + 1 - _main_reload / stat.MAIN_RELOAD) / stat.MAX_AMMO;
-	CAN_SUPER_INDICATOR.visible = can_super();
-	IN_SUPER_INDICATOR.visible = in_super;
-	CAN_HYPER_INDICATOR.visible = can_hyper();
-	IN_HYPER_INDICATOR.visible = in_hyper;
+	UI.HEALTH_BAR.value = hp / stat.MAX_HP;
+	UI.AMMO_BAR.value = (_main_ammo + 1 - _main_reload / stat.MAIN_RELOAD) / stat.MAX_AMMO;
+	UI.CAN_SUPER_INDICATOR.visible = can_super();
+	UI.IN_SUPER_INDICATOR.visible = in_super;
+	UI.CAN_HYPER_INDICATOR.visible = can_hyper();
+	UI.IN_HYPER_INDICATOR.visible = in_hyper;
 	
 	if _main_cooldown > 0:
 		_main_cooldown -= delta;
