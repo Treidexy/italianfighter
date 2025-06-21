@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnyjet4c0d84r"]
+
+[ext_resource type="Texture2D" uid="uid://0m8v7e6mcb8v" path="res://assets/troops/capu/capu_slash.png" id="1_qiix6"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CapuSlash" type="Sprite2D" parent="."]
+texture = ExtResource("1_qiix6")
+
+[node name="CapuSlash2" type="Sprite2D" parent="."]
+scale = Vector2(-1, 1)
+texture = ExtResource("1_qiix6")

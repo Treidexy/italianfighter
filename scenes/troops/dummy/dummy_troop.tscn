@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://i84pw8ci1i0j" path="res://scripts/troops/dummy/dummy_troop.gd" id="1_pmnpd"]
 [ext_resource type="PackedScene" uid="uid://dw6selja8rroc" path="res://scenes/troops/troop_ui.tscn" id="2_rvun0"]
 [ext_resource type="Resource" uid="uid://drm0rcesgaxg2" path="res://stats/dummy/dummy.tres" id="2_yvucy"]
-[ext_resource type="Texture2D" uid="uid://cbcsy41riot3k" path="res://assets/troops/dummy.png" id="3_yvucy"]
+[ext_resource type="Texture2D" uid="uid://cbcsy41riot3k" path="res://assets/troops/dummy/dummy.png" id="3_yvucy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
 
 [node name="DummyTroop" type="CharacterBody2D" node_paths=PackedStringArray("UI")]
-collision_mask = 2
+collision_mask = 6
 motion_mode = 1
 script = ExtResource("1_pmnpd")
 NORMAL_STAT = ExtResource("2_yvucy")
