@@ -1,5 +1,5 @@
 class_name TroopUi
-extends Node
+extends Node2D
 
 @export var AMMO_BAR: ProgressBar;
 @export var HEALTH_BAR: ProgressBar;
