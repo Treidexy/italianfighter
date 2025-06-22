@@ -9,8 +9,8 @@ var stat: Stat;
 var hp: float;
 var in_super: bool = false;
 var in_hyper: bool = false;
-var in_snare: bool = false;
-var in_silence: bool = false;
+#var in_snare: bool = false;
+#var in_silence: bool = false;
 var current_action: Action = null;
 
 var _main_cooldown: float;
@@ -56,13 +56,20 @@ func die():
 ###
 
 func can_move() -> bool:
-	return current_action == null and not in_snare;
+	return not in_snare();
 func can_main() -> bool:
-	return current_action == null and not in_silence and _main_ammo > 0 and _main_cooldown <= 0;
+	return not in_silence() and _main_ammo > 0 and _main_cooldown <= 0;
 func can_super() -> bool:
-	return current_action == null and not in_silence and not in_super and _super_charge >= stat.MAX_SUPER_CHARGE;
+	return not in_silence() and not in_super and _super_charge >= stat.MAX_SUPER_CHARGE;
 func can_hyper() -> bool:
-	return current_action == null and not in_silence and not in_hyper and _hyper_charge >= stat.MAX_HYPER_CHARGE;
+	return not in_silence() and not in_hyper and _hyper_charge >= stat.MAX_HYPER_CHARGE;
+
+func in_snare() -> bool:
+	return current_action != null and current_action.does_snare;
+func in_silence() -> bool:
+	return current_action != null and current_action.does_silence;
+
+###
 
 func _ready() -> void:
 	stat = NORMAL_STAT;

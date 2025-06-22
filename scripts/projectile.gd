@@ -18,11 +18,9 @@ func hit(troop: Troop):
 		var d = troop.position - position;
 		# bc nga godot has no fking .set-length()
 		d = d.normalized() * (1 / sqrt(d.length()) * kb);
-		var curse = KbCurse.new();
-		curse.force = d;
-		curse.FATHER = FATHER;
+		var curse = KbAction.new();
 		curse.VICTIM = troop;
-		curse.life = 0.5;
+		curse.force = d;
 		get_tree().root.add_child(curse);
 	troop.exflict(self);
 func die():
