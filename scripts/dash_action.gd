@@ -8,7 +8,6 @@ var _origen: Vector2;
 
 func begin():
 	super();
-	life = 99;
 	_origen = VICTIM.position;
 
 func _physics_process(delta: float) -> void:

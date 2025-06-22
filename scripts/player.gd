@@ -2,8 +2,8 @@ class_name Player
 extends Node
 
 @export var TROOP: Troop;
-var main_dir := Vector2(0, 0);
-var super_dir := Vector2(0, 0);
+var main_weighted_dir := Vector2(0, 0);
+var super_weighted_dir := Vector2(0, 0);
 
 func _physics_process(delta: float) -> void:
 	if not TROOP.can_move():
@@ -19,18 +19,20 @@ func _physics_process(delta: float) -> void:
 	# because on mouseUp event, joystick is reset before we can read it :(
 	var x := Input.get_axis('aim_main_left', 'aim_main_right')
 	var y := Input.get_axis('aim_main_up', 'aim_main_down')
-	main_dir = Vector2(x, y).normalized();
+	main_weighted_dir = Vector2(x, y);
 	x = Input.get_axis('aim_super_left', 'aim_super_right')
 	y = Input.get_axis('aim_super_up', 'aim_super_down')
-	super_dir = Vector2(x, y).normalized();
+	super_weighted_dir = Vector2(x, y);
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch and event.is_pressed() == false:
-		if main_dir.length() > 0 and TROOP.can_main():
-			TROOP.dir = main_dir;
+		if main_weighted_dir.length() > 0 and TROOP.can_main():
+			TROOP.dir = main_weighted_dir.normalized();
+			TROOP.weighted_dir = main_weighted_dir;
 			TROOP.main();
-		if super_dir.length() > 0 and TROOP.can_super():
-			TROOP.dir = super_dir;
+		if super_weighted_dir.length() > 0 and TROOP.can_super():
+			TROOP.dir = super_weighted_dir.normalized();
+			TROOP.weighted_dir = super_weighted_dir;
 			TROOP.zuper();
 
 func _on_button_pressed() -> void:

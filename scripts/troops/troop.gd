@@ -13,6 +13,7 @@ var in_hyper: bool = false;
 #var in_silence: bool = false;
 var current_action: Action = null;
 var dir: Vector2 = Vector2.from_angle(0);
+var weighted_dir: Vector2 = Vector2.from_angle(0);
 
 var _main_cooldown: float;
 var _main_reload: float;

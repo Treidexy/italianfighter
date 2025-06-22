@@ -36,7 +36,7 @@ func _physics_process(delta: float) -> void:
 	position += velocity * delta;
 
 func _on_body_entered(body: Node) -> void:
-	print("see " + str(body));
+	#print("see " + str(body));
 	if body is Troop and body != FATHER:
-		print("hit " + str(body));
+		#print("hit " + str(body));
 		hit(body);

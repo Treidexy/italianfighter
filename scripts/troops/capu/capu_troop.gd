@@ -4,7 +4,6 @@ extends Troop
 @export var SLASH: PackedScene = preload("res://scenes/troops/capu/capu_slash.tscn");
 
 func slash():
-	print('hi');
 	var proj1: CapuSlash = SLASH.instantiate();
 	proj1.FATHER = self;
 	proj1.life = 0.3;
@@ -30,4 +29,14 @@ func main():
 	action.VICTIM = self;
 	action.dist = stat.DASH_DIST;
 	action.velocity = dir * stat.DASH_SPEED;
+	get_tree().current_scene.add_child(action);
+
+func zuper():
+	super();
+	
+	var stat := stat as CapuStat;
+	var action = CapuJumpAction.new();
+	action.VICTIM = self;
+	action.dest = position + dir * stat.JUMP_DIST;
+	action.duration = stat.JUMP_DURATION;
 	get_tree().current_scene.add_child(action);

@@ -2,7 +2,6 @@ class_name Action
 extends Node
 
 var VICTIM: Troop;
-var life: float;
 var does_snare: bool = true;
 var does_silence: bool = true;
 
@@ -14,9 +13,7 @@ func end():
 	VICTIM.current_action = null;
 	queue_free();
 func _physics_process(delta: float) -> void:
-	life -= delta;
-	if life < 0:
-		end();
+	pass
 
 func _ready() -> void:
 	begin();
