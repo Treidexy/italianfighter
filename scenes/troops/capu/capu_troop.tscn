@@ -31,6 +31,7 @@ scale = Vector2(0.20625, 0.207813)
 texture = ExtResource("5_pngg7")
 
 [node name="MainHint" type="Node2D" parent="."]
+visible = false
 
 [node name="CapuSlash" type="Sprite2D" parent="MainHint"]
 modulate = Color(1, 1, 1, 0.196078)
@@ -45,6 +46,7 @@ scale = Vector2(0.4, -0.4)
 texture = ExtResource("5_wuisp")
 
 [node name="SuperHint" type="Node2D" parent="."]
+visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="SuperHint"]
 modulate = Color(1, 1, 1, 0.196078)

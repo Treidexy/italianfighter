@@ -5,6 +5,16 @@ extends Troop
 @export var MAIN_HINT: Node2D;
 @export var SUPER_HINT: Node2D;
 
+func show_hint():
+	super();
+	print('hi')
+	MAIN_HINT.visible = true;
+	
+func hide_hint():
+	super();
+	print('bi')
+	MAIN_HINT.visible = false;
+
 func _physics_process(delta: float) -> void:
 	super(delta);
 	var stat := stat as CapuStat;

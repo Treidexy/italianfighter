@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 	VICTIM.velocity = d * VICTIM.stat.SPEED;
 	VICTIM.move_and_slide();
 	
-	butt = MainOrSuper.NONE;
+	var ts_butt = MainOrSuper.NONE;
 	
 	# because on mouseUp event, joystick is reset before we can read it :(
 	dx = Input.get_axis('aim_main_left', 'aim_main_right');
@@ -32,7 +32,7 @@ func _physics_process(delta: float) -> void:
 	if d.length() > 0:
 		VICTIM.dir = d.normalized();
 		VICTIM.weighted_dir = d;
-		butt = MainOrSuper.MAIN;
+		ts_butt = MainOrSuper.MAIN;
 		
 	dx = Input.get_axis('aim_super_left', 'aim_super_right');
 	dy = Input.get_axis('aim_super_up', 'aim_super_down');
@@ -40,15 +40,25 @@ func _physics_process(delta: float) -> void:
 	if d.length() > 0:
 		VICTIM.dir = d.normalized();
 		VICTIM.weighted_dir = d;
-		butt = MainOrSuper.SUPER;
+		ts_butt = MainOrSuper.SUPER;
+		#VICTIM.show_super_hint();
+		
+	if ts_butt != butt:
+		if ts_butt == MainOrSuper.NONE:
+			VICTIM.hide_hint();
+		if ts_butt == MainOrSuper.MAIN:
+			VICTIM.show_hint();
+		butt = ts_butt;
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch:
-		if event.is_pressed() == false:
+		if event.is_released():
 			if butt == MainOrSuper.MAIN and VICTIM.can_main():
 				VICTIM.main();
+				VICTIM.hide_hint();
 			if butt == MainOrSuper.SUPER and  VICTIM.can_super():
 				VICTIM.zuper();
+			butt = MainOrSuper.NONE;
 
 func _on_button_pressed() -> void:
 	if VICTIM.can_hyper():
