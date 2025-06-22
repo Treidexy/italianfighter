@@ -12,6 +12,7 @@ var in_hyper: bool = false;
 #var in_snare: bool = false;
 #var in_silence: bool = false;
 var current_action: Action = null;
+var dir: Vector2 = Vector2.from_angle(0);
 
 var _main_cooldown: float;
 var _main_reload: float;
@@ -24,11 +25,11 @@ var _hyper_life: float;
 ###
 
 # normalized Vector2
-func main(dir: Vector2):
+func main():
 	_main_cooldown = stat.MAIN_COOLDOWN;
 	_main_reload = stat.MAIN_RELOAD;
 	_main_ammo -= 1;
-func zuper(dir: Vector2):
+func zuper():
 	in_super = true;
 func hyper():
 	stat = HYPER_STAT;

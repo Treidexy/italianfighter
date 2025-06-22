@@ -5,7 +5,8 @@
 [resource]
 script = ExtResource("1_faw3u")
 MAIN_HALF_DAMAGE = 750.0
-DASH_DIST = 20.0
+DASH_DIST = 25.0
+DASH_SPEED = 180.0
 SPEED = 55.0
 MAX_HP = 4500.0
 MAIN_COOLDOWN = 0.2

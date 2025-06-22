@@ -27,10 +27,11 @@ func _physics_process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch and event.is_pressed() == false:
 		if main_dir.length() > 0 and TROOP.can_main():
-			TROOP.main(main_dir);
+			TROOP.dir = main_dir;
+			TROOP.main();
 		if super_dir.length() > 0 and TROOP.can_super():
-			TROOP.zuper(super_dir);
-
+			TROOP.dir = super_dir;
+			TROOP.zuper();
 
 func _on_button_pressed() -> void:
 	if TROOP.can_hyper():

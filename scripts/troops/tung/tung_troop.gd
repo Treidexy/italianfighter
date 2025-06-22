@@ -4,8 +4,8 @@ extends Troop
 @export var SLASH: PackedScene = preload("res://scenes/troops/tung/tung_slash.tscn");
 @export var THROW: PackedScene = preload("res://scenes/troops/tung/tung_throw.tscn");
 
-func main(dir: Vector2):
-	super(dir);
+func main():
+	super();
 	var stat := stat as TungStat;
 	var proj: TungSlash = SLASH.instantiate();
 	proj.FATHER = self;
@@ -16,8 +16,8 @@ func main(dir: Vector2):
 	proj.kb = stat.KB;
 	get_tree().current_scene.add_child(proj);
 
-func zuper(dir: Vector2):
-	super(dir);	
+func zuper():
+	super();	
 	var stat := stat as TungStat;
 	var proj: TungThrow = THROW.instantiate();
 	proj.FATHER = self;
