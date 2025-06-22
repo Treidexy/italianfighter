@@ -2,6 +2,15 @@ class_name CapuTroop
 extends Troop
 
 @export var SLASH: PackedScene = preload("res://scenes/troops/capu/capu_slash.tscn");
+@export var MAIN_HINT: Node2D;
+@export var SUPER_HINT: Node2D;
+
+func _physics_process(delta: float) -> void:
+	super(delta);
+	var stat := stat as CapuStat;
+	MAIN_HINT.position = weighted_dir * stat.DASH_DIST;
+	MAIN_HINT.rotation = dir.angle();
+	SUPER_HINT.position = weighted_dir * stat.JUMP_DIST;
 
 func slash():
 	var proj1: CapuSlash = SLASH.instantiate();
@@ -27,7 +36,7 @@ func main():
 	var stat := stat as CapuStat;
 	var action = CapuDashAction.new();
 	action.VICTIM = self;
-	action.dist = stat.DASH_DIST;
+	action.dist = weighted_dir.length() * stat.DASH_DIST;
 	action.velocity = dir * stat.DASH_SPEED;
 	get_tree().current_scene.add_child(action);
 
@@ -37,6 +46,6 @@ func zuper():
 	var stat := stat as CapuStat;
 	var action = CapuJumpAction.new();
 	action.VICTIM = self;
-	action.dest = position + dir * stat.JUMP_DIST;
+	action.dest = position + weighted_dir * stat.JUMP_DIST;
 	action.duration = stat.JUMP_DURATION;
 	get_tree().current_scene.add_child(action);

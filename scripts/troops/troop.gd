@@ -52,8 +52,12 @@ func exflict(gluon):
 	hp -= gluon.damage;
 	if hp <= 0:
 		die();
-func die():
-	pass
+func die(): pass
+	
+###
+
+func show_hint(): pass
+func hide_hint(): pass
 
 ###
 

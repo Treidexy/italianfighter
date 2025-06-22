@@ -1,16 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://bobaid84s3dpw"]
+[gd_scene load_steps=8 format=3 uid="uid://bobaid84s3dpw"]
 
 [ext_resource type="Script" uid="uid://b512w8g2gj5nl" path="res://scripts/troops/capu/capu_troop.gd" id="1_pngg7"]
 [ext_resource type="Resource" uid="uid://vpkrhyjylyct" path="res://stats/capu/capu_norm.tres" id="2_d5wf6"]
 [ext_resource type="PackedScene" uid="uid://dw6selja8rroc" path="res://scenes/troops/troop_ui.tscn" id="4_6h6eu"]
 [ext_resource type="Texture2D" uid="uid://dk740qg7nxwtw" path="res://assets/troops/capu/capu.png" id="5_pngg7"]
+[ext_resource type="Texture2D" uid="uid://0m8v7e6mcb8v" path="res://assets/troops/capu/capu_slash.png" id="5_wuisp"]
+[ext_resource type="Texture2D" uid="uid://d27d4fmny001g" path="res://assets/circle.png" id="6_wuisp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yk7wj"]
 
-[node name="CapuTroop" type="CharacterBody2D" node_paths=PackedStringArray("UI")]
+[node name="CapuTroop" type="CharacterBody2D" node_paths=PackedStringArray("MAIN_HINT", "SUPER_HINT", "UI")]
 collision_mask = 6
 motion_mode = 1
 script = ExtResource("1_pngg7")
+MAIN_HINT = NodePath("MainHint")
+SUPER_HINT = NodePath("SuperHint")
 NORMAL_STAT = ExtResource("2_d5wf6")
 HYPER_STAT = ExtResource("2_d5wf6")
 UI = NodePath("TroopUi")
@@ -25,3 +29,24 @@ shape = SubResource("CircleShape2D_yk7wj")
 position = Vector2(0, 1.19209e-07)
 scale = Vector2(0.20625, 0.207813)
 texture = ExtResource("5_pngg7")
+
+[node name="MainHint" type="Node2D" parent="."]
+
+[node name="CapuSlash" type="Sprite2D" parent="MainHint"]
+modulate = Color(1, 1, 1, 0.196078)
+rotation = 1.5708
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_wuisp")
+
+[node name="CapuSlash2" type="Sprite2D" parent="MainHint"]
+modulate = Color(1, 1, 1, 0.196078)
+rotation = -1.5708
+scale = Vector2(0.4, -0.4)
+texture = ExtResource("5_wuisp")
+
+[node name="SuperHint" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="SuperHint"]
+modulate = Color(1, 1, 1, 0.196078)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_wuisp")
