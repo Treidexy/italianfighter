@@ -1,24 +1,6 @@
 class_name CapuJumpAction
-extends Action
-
-var dest: Vector2;
-var duration: float;
-var time: float;
-
-var _origen: Vector2;
-
-func begin():
-	super();
-	_origen = VICTIM.position;
+extends JumpAction
 
 func end():
 	super();
 	VICTIM.end_super();
-
-func _physics_process(delta: float) -> void:
-	super(delta);
-	time += delta;
-	VICTIM.position = lerp(_origen, dest, time / duration);
-	if time > duration:
-		VICTIM.position = dest;
-		end();
