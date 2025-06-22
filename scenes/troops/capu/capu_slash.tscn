@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bnyjet4c0d84r"]
 
-[ext_resource type="Script" uid="uid://ce43hm0hlndkb" path="res://scripts/troops/capu/capu_slash.gd" id="1_a1mlo"]
+[ext_resource type="Script" uid="uid://ce43hm0hlndkb" path="res://scripts/troops/capu/capu_slash_projectile.gd" id="1_a1mlo"]
 [ext_resource type="Texture2D" uid="uid://0m8v7e6mcb8v" path="res://assets/troops/capu/capu_slash.png" id="1_qiix6"]
 
 [node name="CapuSlash" type="Area2D"]

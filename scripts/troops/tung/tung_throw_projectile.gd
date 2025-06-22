@@ -1,4 +1,4 @@
-class_name TungThrow
+class_name TungThrowProjectile
 extends Projectile
 
 @export var ROTATE_TIME: float = 0.5;

@@ -1,0 +1,2 @@
+class_name CapuSlashProjectile
+extends Projectile

@@ -8,6 +8,7 @@ extends CharacterBody2D
 @export var SUPER_HINT: Node2D;
 
 var stat: Stat;
+var stat_boost: StatBoost = StatBoost.new();
 var hp: float;
 var in_super: bool = false;
 var in_hyper: bool = false;

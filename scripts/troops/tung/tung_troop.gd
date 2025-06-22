@@ -13,7 +13,7 @@ func _physics_process(delta: float) -> void:
 func main():
 	super();
 	var stat := stat as TungStat;
-	var proj: TungSlash = SLASH.instantiate();
+	var proj: TungSlashProjectile = SLASH.instantiate();
 	proj.FATHER = self;
 	proj.life = 0.3;
 	proj.position = position;
@@ -25,7 +25,7 @@ func main():
 func zuper():
 	super();	
 	var stat := stat as TungStat;
-	var proj: TungThrow = THROW.instantiate();
+	var proj: TungThrowProjectile = THROW.instantiate();
 	proj.FATHER = self;
 	proj.life = 3.0;
 	proj.position = position;

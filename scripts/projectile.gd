@@ -12,6 +12,10 @@ var damage: float = 0;
 ###
 
 func hit(victim: Troop):
+	# ik hacky right
+	if victim == FATHER:
+		return;
+	
 	FATHER.inflict(self, victim);
 	#troop.hp -= damage; # troop.exflict deals w ts
 	if kb > 0:
@@ -37,6 +41,6 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_entered(body: Node) -> void:
 	#print("see " + str(body));
-	if body is Troop and body != FATHER:
+	if body is Troop:
 		#print("hit " + str(body));
 		hit(body);

@@ -11,7 +11,7 @@ func _physics_process(delta: float) -> void:
 	SUPER_HINT.position = weighted_dir * stat.JUMP_DIST;
 
 func slash():
-	var proj1: CapuSlash = SLASH.instantiate();
+	var proj1: CapuSlashProjectile = SLASH.instantiate();
 	proj1.FATHER = self;
 	proj1.life = 0.3;
 	proj1.position = position;
@@ -19,7 +19,7 @@ func slash():
 	proj1.damage = stat.MAIN_HALF_DAMAGE;
 	get_tree().current_scene.add_child(proj1);
 	
-	var proj2: CapuSlash = SLASH.instantiate();
+	var proj2: CapuSlashProjectile = SLASH.instantiate();
 	proj2.FATHER = self;
 	proj2.life = 0.3;
 	proj2.position = position;
