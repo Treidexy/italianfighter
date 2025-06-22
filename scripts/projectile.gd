@@ -11,18 +11,18 @@ var damage: float = 0;
 
 ###
 
-func hit(troop: Troop):
-	FATHER.inflict(self, troop);
+func hit(victim: Troop):
+	FATHER.inflict(self, victim);
 	#troop.hp -= damage; # troop.exflict deals w ts
 	if kb > 0:
-		var d = troop.position - position;
+		var d = victim.position - position;
 		# bc nga godot has no fking .set-length()
 		d = d.normalized() * (1 / sqrt(d.length()) * kb);
 		var curse = KbAction.new();
-		curse.VICTIM = troop;
+		curse.VICTIM = victim;
 		curse.force = d;
 		get_tree().root.add_child(curse);
-	troop.exflict(self);
+	victim.exflict(self);
 func die():
 	queue_free();
 

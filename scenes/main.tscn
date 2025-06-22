@@ -59,9 +59,9 @@ position = Vector2(887, 491)
 texture_normal = ExtResource("2_tbgi4")
 shape = SubResource("CircleShape2D_tefeu")
 
-[node name="Player" type="Node" parent="." node_paths=PackedStringArray("TROOP")]
+[node name="Player" type="Node" parent="." node_paths=PackedStringArray("VICTIM")]
 script = ExtResource("3_jyhfs")
-TROOP = NodePath("CapuTroop")
+VICTIM = NodePath("CapuTroop")
 metadata/_custom_type_script = "uid://bmr36mnhgd4ds"
 
 [node name="CapuTroop" parent="Player" instance=ExtResource("4_tefeu")]

@@ -1,40 +1,55 @@
 class_name Player
 extends Node
 
-@export var TROOP: Troop;
-var main_weighted_dir := Vector2(0, 0);
-var super_weighted_dir := Vector2(0, 0);
+# very creative name ik
+enum MainOrSuper {
+	NONE,
+	MAIN,
+	SUPER,
+}
+
+@export var VICTIM: Troop;
+#var weighted_dir := Vector2(0, 0); # user TROOP.d instead
+var butt := MainOrSuper.NONE; # idk what to call ts
 
 func _physics_process(delta: float) -> void:
-	if not TROOP.can_move():
+	if not VICTIM.can_move():
 		return;
 	
-	var dx = Input.get_axis("left", "right");
-	var dy = Input.get_axis("up", "down");
-	var d = Vector2(dx, dy).normalized();
+	var dx := Input.get_axis("left", "right");
+	var dy := Input.get_axis("up", "down");
+	var d := Vector2(dx, dy).normalized();
 	
-	TROOP.velocity = d * TROOP.stat.SPEED;
-	TROOP.move_and_slide();
+	VICTIM.velocity = d * VICTIM.stat.SPEED;
+	VICTIM.move_and_slide();
+	
+	butt = MainOrSuper.NONE;
 	
 	# because on mouseUp event, joystick is reset before we can read it :(
-	var x := Input.get_axis('aim_main_left', 'aim_main_right')
-	var y := Input.get_axis('aim_main_up', 'aim_main_down')
-	main_weighted_dir = Vector2(x, y);
-	x = Input.get_axis('aim_super_left', 'aim_super_right')
-	y = Input.get_axis('aim_super_up', 'aim_super_down')
-	super_weighted_dir = Vector2(x, y);
+	dx = Input.get_axis('aim_main_left', 'aim_main_right');
+	dy = Input.get_axis('aim_main_up', 'aim_main_down');
+	d = Vector2(dx, dy);
+	if d.length() > 0:
+		VICTIM.dir = d.normalized();
+		VICTIM.weighted_dir = d;
+		butt = MainOrSuper.MAIN;
+		
+	dx = Input.get_axis('aim_super_left', 'aim_super_right');
+	dy = Input.get_axis('aim_super_up', 'aim_super_down');
+	d = Vector2(dx, dy);
+	if d.length() > 0:
+		VICTIM.dir = d.normalized();
+		VICTIM.weighted_dir = d;
+		butt = MainOrSuper.SUPER;
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventScreenTouch and event.is_pressed() == false:
-		if main_weighted_dir.length() > 0 and TROOP.can_main():
-			TROOP.dir = main_weighted_dir.normalized();
-			TROOP.weighted_dir = main_weighted_dir;
-			TROOP.main();
-		if super_weighted_dir.length() > 0 and TROOP.can_super():
-			TROOP.dir = super_weighted_dir.normalized();
-			TROOP.weighted_dir = super_weighted_dir;
-			TROOP.zuper();
+	if event is InputEventScreenTouch:
+		if event.is_pressed() == false:
+			if butt == MainOrSuper.MAIN and VICTIM.can_main():
+				VICTIM.main();
+			if butt == MainOrSuper.SUPER and  VICTIM.can_super():
+				VICTIM.zuper();
 
 func _on_button_pressed() -> void:
-	if TROOP.can_hyper():
-		TROOP.hyper();
+	if VICTIM.can_hyper():
+		VICTIM.hyper();
