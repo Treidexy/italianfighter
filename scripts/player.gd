@@ -45,9 +45,11 @@ func _physics_process(delta: float) -> void:
 		
 	if ts_butt != butt:
 		if ts_butt == MainOrSuper.NONE:
-			VICTIM.hide_hint();
+			VICTIM.hide_hints();
 		if ts_butt == MainOrSuper.MAIN:
-			VICTIM.show_hint();
+			VICTIM.show_main_hint();
+		if ts_butt == MainOrSuper.SUPER:
+			VICTIM.show_super_hint();
 		butt = ts_butt;
 
 func _input(event: InputEvent) -> void:
@@ -55,10 +57,8 @@ func _input(event: InputEvent) -> void:
 		if event.is_released():
 			if butt == MainOrSuper.MAIN and VICTIM.can_main():
 				VICTIM.main();
-				VICTIM.hide_hint();
 			if butt == MainOrSuper.SUPER and  VICTIM.can_super():
 				VICTIM.zuper();
-			butt = MainOrSuper.NONE;
 
 func _on_button_pressed() -> void:
 	if VICTIM.can_hyper():

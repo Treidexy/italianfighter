@@ -61,7 +61,7 @@ shape = SubResource("CircleShape2D_tefeu")
 
 [node name="Player" type="Node" parent="." node_paths=PackedStringArray("VICTIM")]
 script = ExtResource("3_jyhfs")
-VICTIM = NodePath("CapuTroop")
+VICTIM = NodePath("TungTroop")
 metadata/_custom_type_script = "uid://bmr36mnhgd4ds"
 
 [node name="CapuTroop" parent="Player" instance=ExtResource("4_tefeu")]

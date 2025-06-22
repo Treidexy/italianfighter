@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var NORMAL_STAT: Stat;
 @export var HYPER_STAT: Stat;
 @export var UI: TroopUi;
+@export var MAIN_HINT: Node2D;
+@export var SUPER_HINT: Node2D;
 
 var stat: Stat;
 var hp: float;
@@ -56,8 +58,15 @@ func die(): pass
 	
 ###
 
-func show_hint(): pass
-func hide_hint(): pass
+func show_main_hint():
+	MAIN_HINT.visible = true;
+	
+func show_super_hint():
+	SUPER_HINT.visible = true;
+	
+func hide_hints():
+	MAIN_HINT.visible = false;
+	SUPER_HINT.visible = false;
 
 ###
 

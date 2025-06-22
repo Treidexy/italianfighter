@@ -9,15 +9,15 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yk7wj"]
 
-[node name="CapuTroop" type="CharacterBody2D" node_paths=PackedStringArray("MAIN_HINT", "SUPER_HINT", "UI")]
+[node name="CapuTroop" type="CharacterBody2D" node_paths=PackedStringArray("UI", "MAIN_HINT", "SUPER_HINT")]
 collision_mask = 6
 motion_mode = 1
 script = ExtResource("1_pngg7")
-MAIN_HINT = NodePath("MainHint")
-SUPER_HINT = NodePath("SuperHint")
 NORMAL_STAT = ExtResource("2_d5wf6")
 HYPER_STAT = ExtResource("2_d5wf6")
 UI = NodePath("TroopUi")
+MAIN_HINT = NodePath("MainHint")
+SUPER_HINT = NodePath("SuperHint")
 metadata/_custom_type_script = "uid://b512w8g2gj5nl"
 
 [node name="TroopUi" parent="." instance=ExtResource("4_6h6eu")]
