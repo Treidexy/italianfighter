@@ -34,7 +34,7 @@ var _hyper_life: float;
 # normalized Vector2
 func main():
 	_main_cooldown = stat.MAIN_COOLDOWN;
-	_main_reload = stat.MAIN_RELOAD;
+	_main_reload = stat.MAIN_RELOAD * stat_boost.reload_mul;
 	_main_ammo -= 1;
 func zuper():
 	in_super = true;

@@ -8,4 +8,5 @@ extends Stat
 @export var JUMP_DURATION: float;
 @export var COFFEE_PROJECTILE_DURATION: float;
 @export var COFFEE_CURSE_DURATION: float;
-@export var COFFEE_SPEED_BOOST: float;
+@export var COFFEE_SPEED_MUL: float;
+@export var COFFEE_RELOAD_MUL: float;
