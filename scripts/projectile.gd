@@ -4,7 +4,7 @@ extends Area2D
 
 var FATHER: Troop;
 var life: float = 6.9;
-var velocity: Vector2;
+var velocity: Vector2 = Vector2(0, 0);
 
 var kb: float = 0;
 var damage: float = 0;

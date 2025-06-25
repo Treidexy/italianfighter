@@ -12,6 +12,9 @@ var stat_boost: StatBoost = StatBoost.new();
 var hp: float;
 var in_super: bool = false;
 var in_hyper: bool = false;
+
+var curses: Array[Curse] = [];
+
 #var in_snare: bool = false;
 #var in_silence: bool = false;
 var current_action: Action = null;
@@ -100,7 +103,7 @@ func _ready() -> void:
 	sb1.bg_color = Color(255, 255, 0);
 	UI.AMMO_BAR.add_theme_stylebox_override("fill", sb1);
 
-func _physics_process(delta: float) -> void:	
+func _physics_process(delta: float) -> void:
 	UI.HEALTH_BAR.value = hp / stat.MAX_HP;
 	UI.AMMO_BAR.value = (_main_ammo + 1 - _main_reload / stat.MAIN_RELOAD) / stat.MAX_AMMO;
 	UI.CAN_SUPER_INDICATOR.visible = can_super();

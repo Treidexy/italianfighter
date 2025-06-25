@@ -8,9 +8,9 @@ var life: float;
 var damage: float;
 
 func begin():
-	print('begin curse');
+	VICTIM.curses.append(self);
 func end():
-	print('end curse');
+	VICTIM.curses.erase(self);
 	queue_free();
 
 func _ready() -> void:

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4d3ec4y0gxur"]
+
+[ext_resource type="Script" uid="uid://c2koibumjts8w" path="res://scripts/troops/capu/capu_coffee_projectile.gd" id="1_uj8un"]
+[ext_resource type="Texture2D" uid="uid://c6j6mnityysb6" path="res://assets/troops/capu/capu_coffee.png" id="2_3s4wm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3s4wm"]
+radius = 15.0
+
+[node name="CapuCoffee" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_uj8un")
+metadata/_custom_type_script = "uid://c2koibumjts8w"
+
+[node name="CapuCoffee" type="Sprite2D" parent="."]
+z_index = -1
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_3s4wm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3s4wm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

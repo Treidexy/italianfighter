@@ -1,7 +1,7 @@
 class_name CapuTroop
 extends Troop
 
-@export var SLASH: PackedScene = preload("res://scenes/troops/capu/capu_slash.tscn");
+@export var SLASH := preload("res://scenes/troops/capu/capu_slash.tscn");
 
 func _physics_process(delta: float) -> void:
 	super(delta);
