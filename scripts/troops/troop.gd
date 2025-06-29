@@ -9,7 +9,13 @@ extends CharacterBody2D
 
 var stat: Stat;
 var stat_boost: StatBoost = StatBoost.new();
-var hp: float;
+# between 0 and 1. used so that health scaling is nice
+var rel_hp: float;
+var hp: float :
+	get:
+		return rel_hp * stat.MAX_HP;
+	set(v):
+		rel_hp = v / stat.MAX_HP;
 var in_super: bool = false;
 var in_hyper: bool = false;
 
@@ -58,6 +64,10 @@ func exflict(gluon):
 	if hp <= 0:
 		die();
 func die(): pass
+func heal(amt: float):
+	hp += amt;
+	if hp > stat.MAX_HP:
+		hp = stat.MAX_HP;
 	
 ###
 
