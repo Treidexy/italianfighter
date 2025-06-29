@@ -3,10 +3,11 @@
 [ext_resource type="Script" uid="uid://qw67q40gxsik" path="res://scripts/troops/troop_ui.gd" id="1_vq5un"]
 [ext_resource type="Texture2D" uid="uid://d27d4fmny001g" path="res://assets/circle.png" id="2_yw5vp"]
 
-[node name="TroopUi" type="Node2D" node_paths=PackedStringArray("AMMO_BAR", "HEALTH_BAR", "CAN_SUPER_INDICATOR", "IN_SUPER_INDICATOR", "CAN_HYPER_INDICATOR", "IN_HYPER_INDICATOR")]
+[node name="TroopUi" type="Node2D" node_paths=PackedStringArray("AMMO_BAR", "HEALTH_BAR", "HEALTH_LABEL", "CAN_SUPER_INDICATOR", "IN_SUPER_INDICATOR", "CAN_HYPER_INDICATOR", "IN_HYPER_INDICATOR")]
 script = ExtResource("1_vq5un")
 AMMO_BAR = NodePath("AmmoBar")
 HEALTH_BAR = NodePath("HealthBar")
+HEALTH_LABEL = NodePath("HealthLabel")
 CAN_SUPER_INDICATOR = NodePath("CanSuperIndicator")
 IN_SUPER_INDICATOR = NodePath("InSuperIndicator")
 CAN_HYPER_INDICATOR = NodePath("CanHyperIndicator")
@@ -33,7 +34,30 @@ offset_right = 11.0
 offset_bottom = -12.0
 max_value = 1.0
 value = 1.0
+rounded = true
+allow_greater = true
 show_percentage = false
+
+[node name="HealthLabel" type="RichTextLabel" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_top = -25.0
+offset_right = 48.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.4, 0.4)
+text = "5000
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 2
 
 [node name="CanSuperIndicator" type="Polygon2D" parent="."]
 visible = false

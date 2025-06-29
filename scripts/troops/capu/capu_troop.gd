@@ -1,7 +1,10 @@
 class_name CapuTroop
 extends Troop
 
+@export var CAPU_COFFEE := preload("res://scenes/troops/capu/capu_coffee.tscn");
 @export var SLASH := preload("res://scenes/troops/capu/capu_slash.tscn");
+
+var spill_timer: float = 0;
 
 func _physics_process(delta: float) -> void:
 	super(delta);
@@ -27,6 +30,17 @@ func slash():
 	proj2.scale.y = -1;
 	proj2.damage = stat.MAIN_HALF_DAMAGE;
 	get_tree().current_scene.add_child(proj2);
+	
+	if in_hyper:
+		spill_coffee();
+
+func spill_coffee():
+	var stat: CapuStat = stat;
+	var proj: CapuCoffeeProjectile = CAPU_COFFEE.instantiate();
+	proj.FATHER = self;
+	proj.position = position;
+	proj.life = stat.COFFEE_PROJECTILE_DURATION;
+	get_tree().root.add_child(proj);
 
 func main():
 	super();
@@ -47,3 +61,8 @@ func zuper():
 	action.dest = position + weighted_dir * stat.JUMP_DIST;
 	action.duration = stat.JUMP_DURATION;
 	get_tree().current_scene.add_child(action);
+
+func hyper():
+	super();
+	
+	spill_timer = 0;
