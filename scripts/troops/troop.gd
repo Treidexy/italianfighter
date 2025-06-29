@@ -35,18 +35,24 @@ var _super_charge: float = 0;
 var _hyper_charge: float = 0;
 var _hyper_life: float;
 
+var _recovery_cooldown: float = 0;
+
 ###
 
 func main():
 	_main_cooldown = stat.MAIN_COOLDOWN;
 	_main_reload = stat.MAIN_RELOAD * stat_boost.reload_mul;
 	_main_ammo -= 1;
+	
+	_recovery_cooldown = stat.RECOVERY_COOLDOWN;
 func zuper():
 	in_super = true;
+	_recovery_cooldown = stat.RECOVERY_COOLDOWN;
 func hyper():
 	stat = HYPER_STAT;
 	in_hyper = true;
 	_hyper_life = stat.HYPER_DURATION;
+	_recovery_cooldown = stat.RECOVERY_COOLDOWN;
 func end_super():
 	in_super = false;
 	_super_charge = 0;
@@ -63,6 +69,8 @@ func exflict(gluon):
 	hp -= gluon.damage;
 	if hp <= 0:
 		die();
+
+	_recovery_cooldown = stat.RECOVERY_COOLDOWN;
 func die(): pass
 func heal(amt: float):
 	hp += amt;
@@ -113,9 +121,9 @@ func _ready() -> void:
 	UI.AMMO_BAR.add_theme_stylebox_override("fill", sb1);
 
 func _physics_process(delta: float) -> void:
-	UI.HEALTH_BAR.value = hp / stat.MAX_HP;
+	UI.HEALTH_BAR.value = rel_hp;
 	UI.HEALTH_LABEL.text = str(int(hp));
-	UI.AMMO_BAR.value = (_main_ammo + 1 - _main_reload / stat.MAIN_RELOAD) / stat.MAX_AMMO;
+	UI.AMMO_BAR.value = (_main_ammo + 1 - _main_reload / stat.MAIN_RELOAD) / stat.MAX_AMMO;$HealthBar
 	UI.CAN_SUPER_INDICATOR.visible = can_super();
 	UI.IN_SUPER_INDICATOR.visible = in_super;
 	UI.CAN_HYPER_INDICATOR.visible = can_hyper();
@@ -128,7 +136,13 @@ func _physics_process(delta: float) -> void:
 		if _main_reload < 0:
 			_main_reload = stat.MAIN_RELOAD;
 			_main_ammo += 1;
+	
 	if in_hyper and _hyper_life > 0:
 		_hyper_life -= delta;
 		if _hyper_life < 0:
 			end_hyper();
+			
+	if _recovery_cooldown > 0:
+		_recovery_cooldown -= delta;
+	else:
+		heal(stat.RECOVERY_RATE * delta * stat.MAX_HP);

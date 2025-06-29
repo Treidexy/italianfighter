@@ -9,4 +9,5 @@ extends Resource
 @export var MAX_SUPER_CHARGE: float = 5000;
 @export var MAX_HYPER_CHARGE: float = 12000;
 @export var HYPER_DURATION: float = 8;
-@export var AUTO_HEAL_COOLDOWN: float = 5;
+@export var RECOVERY_COOLDOWN: float = 3;
+@export var RECOVERY_RATE: float = .13;
