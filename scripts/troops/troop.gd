@@ -76,6 +76,10 @@ func heal(amt: float):
 	hp += amt;
 	if hp > stat.MAX_HP:
 		hp = stat.MAX_HP;
+func heal_rel(amt: float):
+	rel_hp += amt;
+	if rel_hp > 1:
+		rel_hp = 1;
 	
 ###
 
@@ -145,4 +149,4 @@ func _physics_process(delta: float) -> void:
 	if _recovery_cooldown > 0:
 		_recovery_cooldown -= delta;
 	else:
-		heal(stat.RECOVERY_RATE * delta * stat.MAX_HP);
+		heal_rel(stat.RECOVERY_RATE * delta);
