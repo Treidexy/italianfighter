@@ -11,9 +11,11 @@ func _physics_process(delta: float) -> void:
 func main():
 	super();
 	
+	var stat: FruliStat = stat;
 	var proj: FruliWindProjetile = WIND.instantiate();
 	proj.FATHER = self;
 	proj.position = position;
 	proj.rotation = dir.angle();
 	proj.life = 0.2;
+	proj.damage = stat.WIND_DAMAGE;
 	get_tree().current_scene.add_child(proj);
