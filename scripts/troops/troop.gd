@@ -127,7 +127,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	UI.HEALTH_BAR.value = rel_hp;
 	UI.HEALTH_LABEL.text = str(int(hp));
-	UI.AMMO_BAR.value = (_main_ammo + 1 - _main_reload / stat.MAIN_RELOAD) / stat.MAX_AMMO;$HealthBar
+	UI.AMMO_BAR.value = (_main_ammo + 1 - _main_reload / stat.MAIN_RELOAD) / stat.MAX_AMMO;
 	UI.CAN_SUPER_INDICATOR.visible = can_super();
 	UI.IN_SUPER_INDICATOR.visible = in_super;
 	UI.CAN_HYPER_INDICATOR.visible = can_hyper();

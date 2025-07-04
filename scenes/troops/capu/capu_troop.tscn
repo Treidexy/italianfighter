@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://bobaid84s3dpw"]
 
 [ext_resource type="Script" uid="uid://b512w8g2gj5nl" path="res://scripts/troops/capu/capu_troop.gd" id="1_pngg7"]
-[ext_resource type="Resource" uid="uid://vpkrhyjylyct" path="res://stats/capu/capu_norm.tres" id="2_d5wf6"]
-[ext_resource type="Resource" uid="uid://ceqna5i3smusw" path="res://stats/capu/capu_hyper.tres" id="3_2ayji"]
+[ext_resource type="Resource" uid="uid://vpkrhyjylyct" path="res://stats/troops/capu/capu_norm.tres" id="2_d5wf6"]
+[ext_resource type="Resource" uid="uid://ceqna5i3smusw" path="res://stats/troops/capu/capu_hyper.tres" id="3_2ayji"]
 [ext_resource type="PackedScene" uid="uid://dw6selja8rroc" path="res://scenes/troops/troop_ui.tscn" id="4_6h6eu"]
-[ext_resource type="Texture2D" uid="uid://dk740qg7nxwtw" path="res://assets/troops/capu/capu.png" id="5_pngg7"]
+[ext_resource type="Texture2D" uid="uid://dk740qg7nxwtw" path="res://assets/troops/capu/capu_troop.png" id="5_pngg7"]
 [ext_resource type="Texture2D" uid="uid://0m8v7e6mcb8v" path="res://assets/troops/capu/capu_slash.png" id="5_wuisp"]
 [ext_resource type="Texture2D" uid="uid://d27d4fmny001g" path="res://assets/circle.png" id="6_wuisp"]
 

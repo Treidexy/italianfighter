@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://2n5qb7ili84r"]
+
+[ext_resource type="Script" uid="uid://bwh7apm66niea" path="res://scripts/troops/fruli/fruli_troop.gd" id="1_vaugv"]
+[ext_resource type="Resource" uid="uid://cu405f0x8lcgd" path="res://stats/troops/fruli/fruli_norm.tres" id="2_vaugv"]
+[ext_resource type="PackedScene" uid="uid://dw6selja8rroc" path="res://scenes/troops/troop_ui.tscn" id="3_c5i73"]
+[ext_resource type="Texture2D" uid="uid://cu01knin8swh2" path="res://assets/troops/fruli/fruli_troop.png" id="4_mjjid"]
+[ext_resource type="Texture2D" uid="uid://8wss0rulaps8" path="res://assets/troops/fruli/fruli_wind.png" id="5_apfsc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
+
+[node name="FruliTroop" type="CharacterBody2D" node_paths=PackedStringArray("UI", "MAIN_HINT", "SUPER_HINT")]
+collision_mask = 6
+motion_mode = 1
+script = ExtResource("1_vaugv")
+NORMAL_STAT = ExtResource("2_vaugv")
+HYPER_STAT = ExtResource("2_vaugv")
+UI = NodePath("TroopUi")
+MAIN_HINT = NodePath("MainHint")
+SUPER_HINT = NodePath("SuperHint")
+metadata/_custom_type_script = "uid://bwh7apm66niea"
+
+[node name="TroopUi" parent="." instance=ExtResource("3_c5i73")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_g2els")
+
+[node name="Fruli" type="Sprite2D" parent="."]
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("4_mjjid")
+
+[node name="MainHint" type="Node2D" parent="."]
+visible = false
+
+[node name="FruliWind" type="Sprite2D" parent="MainHint"]
+modulate = Color(1, 1, 1, 0.196078)
+position = Vector2(61, 0)
+scale = Vector2(0.51, 0.51)
+texture = ExtResource("5_apfsc")
+
+[node name="SuperHint" type="Node2D" parent="."]
+visible = false

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="FruliStat" load_steps=2 format=3 uid="uid://cu405f0x8lcgd"]
+
+[ext_resource type="Script" uid="uid://ckp3ife5rktxp" path="res://scripts/troops/fruli/fruli_stat.gd" id="1_eogm2"]
+
+[resource]
+script = ExtResource("1_eogm2")
+SPEED = 65.0
+MAX_HP = 5000.0
+MAIN_COOLDOWN = 0.25
+MAIN_RELOAD = 1.0
+MAX_AMMO = 4
+MAX_SUPER_CHARGE = 5000.0
+MAX_HYPER_CHARGE = 12000.0
+HYPER_DURATION = 8.0
+RECOVERY_COOLDOWN = 3.0
+RECOVERY_RATE = 0.13
+metadata/_custom_type_script = "uid://ckp3ife5rktxp"

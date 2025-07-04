@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://can3foucqf1xq"]
+[gd_scene load_steps=10 format=3 uid="uid://can3foucqf1xq"]
 
 [ext_resource type="PackedScene" uid="uid://gkkaaufyce68" path="res://scenes/troops/tung/tung_troop.tscn" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://dt13r06u87fib" path="res://addons/virtual_joystick/textures/joystick_tip_arrows.png" id="2_tbgi4"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bobaid84s3dpw" path="res://scenes/troops/capu/capu_troop.tscn" id="4_tefeu"]
 [ext_resource type="PackedScene" uid="uid://by2muutbj07bm" path="res://scenes/troops/dummy/dummy_troop.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://kryx4h3tjpvp" path="res://scenes/wall.tscn" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://2n5qb7ili84r" path="res://scenes/troops/fruli/fruli_troop.tscn" id="6_tipki"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tefeu"]
 radius = 50.0
@@ -61,12 +62,14 @@ shape = SubResource("CircleShape2D_tefeu")
 
 [node name="Player" type="Node" parent="." node_paths=PackedStringArray("VICTIM")]
 script = ExtResource("3_jyhfs")
-VICTIM = NodePath("CapuTroop")
+VICTIM = NodePath("FruliTroop")
 metadata/_custom_type_script = "uid://bmr36mnhgd4ds"
 
 [node name="CapuTroop" parent="Player" instance=ExtResource("4_tefeu")]
 
 [node name="TungTroop" parent="Player" instance=ExtResource("1_o5qli")]
+
+[node name="FruliTroop" parent="Player" instance=ExtResource("6_tipki")]
 
 [node name="DummyTroop" parent="." instance=ExtResource("5_tbgi4")]
 position = Vector2(-123, 36)

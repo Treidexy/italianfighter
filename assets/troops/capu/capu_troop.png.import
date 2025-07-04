@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dk740qg7nxwtw"
-path="res://.godot/imported/capu.png-7669f3fb96318e2b7b59e1c5eef49ece.ctex"
+path="res://.godot/imported/capu_troop.png-300aabe7f6bcac51b974368ca5d004ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/troops/capu/capu.png"
-dest_files=["res://.godot/imported/capu.png-7669f3fb96318e2b7b59e1c5eef49ece.ctex"]
+source_file="res://assets/troops/capu/capu_troop.png"
+dest_files=["res://.godot/imported/capu_troop.png-300aabe7f6bcac51b974368ca5d004ee.ctex"]
 
 [params]
 
