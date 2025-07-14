@@ -23,10 +23,7 @@ func end():
 func snatch(victim: Troop):
 	swoop.die();
 	
-	var action = FruliSnatchedAction.new();
-	action.FATHER = VICTIM;
-	action.VICTIM = victim;
-	get_tree().root.add_child(action);
+	VICTIM.snatch(victim);
 	
-	await get_tree().create_timer(0.1).timeout;
+	#await get_tree().create_timer(0.1).timeout;
 	end();

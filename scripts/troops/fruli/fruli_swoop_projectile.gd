@@ -14,5 +14,6 @@ func hit(victim: Troop):
 	if victim == FATHER:
 		return;
 	
+	await get_tree().create_timer(0.1).timeout;
 	victim.end_super();
 	ACTION.snatch(victim);

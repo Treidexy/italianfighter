@@ -8,6 +8,12 @@ func _physics_process(delta: float) -> void:
 	
 	MAIN_HINT.rotation = dir.angle();
 	SUPER_HINT.rotation = dir.angle();
+	
+func snatch(victim: Troop):
+	var action = FruliSnatchedAction.new();
+	action.FATHER = self;
+	action.VICTIM = victim;
+	get_tree().root.add_child(action);
 
 func main():
 	super();
@@ -27,6 +33,6 @@ func zuper():
 	var stat: FruliStat = stat;
 	var action: FruliSwoopAction = FruliSwoopAction.new();
 	action.VICTIM = self;
-	action.dist = 110;
-	action.velocity = dir * 300;
+	action.dist = stat.SWOOP_DIST;
+	action.velocity = dir * stat.SWOOP_SPEED;
 	get_tree().current_scene.add_child(action);
