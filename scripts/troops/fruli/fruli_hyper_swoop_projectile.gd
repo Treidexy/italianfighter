@@ -1,12 +1,7 @@
-class_name FruliSwoopProjectile
+class_name FruliHyperSwoopProjectile
 extends Projectile
 
-var ACTION: FruliSwoopAction;
-
-func _physics_process(delta: float) -> void:
-	super(delta);
-	
-	position = FATHER.position;
+var ACTION: FruliHyperSwoopAction;
 	
 func hit(victim: Troop):
 	super(victim);
@@ -22,5 +17,5 @@ func hit(victim: Troop):
 	action.VICTIM = victim;
 	get_tree().root.add_child(action);
 	
-	ACTION.end();
+	ACTION.snatch();
 	die();
