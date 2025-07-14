@@ -39,3 +39,13 @@ texture = ExtResource("5_apfsc")
 
 [node name="SuperHint" type="Node2D" parent="."]
 visible = false
+
+[node name="ProgressBar" type="ProgressBar" parent="SuperHint"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -8.0
+offset_right = 110.0
+offset_bottom = 8.0
+grow_vertical = 2
+show_percentage = false

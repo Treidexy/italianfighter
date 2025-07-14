@@ -55,6 +55,7 @@ func _physics_process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch:
 		if event.is_released():
+			VICTIM.hide_hints();
 			if butt == MainOrSuper.MAIN and VICTIM.can_main():
 				VICTIM.main();
 			if butt == MainOrSuper.SUPER and  VICTIM.can_super():

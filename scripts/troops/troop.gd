@@ -62,9 +62,8 @@ func end_hyper():
 	stat = NORMAL_STAT;
 
 func inflict(gluon, troop: Troop):
-	if gluon is Projectile:
-		_super_charge += gluon.damage;
-		_hyper_charge += gluon.damage;
+	_super_charge += gluon.damage;
+	_hyper_charge += gluon.damage;
 func exflict(gluon):
 	hp -= gluon.damage;
 	if hp <= 0:

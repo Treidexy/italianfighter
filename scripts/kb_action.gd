@@ -6,7 +6,9 @@ var life: float;
 
 func begin():
 	super();
+	
 	life = 0.25;
+	VICTIM.end_super();
 
 func _physics_process(delta: float) -> void:
 	super(delta);
