@@ -2,6 +2,7 @@ class_name FruliTroop
 extends Troop
 
 @export var WIND := preload("res://scenes/troops/fruli/fruli_wind.tscn");
+@export var HYPER_SWOOP := preload("res://scenes/troops/fruli/fruli_hyper_swoop_projectile.tscn");
 
 func _physics_process(delta: float) -> void:
 	super(delta);
@@ -25,10 +26,14 @@ func zuper():
 	super();
 	
 	var stat: FruliStat = stat;
-	var action := FruliHyperSwoopAction.new();
-	action.VICTIM = self;
-	action.dest = position + dir * stat.SWOOP_DIST;
-	get_tree().current_scene.add_child(action);
+	var swoop: FruliHyperSwoopProjectile = HYPER_SWOOP.instantiate();
+	swoop.position = position;
+	swoop.rotation = dir.angle();
+	swoop.FATHER = self;
+	swoop.damage = stat.SNATCH_DAMAGE;
+	swoop.life = 0.1;
+	get_tree().root.add_child(swoop);
+	position += dir * stat.SWOOP_DIST;
 	#var action := FruliSwoopAction.new();
 	#action.VICTIM = self;
 	#action.dist = stat.SWOOP_DIST;

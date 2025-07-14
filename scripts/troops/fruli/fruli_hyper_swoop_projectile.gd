@@ -1,7 +1,5 @@
 class_name FruliHyperSwoopProjectile
 extends Projectile
-
-var ACTION: FruliHyperSwoopAction;
 	
 func hit(victim: Troop):
 	super(victim);
@@ -15,7 +13,11 @@ func hit(victim: Troop):
 	var action = FruliSnatchedAction.new();
 	action.FATHER = FATHER;
 	action.VICTIM = victim;
+	action.life = 0.5;
 	get_tree().root.add_child(action);
 	
-	ACTION.snatch();
+	var action2 = TimedAction.new();
+	action2.VICTIM = FATHER;
+	action2.life = 0.1;
+	get_tree().root.add_child(action2);
 	die();
