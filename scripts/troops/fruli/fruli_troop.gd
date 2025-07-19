@@ -28,12 +28,12 @@ func zuper():
 	var stat: FruliStat = stat;
 	var swoop: FruliHyperSwoopProjectile = HYPER_SWOOP.instantiate();
 	swoop.position = position;
+	position += dir * stat.SWOOP_DIST;
 	swoop.rotation = dir.angle();
 	swoop.FATHER = self;
 	swoop.damage = stat.SNATCH_DAMAGE;
 	swoop.life = 0.1;
 	get_tree().root.add_child(swoop);
-	position += dir * stat.SWOOP_DIST;
 	#var action := FruliSwoopAction.new();
 	#action.VICTIM = self;
 	#action.dist = stat.SWOOP_DIST;

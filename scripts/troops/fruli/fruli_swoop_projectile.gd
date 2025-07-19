@@ -20,6 +20,7 @@ func hit(victim: Troop):
 	var action = FruliSnatchedAction.new();
 	action.FATHER = FATHER;
 	action.VICTIM = victim;
+	action.life = 0.5;
 	get_tree().root.add_child(action);
 	
 	ACTION.end();
