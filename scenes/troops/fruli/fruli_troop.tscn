@@ -9,10 +9,11 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
 
-[node name="FruliTroop" type="CharacterBody2D" node_paths=PackedStringArray("UI", "MAIN_HINT", "SUPER_HINT")]
+[node name="FruliTroop" type="CharacterBody2D" node_paths=PackedStringArray("SUPER_HINT_PROGRESS_BAR", "UI", "MAIN_HINT", "SUPER_HINT")]
 collision_mask = 6
 motion_mode = 1
 script = ExtResource("1_vaugv")
+SUPER_HINT_PROGRESS_BAR = NodePath("SuperHint/ProgressBar")
 NORMAL_STAT = ExtResource("2_vaugv")
 HYPER_STAT = ExtResource("3_mjjid")
 UI = NodePath("TroopUi")

@@ -3,6 +3,13 @@ extends Troop
 
 @export var WIND := preload("res://scenes/troops/fruli/fruli_wind.tscn");
 @export var HYPER_SWOOP := preload("res://scenes/troops/fruli/fruli_hyper_swoop_projectile.tscn");
+@export var SUPER_HINT_PROGRESS_BAR: ProgressBar;
+
+func show_super_hint():
+	super();
+	
+	var stat: FruliStat = stat;
+	SUPER_HINT_PROGRESS_BAR.size.x = stat.SWOOP_DIST;
 
 func _physics_process(delta: float) -> void:
 	super(delta);

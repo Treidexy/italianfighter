@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_eogm2")
 WIND_DAMAGE = 900.0
+WIND_SNARE_DURATION = 0.0
 SWOOP_SPEED = 300.0
 SWOOP_DIST = 110.0
 SNATCH_DAMAGE = 1000.0
