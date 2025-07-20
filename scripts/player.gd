@@ -9,6 +9,7 @@ enum MainOrSuper {
 }
 
 @export var VICTIM: Troop;
+
 #var weighted_dir := Vector2(0, 0); # user TROOP.d instead
 var butt := MainOrSuper.NONE; # idk what to call ts
 
@@ -54,7 +55,7 @@ func _physics_process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch:
-		if event.is_released():
+		if event.is_released() and event.position.x > get_viewport().size.x / 2:
 			VICTIM.hide_hints();
 			if butt == MainOrSuper.MAIN and VICTIM.can_main():
 				VICTIM.main();
