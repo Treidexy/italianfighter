@@ -5,3 +5,4 @@ extends Stat
 @export var SWOOP_SPEED: float = 300;
 @export var SWOOP_DIST: float = 110; # hard coded in fruli_troop scene
 @export var SNATCH_DAMAGE: float = 1000;
+@export var SNATCH_DURATION: float = 0.5;

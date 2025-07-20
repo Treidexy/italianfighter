@@ -11,10 +11,11 @@ func hit(victim: Troop):
 	#await get_tree().create_timer(0.1).timeout;
 	victim.position = FATHER.position;
 	
+	var stat: FruliStat = FATHER.stat;
 	var action = FruliSnatchedAction.new();
 	action.FATHER = FATHER;
 	action.VICTIM = victim;
-	action.life = 0.7;
+	action.life = stat.SNATCH_DURATION;
 	get_tree().root.add_child(action);
 	
 	var action2 = TimedAction.new();

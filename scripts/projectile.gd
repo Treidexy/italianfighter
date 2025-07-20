@@ -25,6 +25,7 @@ func hit(victim: Troop):
 		var curse = KbAction.new();
 		curse.VICTIM = victim;
 		curse.force = d;
+		curse.life = 0.25;
 		get_tree().root.add_child(curse);
 	victim.exflict(self);
 func die():
