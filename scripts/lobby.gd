@@ -9,6 +9,8 @@ extends Node
 @export var id_label: Label;
 @export var game_scene := preload("res://scenes/game.tscn");
 
+var game: Game;
+
 func _ready() -> void:
 	multiplayer.peer_connected.connect(_on_connect1);
 	multiplayer.connected_to_server.connect(_on_connect);
@@ -49,28 +51,24 @@ func join():
 ###
 
 func _on_connect():
-	add_child(game_scene.instantiate());
+	game = game_scene.instantiate();
+	add_child(game);
 	
 	var id = multiplayer.get_unique_id();
 	id_label.text = 'id = ' + str(id);
 	print("connected " + str(id));
-	add_player(id);
+	game.player.VICTIM = game.add_troop(id);
 
 func _on_connect1(id):
 	print("connected1 " + str(id));
-	add_player(id);
+	game.add_troop(id);
 
 func _on_disconnect():
 	print('disconnect');
 	
 func _on_disconnect1(id):
 	print('disconnect1 ' + str(id));
-	remove_player(id);
+	game.remove_troop(id);
 
 func _on_fail():
 	print('faile');
-
-###
-
-func add_player(id): pass
-func remove_player(id): pass

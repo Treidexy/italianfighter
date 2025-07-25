@@ -1,4 +1,4 @@
-class_name Player
+class_name PlayerCtrl
 extends Node
 
 # very creative name ik
@@ -60,7 +60,7 @@ func _input(event: InputEvent) -> void:
 			if butt == MainOrSuper.MAIN and VICTIM.can_main():
 				VICTIM.main();
 			if butt == MainOrSuper.SUPER and  VICTIM.can_super():
-				VICTIM.zuper();
+				VICTIM.super();
 
 func _on_button_pressed() -> void:
 	if VICTIM.can_hyper():

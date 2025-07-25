@@ -1,6 +1,8 @@
 class_name Troop
 extends CharacterBody2D
 
+var peer_id: int;
+
 @export var NORMAL_STAT: Stat;
 @export var HYPER_STAT: Stat;
 @export var UI: TroopUi;
@@ -24,7 +26,9 @@ var curses: Array[Curse] = [];
 #var in_snare: bool = false;
 #var in_silence: bool = false;
 var current_action: Action = null;
-var dir: Vector2 = Vector2.from_angle(0);
+var dir: Vector2 :
+	get:
+		return weighted_dir.normalized();
 var weighted_dir: Vector2 = Vector2.from_angle(0);
 
 var _main_cooldown: float;
@@ -40,23 +44,33 @@ var _recovery_cooldown: float = 0;
 ###
 
 func main():
+	_sync(_main_rpc, weighted_dir);
+	
 	_main_cooldown = stat.MAIN_COOLDOWN;
 	_main_reload = stat.MAIN_RELOAD * stat_boost.reload_mul;
 	_main_ammo -= 1;
 	
 	_recovery_cooldown = stat.RECOVERY_COOLDOWN;
 func zuper():
+	_sync(_super_rpc, weighted_dir);
+	
 	in_super = true;
 	_recovery_cooldown = stat.RECOVERY_COOLDOWN;
 func hyper():
+	_sync(_hyper_rpc);
+	
 	stat = HYPER_STAT;
 	in_hyper = true;
 	_hyper_life = stat.HYPER_DURATION;
 	_recovery_cooldown = stat.RECOVERY_COOLDOWN;
 func end_super():
+	#_end_super_rpc.rpc();
+	
 	in_super = false;
 	_super_charge = 0;
 func end_hyper():
+	#_end_hyper_rpc.rpc();
+	
 	in_hyper = false;
 	_hyper_charge = 0;
 	stat = NORMAL_STAT;
@@ -124,6 +138,8 @@ func _ready() -> void:
 	UI.AMMO_BAR.add_theme_stylebox_override("fill", sb1);
 
 func _physics_process(delta: float) -> void:
+	_sync(_info_rpc, position, rel_hp);
+	
 	UI.HEALTH_BAR.value = rel_hp;
 	UI.HEALTH_LABEL.text = str(int(hp));
 	UI.AMMO_BAR.value = (_main_ammo + 1 - _main_reload / stat.MAIN_RELOAD) / stat.MAX_AMMO;
@@ -149,3 +165,31 @@ func _physics_process(delta: float) -> void:
 		_recovery_cooldown -= delta;
 	else:
 		heal_rel(stat.RECOVERY_RATE * delta);
+
+###
+
+func _sync(fn, arg0 = null, arg1 = null) -> void:
+	if peer_id == multiplayer.get_unique_id():
+		fn.rpc(arg0, arg1);
+@rpc("any_peer", "call_remote", "reliable")
+func _main_rpc(weighted_dir):
+	self.weighted_dir = weighted_dir;
+	main();
+@rpc("any_peer", "call_remote", "reliable")
+func _super_rpc(weighted_dir):
+	self.weighted_dir = weighted_dir;
+	zuper();
+@rpc("any_peer", "call_remote", "reliable")
+func _hyper_rpc():
+	hyper();
+## SHOULD BE HANDLED BY EACH CLIENT ALR
+#@rpc("any_peer", "call_remote", "reliable")
+#func _end_super_rpc():
+	#end_super();
+#@rpc("any_peer", "call_remote", "reliable")
+#func _end_hyper_rpc():
+	#end_super();
+@rpc("any_peer", "call_remote", "unreliable")
+func _info_rpc(pos: Vector2, rel_hp: float):
+	position = pos;
+	self.rel_hp = rel_hp;
