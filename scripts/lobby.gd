@@ -65,6 +65,8 @@ func _on_connect1(id):
 
 func _on_disconnect():
 	print('disconnect');
+	game.queue_free();
+	game = null;
 	
 func _on_disconnect1(id):
 	print('disconnect1 ' + str(id));

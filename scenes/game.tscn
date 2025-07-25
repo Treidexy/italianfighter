@@ -84,6 +84,7 @@ position = Vector2(77, 78)
 position = Vector2(139, -12)
 
 [node name="Wall" parent="." instance=ExtResource("8_ir15t")]
+z_index = 10
 position = Vector2(47, 10)
 
 [connection signal="pressed" from="CanvasLayer/TouchScreenButton" to="PlayerCtrl" method="_on_button_pressed"]

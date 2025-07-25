@@ -168,9 +168,15 @@ func _physics_process(delta: float) -> void:
 
 ###
 
+# bc godot is a fucking clanker and doesn't support vaargs
 func _sync(fn, arg0 = null, arg1 = null) -> void:
 	if peer_id == multiplayer.get_unique_id():
-		fn.rpc(arg0, arg1);
+		if arg0 == null:
+			fn.rpc();
+		elif arg1 == null:
+			fn.rpc(arg0);
+		else:
+			fn.rpc(arg0, arg1);
 @rpc("any_peer", "call_remote", "reliable")
 func _main_rpc(weighted_dir):
 	self.weighted_dir = weighted_dir;

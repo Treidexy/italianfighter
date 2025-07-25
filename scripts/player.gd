@@ -31,7 +31,7 @@ func _physics_process(delta: float) -> void:
 	dy = Input.get_axis('aim_main_up', 'aim_main_down');
 	d = Vector2(dx, dy);
 	if d.length() > 0:
-		VICTIM.dir = d.normalized();
+		#VICTIM.dir = d.normalized();
 		VICTIM.weighted_dir = d;
 		ts_butt = MainOrSuper.MAIN;
 		
@@ -39,10 +39,21 @@ func _physics_process(delta: float) -> void:
 	dy = Input.get_axis('aim_super_up', 'aim_super_down');
 	d = Vector2(dx, dy);
 	if d.length() > 0:
-		VICTIM.dir = d.normalized();
+		#VICTIM.dir = d.normalized();
 		VICTIM.weighted_dir = d;
 		ts_butt = MainOrSuper.SUPER;
 		#VICTIM.show_super_hint();
+	
+	dx = Input.get_axis('aim_left', 'aim_right');
+	dy = Input.get_axis('aim_up', 'aim_down');
+	d = Vector2(dx, dy);
+	if d.length() > 0:
+		VICTIM.weighted_dir = d;
+		
+	if Input.is_action_pressed("main"):
+		ts_butt = MainOrSuper.MAIN;
+	if Input.is_action_pressed("super"):
+		ts_butt = MainOrSuper.SUPER;
 		
 	if ts_butt != butt:
 		if ts_butt == MainOrSuper.NONE:
@@ -54,6 +65,18 @@ func _physics_process(delta: float) -> void:
 		butt = ts_butt;
 
 func _input(event: InputEvent) -> void:
+	if event is InputEventJoypadMotion or event is InputEventJoypadButton:
+		if Input.is_action_just_released("main"):
+			VICTIM.hide_hints();
+			if VICTIM.can_main():
+				VICTIM.main();
+		if Input.is_action_just_released("super"):
+			VICTIM.hide_hints();
+			if VICTIM.can_super():
+				VICTIM.zuper();
+		if Input.is_action_just_released("hyper"):
+			if VICTIM.can_hyper():
+				VICTIM.hyper();
 	if event is InputEventScreenTouch:
 		if event.is_released() and event.position.x > get_viewport().size.x / 2:
 			VICTIM.hide_hints();

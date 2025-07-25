@@ -11,7 +11,7 @@ var troop_presets := [
 ];
 
 func add_troop(id) -> Troop:
-	var troop: Troop = troop_presets.pick_random().instantiate();
+	var troop: Troop = troop_presets[id % troop_presets.size()].instantiate();
 	troop.name = 'player' + str(id);
 	troop.peer_id = id;
 	troops[id] = troop;
