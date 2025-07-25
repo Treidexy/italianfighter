@@ -13,11 +13,7 @@ enum MainOrSuper {
 #var weighted_dir := Vector2(0, 0); # user TROOP.d instead
 var butt := MainOrSuper.NONE; # idk what to call ts
 
-# trust in the name 🙏
-var obutttime := 0.1;
-var obuttlife := 0;
-
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if not VICTIM.can_move():
 		return;
 	
@@ -39,11 +35,7 @@ func _physics_process(delta: float) -> void:
 	d = Vector2(dx, dy);
 	if d.length() > 0:
 		VICTIM.weighted_dir = d;
-		obuttlife = obutttime
 	else:
-		print(d);
-		obuttlife -= delta;
-		#if obuttlife < 0:
 		ts_butt = MainOrSuper.NONE;
 		
 	
@@ -88,6 +80,8 @@ func _input(event: InputEvent) -> void:
 			if VICTIM.can_hyper():
 				VICTIM.hyper();
 	if event is InputEventScreenTouch:
+		print(get_tree().root.content_scale_factor);
+		#print(str(event.position) + ', ' + str(get_viewport().size / 2));
 		if event.is_released() and event.position.x > get_viewport().size.x / 2:
 			VICTIM.hide_hints();
 			if butt == MainOrSuper.MAIN and VICTIM.can_main():
