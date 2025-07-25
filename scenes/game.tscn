@@ -15,11 +15,6 @@ script = ExtResource("1_0tnpc")
 player = NodePath("PlayerCtrl")
 metadata/_custom_type_script = "uid://bj7tpy3tn8do7"
 
-[node name="PlayerCtrl" type="Node" parent="." node_paths=PackedStringArray("VICTIM")]
-script = ExtResource("3_vtaks")
-VICTIM = NodePath("")
-metadata/_custom_type_script = "uid://bmr36mnhgd4ds"
-
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 
@@ -65,6 +60,10 @@ action_down = "aim_super_down"
 position = Vector2(887, 491)
 texture_normal = ExtResource("2_0tnpc")
 shape = SubResource("CircleShape2D_tefeu")
+
+[node name="PlayerCtrl" type="Node" parent="."]
+script = ExtResource("3_vtaks")
+metadata/_custom_type_script = "uid://bmr36mnhgd4ds"
 
 [node name="DummyTroop" parent="." instance=ExtResource("7_trtic")]
 position = Vector2(-123, 36)
