@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmb0jls423wiw"
-path="res://.godot/imported/lirili-ram.png-2a95daf3a160fb7586b43f3adfbeab07.ctex"
+uid="uid://d27d4fmny001g"
+path="res://.godot/imported/circle.png-9b9544a79e440e8d660b53c0ddc09d18.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/lirili-ram.png"
-dest_files=["res://.godot/imported/lirili-ram.png-2a95daf3a160fb7586b43f3adfbeab07.ctex"]
+source_file="res://assets/old/circle.png"
+dest_files=["res://.godot/imported/circle.png-9b9544a79e440e8d660b53c0ddc09d18.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwf575q3ef6xr"
-path="res://.godot/imported/patapim-apple.png-0349c963c2ce1e3fcbe5afa57e0b081e.ctex"
+uid="uid://cmb0jls423wiw"
+path="res://.godot/imported/lirili-ram.png-56c81e3f2b1826f998835b4a0fbf62be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/patapim-apple.png"
-dest_files=["res://.godot/imported/patapim-apple.png-0349c963c2ce1e3fcbe5afa57e0b081e.ctex"]
+source_file="res://assets/old/lirili-ram.png"
+dest_files=["res://.godot/imported/lirili-ram.png-56c81e3f2b1826f998835b4a0fbf62be.ctex"]
 
 [params]
 

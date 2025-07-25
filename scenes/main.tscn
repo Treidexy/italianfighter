@@ -1,95 +1,48 @@
-[gd_scene load_steps=10 format=3 uid="uid://can3foucqf1xq"]
+[gd_scene load_steps=5 format=3 uid="uid://jsndkyydxmpr"]
 
-[ext_resource type="PackedScene" uid="uid://gkkaaufyce68" path="res://scenes/troops/tung/tung_troop.tscn" id="1_o5qli"]
-[ext_resource type="Texture2D" uid="uid://dt13r06u87fib" path="res://addons/virtual_joystick/textures/joystick_tip_arrows.png" id="2_tbgi4"]
-[ext_resource type="Script" uid="uid://bmr36mnhgd4ds" path="res://scripts/player.gd" id="3_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="4_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://bobaid84s3dpw" path="res://scenes/troops/capu/capu_troop.tscn" id="4_tefeu"]
-[ext_resource type="PackedScene" uid="uid://by2muutbj07bm" path="res://scenes/troops/dummy/dummy_troop.tscn" id="5_tbgi4"]
-[ext_resource type="PackedScene" uid="uid://kryx4h3tjpvp" path="res://scenes/wall.tscn" id="6_tefeu"]
-[ext_resource type="PackedScene" uid="uid://2n5qb7ili84r" path="res://scenes/troops/fruli/fruli_troop.tscn" id="6_tipki"]
+[ext_resource type="Script" uid="uid://bbladkglthm1x" path="res://scripts/lobby.gd" id="1_o5qli"]
+[ext_resource type="Resource" uid="uid://b0sv5mpbybttx" path="res://secret/mine.tres" id="2_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://crv4p83uqdkew" path="res://assets/make.png" id="2_sugp2"]
+[ext_resource type="Texture2D" uid="uid://dxcqurhjc7fue" path="res://assets/join.png" id="3_jyhfs"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_tefeu"]
-radius = 50.0
+[node name="Lobby" type="Node" node_paths=PackedStringArray("port_input", "ip_input", "connect_panel", "id_label")]
+script = ExtResource("1_o5qli")
+default_addr = ExtResource("2_jyhfs")
+port_input = NodePath("ConnectPanel/port")
+ip_input = NodePath("ConnectPanel/ip")
+connect_panel = NodePath("ConnectPanel")
+id_label = NodePath("CanvasLayer/Label")
 
-[node name="Node2D" type="Node2D"]
+[node name="ConnectPanel" type="CanvasLayer" parent="."]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+[node name="make" type="TouchScreenButton" parent="ConnectPanel"]
+position = Vector2(266, 283)
+texture_normal = ExtResource("2_sugp2")
+
+[node name="join" type="TouchScreenButton" parent="ConnectPanel"]
+position = Vector2(693, 280)
+texture_normal = ExtResource("3_jyhfs")
+
+[node name="port" type="TextEdit" parent="ConnectPanel"]
+offset_left = 473.0
+offset_top = 209.0
+offset_right = 601.0
+offset_bottom = 249.0
+placeholder_text = "port"
+
+[node name="ip" type="TextEdit" parent="ConnectPanel"]
+offset_left = 473.0
+offset_top = 156.0
+offset_right = 601.0
+offset_bottom = 196.0
+placeholder_text = "ip address"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="MoveStick" parent="CanvasLayer" instance=ExtResource("4_jyhfs")]
-offset_top = -300.0
-offset_bottom = 0.0
-action_left = "left"
-action_right = "right"
-action_up = "up"
-action_down = "down"
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "id"
 
-[node name="MainStick" parent="CanvasLayer" instance=ExtResource("4_jyhfs")]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -300.0
-offset_top = -435.0
-offset_right = 0.0
-offset_bottom = -135.0
-grow_horizontal = 0
-action_left = "aim_main_left"
-action_right = "aim_main_right"
-action_up = "aim_main_up"
-action_down = "aim_main_down"
-
-[node name="SuperStick" parent="CanvasLayer" instance=ExtResource("4_jyhfs")]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -590.0
-offset_top = -300.0
-offset_right = -290.0
-offset_bottom = 0.0
-grow_horizontal = 0
-action_left = "aim_super_left"
-action_right = "aim_super_right"
-action_up = "aim_super_up"
-action_down = "aim_super_down"
-
-[node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer"]
-position = Vector2(887, 491)
-texture_normal = ExtResource("2_tbgi4")
-shape = SubResource("CircleShape2D_tefeu")
-
-[node name="Player" type="Node" parent="." node_paths=PackedStringArray("VICTIM")]
-script = ExtResource("3_jyhfs")
-VICTIM = NodePath("FruliTroop")
-metadata/_custom_type_script = "uid://bmr36mnhgd4ds"
-
-[node name="CapuTroop" parent="Player" instance=ExtResource("4_tefeu")]
-
-[node name="TungTroop" parent="Player" instance=ExtResource("1_o5qli")]
-
-[node name="FruliTroop" parent="Player" instance=ExtResource("6_tipki")]
-
-[node name="DummyTroop" parent="." instance=ExtResource("5_tbgi4")]
-position = Vector2(-123, 36)
-
-[node name="DummyTroop2" parent="." instance=ExtResource("5_tbgi4")]
-position = Vector2(-138, 3)
-
-[node name="DummyTroop3" parent="." instance=ExtResource("5_tbgi4")]
-position = Vector2(-108, 7)
-
-[node name="DummyTroop4" parent="." instance=ExtResource("5_tbgi4")]
-position = Vector2(32, -76)
-
-[node name="DummyTroop5" parent="." instance=ExtResource("5_tbgi4")]
-position = Vector2(77, 78)
-
-[node name="DummyTroop6" parent="." instance=ExtResource("5_tbgi4")]
-position = Vector2(139, -12)
-
-[node name="Wall" parent="." instance=ExtResource("6_tefeu")]
-position = Vector2(47, 10)
-
-[connection signal="pressed" from="CanvasLayer/TouchScreenButton" to="Player" method="_on_button_pressed"]
+[connection signal="pressed" from="ConnectPanel/make" to="." method="make"]
+[connection signal="pressed" from="ConnectPanel/join" to="." method="join"]

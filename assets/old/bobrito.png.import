@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cix53tdbae6g1"
-path="res://.godot/imported/patapim.png-c1452e43aa05a6db0be1770895fd6670.ctex"
+uid="uid://bq2v686yku6d3"
+path="res://.godot/imported/bobrito.png-c7ef9580eba1cc3d71040c4457e6c635.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/patapim.png"
-dest_files=["res://.godot/imported/patapim.png-c1452e43aa05a6db0be1770895fd6670.ctex"]
+source_file="res://assets/old/bobrito.png"
+dest_files=["res://.godot/imported/bobrito.png-c7ef9580eba1cc3d71040c4457e6c635.ctex"]
 
 [params]
 

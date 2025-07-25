@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bq2v686yku6d3"
-path="res://.godot/imported/bobrito.png-341e62e552f2981cdab8aa9af0c0e497.ctex"
+uid="uid://c6pc1j3rmni43"
+path="res://.godot/imported/bobrito-aim.png-12ddd9371a31bb04e7c657f20115c17a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bobrito.png"
-dest_files=["res://.godot/imported/bobrito.png-341e62e552f2981cdab8aa9af0c0e497.ctex"]
+source_file="res://assets/old/bobrito-aim.png"
+dest_files=["res://.godot/imported/bobrito-aim.png-12ddd9371a31bb04e7c657f20115c17a.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbcs40yen1gqt"
-path="res://.godot/imported/patapim-tree.png-3ee2fad79ce8528c975a8328583910ce.ctex"
+uid="uid://dxcqurhjc7fue"
+path="res://.godot/imported/join.png-45781f786ad4a1d274caf12ef2ab6242.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/patapim-tree.png"
-dest_files=["res://.godot/imported/patapim-tree.png-3ee2fad79ce8528c975a8328583910ce.ctex"]
+source_file="res://assets/join.png"
+dest_files=["res://.godot/imported/join.png-45781f786ad4a1d274caf12ef2ab6242.ctex"]
 
 [params]
 
