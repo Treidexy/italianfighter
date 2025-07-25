@@ -75,7 +75,7 @@ func end_hyper():
 	_hyper_charge = 0;
 	stat = NORMAL_STAT;
 
-func inflict(gluon, troop: Troop):
+func inflict(gluon, _troop: Troop):
 	_super_charge += gluon.damage;
 	_hyper_charge += gluon.damage;
 func exflict(gluon):

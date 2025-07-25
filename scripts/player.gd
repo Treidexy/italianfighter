@@ -13,6 +13,10 @@ enum MainOrSuper {
 #var weighted_dir := Vector2(0, 0); # user TROOP.d instead
 var butt := MainOrSuper.NONE; # idk what to call ts
 
+# trust in the name 🙏
+var obutttime := 0.1;
+var obuttlife := 0;
+
 func _physics_process(delta: float) -> void:
 	if not VICTIM.can_move():
 		return;
@@ -26,7 +30,23 @@ func _physics_process(delta: float) -> void:
 	
 	var ts_butt = MainOrSuper.NONE;
 	
-	# because on mouseUp event, joystick is reset before we can read it :(
+	if Input.is_action_pressed("main"):
+		ts_butt = MainOrSuper.MAIN;
+	if Input.is_action_pressed("super"):
+		ts_butt = MainOrSuper.SUPER;
+	dx = Input.get_axis('aim_left', 'aim_right');
+	dy = Input.get_axis('aim_up', 'aim_down');
+	d = Vector2(dx, dy);
+	if d.length() > 0:
+		VICTIM.weighted_dir = d;
+		obuttlife = obutttime
+	else:
+		print(d);
+		obuttlife -= delta;
+		#if obuttlife < 0:
+		ts_butt = MainOrSuper.NONE;
+		
+	
 	dx = Input.get_axis('aim_main_left', 'aim_main_right');
 	dy = Input.get_axis('aim_main_up', 'aim_main_down');
 	d = Vector2(dx, dy);
@@ -43,17 +63,6 @@ func _physics_process(delta: float) -> void:
 		VICTIM.weighted_dir = d;
 		ts_butt = MainOrSuper.SUPER;
 		#VICTIM.show_super_hint();
-	
-	dx = Input.get_axis('aim_left', 'aim_right');
-	dy = Input.get_axis('aim_up', 'aim_down');
-	d = Vector2(dx, dy);
-	if d.length() > 0:
-		VICTIM.weighted_dir = d;
-		
-	if Input.is_action_pressed("main"):
-		ts_butt = MainOrSuper.MAIN;
-	if Input.is_action_pressed("super"):
-		ts_butt = MainOrSuper.SUPER;
 		
 	if ts_butt != butt:
 		if ts_butt == MainOrSuper.NONE:
@@ -66,13 +75,14 @@ func _physics_process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventJoypadMotion or event is InputEventJoypadButton:
+		#print(str(Input.is_action_pressed("main")) + ', ' + str(Input.is_action_just_released("main")));
 		if Input.is_action_just_released("main"):
 			VICTIM.hide_hints();
-			if VICTIM.can_main():
+			if butt == MainOrSuper.MAIN and VICTIM.can_main():
 				VICTIM.main();
 		if Input.is_action_just_released("super"):
 			VICTIM.hide_hints();
-			if VICTIM.can_super():
+			if butt == MainOrSuper.SUPER and VICTIM.can_super():
 				VICTIM.zuper();
 		if Input.is_action_just_released("hyper"):
 			if VICTIM.can_hyper():

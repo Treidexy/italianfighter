@@ -6,7 +6,7 @@ extends Troop
 
 func _physics_process(delta: float) -> void:
 	super(delta);
-	var stat := stat as TungStat;
+	var _stat := stat as TungStat;
 	MAIN_HINT.rotation = dir.angle();
 	SUPER_HINT.rotation = dir.angle();
 	
