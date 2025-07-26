@@ -1,72 +1,63 @@
-# godot-wakatime
+# Revolutionary
 
-Godot plugin for metrics, insights, and time tracking automatically generated from your Godot usage.
+> <sup>still looking for a name</sup>
 
-- [godot-wakatime](#godot-wakatime)
-  - [Dependencies](#dependencies)
-  - [Installation](#installation)
-	- [Activation](#activation)
-  - [Configuration](#configuration)
-  - [Supported Godot \<\> Plugin versions](#supported-godot--plugin-versions)
+A multiplayer hero fighting game inspired heavily by Brawl Stars (and Italian Brainrot).
 
+## Troops
 
-![wakatime_dashboard](https://user-images.githubusercontent.com/1638660/40685625-24ec905a-636b-11e8-8c78-6d1ed833466d.png)
+Each troop has a unique main attack, a super ability, and a hypercharge (evolution).
 
+### Main
 
-## Dependencies
+Use ammo to attack; ammo is reloaded when you're not attacking.
 
-As there is no easy way to unzip files in GDScript, this plugin uses [Ouch!](https://github.com/ouch-org/ouch) to decompress Wakatime CLI right from the Github page.
+### Super
 
-But there is no need to manually download it as the Godot Wakatime plugin automatically downloads, uses and deletes as needed
+Dealing damage (and other things depending on the character) charges your super.
 
+### Hyper
 
-## Installation
+While your super charges, your hyper also charges. During your hyper, your troop has a unique passive ability, as well as an upgraded main attack and super ability.
 
-The easiest and fastest way is to install directly from Godot's AssetLib
+## Gamemodes
 
-1. Access Godot's AssetLib inside the engine (`F4` default keybind)
-2. Search for `godot-wakatime` and click on install button
+Currently, I haven't really thought out gamemodes, but I have a few ideas.
 
-Or, you can manually install the latest version following the next steps
+One of them: during overtime every troop becomes evolved.
 
-1. Download and extract latest zip file from [**releases**](https://github.com/thomazthz/godot-wakatime/releases).
-2. Copy or move the `wakatime` directory from the extracted zip and put into your project's `addons` directory. Create the `addons` directory at the root of your project if you don't have one.
+### (Showdown) Hunger Games
 
+Free for all pvp match, 24 players. No respawning. The last one standing wins!
 
-### Activation
+### Capture The Flag
 
-- Activate `godot-wakatime` on Plugins tab at menu `Project -> Project Settings -> Plugins`.
-- Enter your Wakatime API Key on the opened prompt.
-- Use Godot script editor for a while and check on https://wakatime.com/api/v1/users/current or https://wakatime.com/dashboard to see your coding activity :)
+In two teams, attempt to infultrate the enemy territory and retrieve their flag in your home territory.
 
+### Foot Ball
 
-## Configuration
+In two teams, compete to score the ball into the enemy goal.
 
-**Godot WakaTime >=1.5.0**
+### Gem Grab
 
-From version 1.5.0 this plugin started to use the global WakaTime config file (`$WAKATIME_HOME/.wakatime.cfg`) which can be opened in the `Project -> Tools -> Wakatime Config File` menu item.
+In four teams, compete to collect the most amount of gems before the timer runs out.
 
-You can enter or replace your API key in the menu item `Project -> Tools -> Wakatime API key`.
+### Heist
 
-More information about the available settings can be found in [wakatime-cli usage page](https://github.com/wakatime/wakatime-cli/blob/develop/USAGE.md)
+Two teams: one on defense, one on offense. Steal as much gold as possible and switch sides.
 
----
+### Infection
 
-**Godot WakaTime < 1.5.0**
+Four teams. When you get killed, you join the team of the troop that killed you.
 
-In versions prior to 1.5.0 the plugin uses a local configuration file located at `res://addons/wakatime/settings.cfg`.
+### King of the Hill
 
-Some settings are available in the editor bottom panel as soon as the plugin is active
+Two teams or 12 players ffa. Attempt to stay on the hill for as long as possible.
 
+### Carnage
 
+Four teams. Goal is to steal as many kills as possible. During the final minute, every troop becomes evolved.
 
-## Supported Godot <> Plugin versions
+## Progression
 
-|     Godot     | Godot Wakatime |
-| :-----------: | :------------: |
-| 3.3.x - 3.5.x |     v1.4.0     |
-|    >=4.0.x    |     v1.5.0     |
-
-Tested **Windows** and **Linux**.
-
-It has Mac OS support as well, but has not yet been tested.
+idk
