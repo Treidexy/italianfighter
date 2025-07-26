@@ -2,7 +2,7 @@
 
 > <sup>still looking for a name</sup>
 
-A multiplayer hero fighting game inspired heavily by Brawl Stars (and Italian Brainrot).
+A chaotic multiplayer hero fighting game inspired heavily by Brawl Stars (and Italian Brainrot).
 
 ## Troops
 
