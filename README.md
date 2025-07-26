@@ -56,7 +56,7 @@ Two teams or 12 players ffa. Attempt to stay on the hill for as long as possible
 
 ### Carnage
 
-Four teams. Goal is to steal as many kills as possible. During the final minute, every troop becomes evolved.
+Four teams or 12 players. Goal is to steal as many kills as possible. During the final minute, every troop becomes evolved.
 
 ## Progression
 
