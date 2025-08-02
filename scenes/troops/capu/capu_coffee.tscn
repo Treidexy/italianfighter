@@ -6,9 +6,10 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_3s4wm"]
 radius = 15.0
 
-[node name="CapuCoffee" type="Area2D"]
+[node name="CapuCoffee" type="Area2D" node_paths=PackedStringArray("ray")]
 collision_layer = 2
 script = ExtResource("1_uj8un")
+ray = NodePath("RayCast2D")
 metadata/_custom_type_script = "uid://c2koibumjts8w"
 
 [node name="CapuCoffee" type="Sprite2D" parent="."]
@@ -18,5 +19,9 @@ texture = ExtResource("2_3s4wm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3s4wm")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+collision_mask = 0
+hit_from_inside = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

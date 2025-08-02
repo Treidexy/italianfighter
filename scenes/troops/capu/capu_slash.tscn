@@ -3,10 +3,11 @@
 [ext_resource type="Script" uid="uid://ce43hm0hlndkb" path="res://scripts/troops/capu/capu_slash_projectile.gd" id="1_a1mlo"]
 [ext_resource type="Texture2D" uid="uid://0m8v7e6mcb8v" path="res://assets/troops/capu/capu_slash.png" id="1_qiix6"]
 
-[node name="CapuSlash" type="Area2D"]
+[node name="CapuSlash" type="Area2D" node_paths=PackedStringArray("ray")]
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_a1mlo")
+ray = NodePath("RayCast2D")
 metadata/_custom_type_script = "uid://ce43hm0hlndkb"
 
 [node name="CapuSlash" type="Sprite2D" parent="."]
@@ -18,5 +19,9 @@ texture = ExtResource("1_qiix6")
 rotation = 1.5708
 scale = Vector2(0.4, 0.4)
 polygon = PackedVector2Array(0, 0, -57, -57, -36, -73, -14, -79, 15, -79, 38, -70, 58, -57, 75, -30, 80, -4, 77, 25, 63, 51, 42, 69, 20, 77, 0, 80)
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+collision_mask = 4
+hit_from_inside = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

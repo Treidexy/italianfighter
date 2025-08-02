@@ -6,9 +6,10 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_sbbvx"]
 radius = 32.0
 
-[node name="FruliSwoopProjectile" type="Area2D"]
+[node name="FruliSwoopProjectile" type="Area2D" node_paths=PackedStringArray("ray")]
 collision_layer = 2
 script = ExtResource("1_pmulo")
+ray = NodePath("RayCast2D")
 metadata/_custom_type_script = "uid://dxpn0x4jf1741"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
@@ -19,5 +20,9 @@ shape = SubResource("CircleShape2D_sbbvx")
 position = Vector2(0, -0.09375)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_ds7yp")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+collision_mask = 0
+hit_from_inside = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -18,3 +18,4 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_xognq")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+collision_mask = 0

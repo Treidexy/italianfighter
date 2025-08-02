@@ -1,4 +1,3 @@
-@tool
 class_name Projectile
 extends Area2D
 # impl Gluon
@@ -57,8 +56,6 @@ func _on_body_entered(body: Node2D) -> void:
 	if result != null:
 		print(result.name);
 		return;
-	else:
-		print(null);
 	if body is Troop:
 		#print("hit " + str(body));
 		#if not thru_walls:

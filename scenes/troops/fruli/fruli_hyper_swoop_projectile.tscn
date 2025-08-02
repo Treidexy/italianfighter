@@ -5,9 +5,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ine4r"]
 size = Vector2(450, 64)
 
-[node name="FruliSwoopProjectile" type="Area2D"]
+[node name="FruliSwoopProjectile" type="Area2D" node_paths=PackedStringArray("ray")]
 collision_layer = 2
 script = ExtResource("1_ine4r")
+ray = NodePath("RayCast2D")
 metadata/_custom_type_script = "uid://b67gwern7qijo"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
@@ -24,5 +25,9 @@ offset_right = 110.0
 offset_bottom = 8.0
 grow_vertical = 2
 show_percentage = false
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+collision_mask = 0
+hit_from_inside = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
