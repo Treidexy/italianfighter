@@ -3,10 +3,11 @@
 [ext_resource type="Script" uid="uid://cr4k35vtsl71e" path="res://scripts/troops/tung/tung_slash_projectile.gd" id="1_6hsx7"]
 [ext_resource type="Texture2D" uid="uid://f5ltou2le1wf" path="res://assets/troops/tung/tung_slash.png" id="2_jpwkj"]
 
-[node name="TungSlash" type="Area2D"]
+[node name="TungSlash" type="Area2D" node_paths=PackedStringArray("ray")]
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_6hsx7")
+ray = NodePath("RayCast2D")
 metadata/_custom_type_script = "uid://cr4k35vtsl71e"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
@@ -17,5 +18,10 @@ polygon = PackedVector2Array(0, -44.5217, 12.3077, -44.5217, 51.6923, -33.3913, 
 position = Vector2(16, 6.77626e-21)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_jpwkj")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+collision_mask = 5
+hit_from_inside = true
+collide_with_areas = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

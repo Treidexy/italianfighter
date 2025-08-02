@@ -20,7 +20,6 @@ metadata/_custom_type_script = "uid://bj7tpy3tn8do7"
 zoom = Vector2(3, 3)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="MoveStick" parent="CanvasLayer" instance=ExtResource("2_at5dv")]
 offset_top = -300.0
@@ -68,22 +67,22 @@ script = ExtResource("4_uacia")
 VICTIM = NodePath("../TungTroop")
 metadata/_custom_type_script = "uid://bmr36mnhgd4ds"
 
-[node name="DummyTroop" parent="." instance=ExtResource("5_yk7ts")]
+[node name="james" parent="." instance=ExtResource("5_yk7ts")]
 position = Vector2(-123, 36)
 
-[node name="DummyTroop2" parent="." instance=ExtResource("5_yk7ts")]
+[node name="jack" parent="." instance=ExtResource("5_yk7ts")]
 position = Vector2(-138, 3)
 
-[node name="DummyTroop3" parent="." instance=ExtResource("5_yk7ts")]
+[node name="john" parent="." instance=ExtResource("5_yk7ts")]
 position = Vector2(-108, 7)
 
-[node name="DummyTroop4" parent="." instance=ExtResource("5_yk7ts")]
+[node name="jonas" parent="." instance=ExtResource("5_yk7ts")]
 position = Vector2(32, -76)
 
-[node name="DummyTroop5" parent="." instance=ExtResource("5_yk7ts")]
+[node name="jet" parent="." instance=ExtResource("5_yk7ts")]
 position = Vector2(77, 78)
 
-[node name="DummyTroop6" parent="." instance=ExtResource("5_yk7ts")]
+[node name="jerry" parent="." instance=ExtResource("5_yk7ts")]
 position = Vector2(139, -12)
 
 [node name="Wall" parent="." instance=ExtResource("6_ajshl")]

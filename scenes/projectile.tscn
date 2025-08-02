@@ -5,10 +5,11 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_akgne"]
 
-[node name="Projectile" type="Area2D"]
+[node name="Projectile" type="Area2D" node_paths=PackedStringArray("ray")]
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_softn")
+ray = NodePath("RayCast2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.25, 0.25)
@@ -18,5 +19,9 @@ shape = SubResource("CircleShape2D_akgne")
 position = Vector2(0, -0.09375)
 scale = Vector2(0.062, 0.062)
 texture = ExtResource("2_dgwo2")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+collision_mask = 5
+hit_from_inside = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

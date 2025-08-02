@@ -14,13 +14,30 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	super(delta);
 	if _forward and position.distance_to(_origen) > return_dist:
-		_forward = false;
-		velocity = -velocity;
+		_switch_dir();
 	elif not _forward:
 		rotation = (FATHER.position - position).angle();
 		velocity = velocity.length() * (FATHER.position - position).normalized();
 		if position.distance_to(FATHER.position) < DIE_DIST:
 			die();
+			
+func _switch_dir():
+	_forward = false;
+	velocity = -velocity;
+	
+	# shhh haxy
+	var bodys := get_overlapping_bodies();
+	for body in bodys:
+		if body is Troop:
+			hit(body);
+
+func hit_wall(wall: Wall):
+	super(wall);
+	
+	if _forward:
+		_switch_dir();
+	else:
+		die();
 
 func die():
 	super();

@@ -1,10 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://kryx4h3tjpvp"]
+[gd_scene load_steps=3 format=3 uid="uid://kryx4h3tjpvp"]
+
+[ext_resource type="Script" uid="uid://cceeuro6fnyvf" path="res://scripts/wall.gd" id="1_wykyb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uvhfp"]
 
 [node name="Wall" type="StaticBody2D"]
 collision_layer = 4
 collision_mask = 3
+script = ExtResource("1_wykyb")
+metadata/_custom_type_script = "uid://cceeuro6fnyvf"
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 offset_left = -12.0
