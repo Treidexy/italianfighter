@@ -10,15 +10,7 @@ var velocity: Vector2 = Vector2(0, 0);
 var kb: float = 0;
 var damage: float = 0;
 
-@export var ray: RayCast2D :
-	set(x):
-		ray = x;
-		update_configuration_warnings();
-
-func _get_configuration_warnings() -> PackedStringArray:
-	if ray == null:
-		return ["assign ray"];
-	return ["fuck clankers"];
+@export var ray: RayCast2D;
 
 ###
 
