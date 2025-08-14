@@ -30,7 +30,7 @@ func hit(victim: Troop):
 		curse.life = 0.25;
 		get_tree().root.add_child(curse);
 	victim.exflict(self);
-func hit_wall(wall: Wall): pass
+func hit_wall(_wall: Wall): pass
 func die():
 	queue_free();
 

@@ -21,3 +21,11 @@ func main():
 
 func zuper():
 	super();
+	
+	var action := BombardiroSwoopAction.new();
+	action.VICTIM = self;
+	action.dist = 100;
+	action.velocity = dir * 100;
+	action.explosion_damage = 500;
+	action.reload = 0.1;
+	get_tree().current_scene.add_child(action);

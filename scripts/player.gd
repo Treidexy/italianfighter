@@ -80,7 +80,7 @@ func _input(event: InputEvent) -> void:
 			if VICTIM.can_hyper():
 				VICTIM.hyper();
 	if event is InputEventScreenTouch:
-		if event.is_released() and event.position.x > get_tree().root.content_scale_size.x / 2:
+		if event.is_released() and event.position.x > get_tree().root.content_scale_size.x / 2.0:
 			VICTIM.hide_hints();
 			if butt == MainOrSuper.MAIN and VICTIM.can_main():
 				VICTIM.main();

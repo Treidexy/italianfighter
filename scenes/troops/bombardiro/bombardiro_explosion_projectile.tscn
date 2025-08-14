@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_akgne"]
 radius = 72.111
 
-[node name="BombardiroRocketProjectile" type="Area2D" node_paths=PackedStringArray("ray")]
+[node name="BombardiroExplosionProjectile" type="Area2D" node_paths=PackedStringArray("ray")]
 collision_layer = 2
 script = ExtResource("1_20253")
 ray = NodePath("RayCast2D")

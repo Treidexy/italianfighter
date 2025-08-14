@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Stat" load_steps=2 format=3 uid="uid://bsnpvbgcbs4ar"]
+
+[ext_resource type="Script" uid="uid://dwg4s2jpctthw" path="res://scripts/stat.gd" id="1_ha3ua"]
+
+[resource]
+script = ExtResource("1_ha3ua")
+SPEED = 50.0
+MAX_HP = 5000.0
+MAIN_COOLDOWN = 0.25
+MAIN_RELOAD = 1.2
+MAX_AMMO = 3
+MAX_SUPER_CHARGE = 1.0
+MAX_HYPER_CHARGE = 20000.0
+HYPER_DURATION = 8.0
+RECOVERY_COOLDOWN = 3.0
+RECOVERY_RATE = 0.13
+metadata/_custom_type_script = "uid://dwg4s2jpctthw"

@@ -16,11 +16,10 @@ func hit_wall(wall: Wall):
 
 func die():
 	super();
-
 	
 	var explosion: BombardiroExplosionProjectile = EXPLOSION.instantiate();
 	explosion.FATHER = FATHER;
 	explosion.life = 0.1;
 	explosion.position = position;
 	explosion.damage = explosion_damage;
-	get_tree().current_scene.add_child(explosion);
+	get_tree().current_scene.call_deferred("add_child", explosion);
