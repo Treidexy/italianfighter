@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://bmr36mnhgd4ds" path="res://scripts/player.gd" id="4_uacia"]
 [ext_resource type="PackedScene" uid="uid://by2muutbj07bm" path="res://scenes/troops/dummy/dummy_troop.tscn" id="5_yk7ts"]
 [ext_resource type="PackedScene" uid="uid://kryx4h3tjpvp" path="res://scenes/wall.tscn" id="6_ajshl"]
-[ext_resource type="PackedScene" uid="uid://gkkaaufyce68" path="res://scenes/troops/tung/tung_troop.tscn" id="7_17a3a"]
+[ext_resource type="PackedScene" uid="uid://bu34ii06mo35e" path="res://scenes/troops/bombardiro/bombardiro_troop.tscn" id="7_17a3a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tefeu"]
 radius = 50.0
@@ -64,7 +64,7 @@ shape = SubResource("CircleShape2D_tefeu")
 
 [node name="PlayerCtrl" type="Node" parent="." node_paths=PackedStringArray("VICTIM")]
 script = ExtResource("4_uacia")
-VICTIM = NodePath("../TungTroop")
+VICTIM = NodePath("../BombardiroTroop")
 metadata/_custom_type_script = "uid://bmr36mnhgd4ds"
 
 [node name="james" parent="." instance=ExtResource("5_yk7ts")]
@@ -89,7 +89,7 @@ position = Vector2(139, -12)
 z_index = 10
 position = Vector2(47, 10)
 
-[node name="TungTroop" parent="." instance=ExtResource("7_17a3a")]
-position = Vector2(-38, 85)
+[node name="BombardiroTroop" parent="." instance=ExtResource("7_17a3a")]
+position = Vector2(-44, 55)
 
 [connection signal="pressed" from="CanvasLayer/TouchScreenButton" to="PlayerCtrl" method="_on_button_pressed"]

@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwh6m3hvoodd6"]
+
+[ext_resource type="Script" uid="uid://bwjywhlenkmpf" path="res://scripts/troops/bombardiro/bombardiro_rocket_projectile.gd" id="1_ilrsv"]
+[ext_resource type="Texture2D" uid="uid://jhgltfkkmrdk" path="res://assets/troops/bombadiro/bombardiro_rocket_projectile.png" id="3_vuh6n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_akgne"]
+radius = 24.0
+
+[node name="BombardiroRocketProjectile" type="Area2D" node_paths=PackedStringArray("ray")]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_ilrsv")
+ray = NodePath("RayCast2D")
+metadata/_custom_type_script = "uid://bwjywhlenkmpf"
+
+[node name="BombardiroRocketProjectile" type="Sprite2D" parent="."]
+position = Vector2(-9, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_vuh6n")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+collision_mask = 5
+hit_from_inside = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.25, 0.25)
+shape = SubResource("CircleShape2D_akgne")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

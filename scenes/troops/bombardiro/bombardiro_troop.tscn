@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://bu34ii06mo35e"]
+
+[ext_resource type="Script" uid="uid://dbknvgm7wbjv5" path="res://scripts/troops/bombardiro/bombardiro_troop.gd" id="1_oitn6"]
+[ext_resource type="Resource" uid="uid://bn14glurtnv42" path="res://stats/troops/tung/tung_normal.tres" id="2_oitn6"]
+[ext_resource type="PackedScene" uid="uid://dw6selja8rroc" path="res://scenes/troops/troop_ui.tscn" id="3_xi232"]
+[ext_resource type="Texture2D" uid="uid://bomadwwjax6ny" path="res://assets/troops/bombadiro/bombardiro_troop.png" id="4_oitn6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
+
+[node name="BombardiroTroop" type="CharacterBody2D" node_paths=PackedStringArray("UI", "MAIN_HINT", "SUPER_HINT")]
+z_index = 6
+collision_mask = 6
+motion_mode = 1
+script = ExtResource("1_oitn6")
+NORMAL_STAT = ExtResource("2_oitn6")
+HYPER_STAT = ExtResource("2_oitn6")
+UI = NodePath("TroopUi")
+MAIN_HINT = NodePath("MainHint")
+SUPER_HINT = NodePath("SuperHint")
+metadata/_custom_type_script = "uid://dbknvgm7wbjv5"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_g2els")
+
+[node name="TroopUi" parent="." instance=ExtResource("3_xi232")]
+
+[node name="Sprite" type="Sprite2D" parent="TroopUi"]
+position = Vector2(0, 4.76837e-07)
+scale = Vector2(0.2375, 0.240625)
+texture = ExtResource("4_oitn6")
+
+[node name="MainHint" type="Node2D" parent="."]
+
+[node name="SuperHint" type="Node2D" parent="."]

@@ -45,12 +45,12 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	#print("see " + str(body));
-	#if body is Wall:
-		#hit_wall(body);
+	if body is Wall:
+		hit_wall(body);
 	ray.global_scale = Vector2(1, 1);
 	ray.global_position = body.position;
 	ray.global_rotation = 0;
-	ray.target_position = position;
+	ray.target_position = position - body.position;
 	ray.clear_exceptions();
 	ray.add_exception_rid(FATHER.get_rid());
 	ray.add_exception_rid(body.get_rid());
