@@ -7,11 +7,14 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
 
-[node name="BombardiroTroop" type="CharacterBody2D" node_paths=PackedStringArray("UI", "MAIN_HINT", "SUPER_HINT")]
+[node name="BombardiroTroop" type="CharacterBody2D" node_paths=PackedStringArray("POINTS", "LEFT", "RIGHT", "UI", "MAIN_HINT", "SUPER_HINT")]
 z_index = 6
 collision_mask = 6
 motion_mode = 1
 script = ExtResource("1_oitn6")
+POINTS = NodePath("points")
+LEFT = NodePath("points/left")
+RIGHT = NodePath("points/right")
 NORMAL_STAT = ExtResource("2_oitn6")
 HYPER_STAT = ExtResource("2_oitn6")
 UI = NodePath("TroopUi")
@@ -32,3 +35,11 @@ texture = ExtResource("4_oitn6")
 [node name="MainHint" type="Node2D" parent="."]
 
 [node name="SuperHint" type="Node2D" parent="."]
+
+[node name="points" type="Node2D" parent="."]
+
+[node name="left" type="Node2D" parent="points"]
+position = Vector2(-10, 0)
+
+[node name="right" type="Node2D" parent="points"]
+position = Vector2(10, 0)

@@ -1,4 +1,4 @@
-class_name DashAction
+class_name SwoopAction
 extends Action
 
 var dist: float;
@@ -16,7 +16,6 @@ func begin():
 func _physics_process(delta: float) -> void:
 	super(delta);
 	VICTIM.velocity = velocity;
-	if VICTIM.move_and_slide():
-		end();
+	VICTIM.move_and_collide(VICTIM.velocity);
 	if _origen.distance_to(VICTIM.position) > dist:
 		end();

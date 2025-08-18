@@ -2,6 +2,9 @@ class_name BombardiroTroop
 extends Troop
 
 @export var ROCKET: PackedScene = preload("res://scenes/troops/bombardiro/bombardiro_rocket_projectile.tscn");
+@export var POINTS: Node2D;
+@export var LEFT: Node2D;
+@export var RIGHT: Node2D;
 
 func _physics_process(delta: float) -> void:
 	super(delta);
@@ -25,7 +28,7 @@ func zuper():
 	var action := BombardiroSwoopAction.new();
 	action.VICTIM = self;
 	action.dist = 100;
-	action.velocity = dir * 100;
+	action.velocity = dir * 100 * stat_boost.speed_mul;
 	action.explosion_damage = 500;
-	action.reload = 0.1;
+	action.explosion_count = 8;
 	get_tree().current_scene.add_child(action);

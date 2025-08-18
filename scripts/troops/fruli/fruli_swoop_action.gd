@@ -1,5 +1,5 @@
 class_name FruliSwoopAction
-extends DashAction
+extends SwoopAction
 
 @export var SWOOP := preload("res://scenes/troops/fruli/fruli_swoop_projectile.tscn");
 
