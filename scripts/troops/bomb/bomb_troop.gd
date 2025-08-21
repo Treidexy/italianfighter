@@ -33,8 +33,18 @@ func zuper():
 	var stat: BombStat = stat;
 	var action := BombSwoopAction.new();
 	action.VICTIM = self;
+	action.does_snare = in_hyper;
 	action.dist = stat.SWOOP_DIST;
 	action.velocity = dir * stat.SWOOP_SPEED * stat_boost.speed_mul;
 	action.explosion_damage = stat.SWOOP_EXPLOSION_DAMAGE;
 	action.explosion_count = stat.SWOOP_EXPLOSION_COUNT;
 	get_tree().current_scene.add_child(action);
+
+# todo maybe: curve super?
+func hyper():
+	super();
+	set_collision_mask_value(3, false);
+
+func end_hyper():
+	super();
+	set_collision_mask_value(3, true);

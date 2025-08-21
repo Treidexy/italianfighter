@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bu34ii06mo35e"]
+[gd_scene load_steps=7 format=3 uid="uid://bu34ii06mo35e"]
 
 [ext_resource type="Script" uid="uid://dbknvgm7wbjv5" path="res://scripts/troops/bomb/bomb_troop.gd" id="1_oitn6"]
 [ext_resource type="Resource" uid="uid://c0thpov46lvwm" path="res://stats/troops/bomb/bomb_norm.tres" id="2_oitn6"]
+[ext_resource type="Resource" uid="uid://cyggeswsdkipy" path="res://stats/troops/bomb/bomb_hyper.tres" id="3_3gy0x"]
 [ext_resource type="PackedScene" uid="uid://dw6selja8rroc" path="res://scenes/troops/troop_ui.tscn" id="3_xi232"]
 [ext_resource type="Texture2D" uid="uid://bomadwwjax6ny" path="res://assets/troops/bomb/bomb_troop.png" id="4_oitn6"]
 
@@ -18,7 +19,7 @@ RIGHT = NodePath("points/right")
 MAIN_HINT_BAR = NodePath("MainHint/ProgressBar")
 SUPER_HINT_BAR = NodePath("SuperHint/ProgressBar")
 NORMAL_STAT = ExtResource("2_oitn6")
-HYPER_STAT = ExtResource("2_oitn6")
+HYPER_STAT = ExtResource("3_3gy0x")
 UI = NodePath("TroopUi")
 MAIN_HINT = NodePath("MainHint")
 SUPER_HINT = NodePath("SuperHint")
