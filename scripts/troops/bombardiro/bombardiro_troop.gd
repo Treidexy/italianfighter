@@ -16,7 +16,7 @@ func main():
 	var stat: BombardiroStat = stat;
 	var proj: BombardiroRocketProjectile = ROCKET.instantiate();
 	proj.FATHER = self;
-	proj.life = 3;
+	proj.life = stat.ROCKET_LIFE;
 	proj.position = position;
 	proj.rotation = dir.angle();
 	proj.explosion_damage = stat.ROCKET_EXPLOSION_DAMAGE;
