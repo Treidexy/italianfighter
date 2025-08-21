@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://bmr36mnhgd4ds" path="res://scripts/player.gd" id="4_uacia"]
 [ext_resource type="PackedScene" uid="uid://by2muutbj07bm" path="res://scenes/troops/dummy/dummy_troop.tscn" id="5_yk7ts"]
 [ext_resource type="PackedScene" uid="uid://kryx4h3tjpvp" path="res://scenes/wall.tscn" id="6_ajshl"]
-[ext_resource type="PackedScene" uid="uid://bu34ii06mo35e" path="res://scenes/troops/bombardiro/bombardiro_troop.tscn" id="7_17a3a"]
+[ext_resource type="PackedScene" uid="uid://bu34ii06mo35e" path="res://scenes/troops/bomb/bomb_troop.tscn" id="7_17a3a"]
 [ext_resource type="PackedScene" uid="uid://2n5qb7ili84r" path="res://scenes/troops/fruli/fruli_troop.tscn" id="8_4b02c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tefeu"]
