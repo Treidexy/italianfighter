@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jhgltfkkmrdk"
-path="res://.godot/imported/bomb_rocket_projectile.png-0fca810eb6c4c157033dbdaef5399034.ctex"
+uid="uid://baqfj8fi1b3i8"
+path="res://.godot/imported/bomba_explosion.png-c36d3c0caab9bcf3982cf715e936b3f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/troops/bomb/bomb_rocket_projectile.png"
-dest_files=["res://.godot/imported/bomb_rocket_projectile.png-0fca810eb6c4c157033dbdaef5399034.ctex"]
+source_file="res://assets/troops/bomba/bomba_explosion.png"
+dest_files=["res://.godot/imported/bomba_explosion.png-c36d3c0caab9bcf3982cf715e936b3f1.ctex"]
 
 [params]
 

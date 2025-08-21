@@ -1,4 +1,4 @@
-class_name BombStat
+class_name BombaStat
 extends Stat
 
 @export var ROCKET_SPEED: float = 80;

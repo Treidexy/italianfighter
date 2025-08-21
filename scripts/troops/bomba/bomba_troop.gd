@@ -1,7 +1,7 @@
-class_name BombardiroTroop
+class_name BombaTroop
 extends Troop
 
-@export var ROCKET: PackedScene = preload("res://scenes/troops/bomb/bomb_rocket_projectile.tscn");
+@export var ROCKET: PackedScene = preload("res://scenes/troops/bomba/bomba_rocket_projectile.tscn");
 @export var POINTS: Node2D;
 @export var LEFT: Node2D;
 @export var RIGHT: Node2D;
@@ -10,7 +10,7 @@ extends Troop
 
 func _physics_process(delta: float) -> void:
 	super(delta);
-	var stat: BombStat = stat;
+	var stat: BombaStat = stat;
 	MAIN_HINT.rotation = dir.angle();
 	SUPER_HINT.rotation = dir.angle();
 	MAIN_HINT_BAR.size.x = stat.ROCKET_LIFE * stat.ROCKET_SPEED;
@@ -18,8 +18,8 @@ func _physics_process(delta: float) -> void:
 	
 func main():
 	super();
-	var stat: BombStat = stat;
-	var proj: BombRocketProjectile = ROCKET.instantiate();
+	var stat: BombaStat = stat;
+	var proj: BombaRocketProjectile = ROCKET.instantiate();
 	proj.FATHER = self;
 	proj.life = stat.ROCKET_LIFE;
 	proj.position = position;
@@ -30,8 +30,8 @@ func main():
 
 func zuper():
 	super();
-	var stat: BombStat = stat;
-	var action := BombSwoopAction.new();
+	var stat: BombaStat = stat;
+	var action := BombaSwoopAction.new();
 	action.VICTIM = self;
 	action.does_snare = in_hyper;
 	action.dist = stat.SWOOP_DIST;

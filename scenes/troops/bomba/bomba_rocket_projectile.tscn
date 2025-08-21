@@ -1,22 +1,22 @@
 [gd_scene load_steps=4 format=3 uid="uid://cwh6m3hvoodd6"]
 
-[ext_resource type="Script" uid="uid://bwjywhlenkmpf" path="res://scripts/troops/bomb/bomb_rocket_projectile.gd" id="1_cshk3"]
-[ext_resource type="Texture2D" uid="uid://jhgltfkkmrdk" path="res://assets/troops/bomb/bomb_rocket_projectile.png" id="2_nen61"]
+[ext_resource type="Script" uid="uid://bwjywhlenkmpf" path="res://scripts/troops/bomba/bomba_rocket_projectile.gd" id="1_c74mq"]
+[ext_resource type="Texture2D" uid="uid://jhgltfkkmrdk" path="res://assets/troops/bomba/bomba_rocket_projectile.png" id="2_1gity"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_akgne"]
 radius = 24.0
 
-[node name="BombRocketProjectile" type="Area2D" node_paths=PackedStringArray("ray")]
+[node name="BombaRocketProjectile" type="Area2D" node_paths=PackedStringArray("ray")]
 collision_layer = 2
 collision_mask = 5
-script = ExtResource("1_cshk3")
+script = ExtResource("1_c74mq")
 ray = NodePath("RayCast2D")
 metadata/_custom_type_script = "uid://bwjywhlenkmpf"
 
 [node name="BombardiroRocketProjectile" type="Sprite2D" parent="."]
 position = Vector2(-9, 0)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_nen61")
+texture = ExtResource("2_1gity")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 collision_mask = 5

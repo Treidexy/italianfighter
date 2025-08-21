@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="BombStat" load_steps=2 format=3 uid="uid://cyggeswsdkipy"]
 
-[ext_resource type="Script" uid="uid://cx26sigcnuytb" path="res://scripts/troops/bomb/bomb_stat.gd" id="1_p8jhx"]
+[ext_resource type="Script" uid="uid://cx26sigcnuytb" path="res://scripts/troops/bomba/bomba_stat.gd" id="1_p8jhx"]
 
 [resource]
 script = ExtResource("1_p8jhx")

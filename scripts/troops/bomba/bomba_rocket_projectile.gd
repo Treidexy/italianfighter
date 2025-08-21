@@ -1,7 +1,7 @@
-class_name BombRocketProjectile
+class_name BombaRocketProjectile
 extends Projectile
 
-@export var EXPLOSION: PackedScene = preload("res://scenes/troops/bomb/bomb_explosion_projectile.tscn");
+@export var EXPLOSION: PackedScene = preload("res://scenes/troops/bomba/bomba_explosion_projectile.tscn");
 
 var explosion_damage: float;
 
@@ -17,7 +17,7 @@ func hit_wall(wall: Wall):
 func die():
 	super();
 	
-	var explosion: BombExplosionProjectile = EXPLOSION.instantiate();
+	var explosion: BombaExplosionProjectile = EXPLOSION.instantiate();
 	explosion.FATHER = FATHER;
 	explosion.life = 0.1;
 	explosion.position = position;

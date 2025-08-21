@@ -1,7 +1,7 @@
-class_name BombSwoopAction
+class_name BombaSwoopAction
 extends SwoopAction
 
-@export var EXPLOSION: PackedScene = preload("res://scenes/troops/bomb/bomb_explosion_projectile.tscn");
+@export var EXPLOSION: PackedScene = preload("res://scenes/troops/bomba/bomba_explosion_projectile.tscn");
 
 var explosion_damage: float;
 var explosion_count: float;
@@ -15,7 +15,7 @@ func _physics_process(delta: float) -> void:
 	super(delta);
 	while traveled / dist >= _has_exploded_count / (explosion_count - 1):
 		_has_exploded_count += 1;
-		var explosion: BombExplosionProjectile = EXPLOSION.instantiate();
+		var explosion: BombaExplosionProjectile = EXPLOSION.instantiate();
 		explosion.FATHER = VICTIM;
 		explosion.life = 0.1;
 		explosion.global_position = VICTIM.LEFT.global_position;
