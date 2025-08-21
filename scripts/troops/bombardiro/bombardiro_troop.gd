@@ -13,22 +13,23 @@ func _physics_process(delta: float) -> void:
 	
 func main():
 	super();
+	var stat: BombardiroStat = stat;
 	var proj: BombardiroRocketProjectile = ROCKET.instantiate();
 	proj.FATHER = self;
 	proj.life = 3;
 	proj.position = position;
 	proj.rotation = dir.angle();
-	proj.explosion_damage = 500;
-	proj.velocity = dir * 67;
+	proj.explosion_damage = stat.ROCKET_EXPLOSION_DAMAGE;
+	proj.velocity = dir * stat.ROCKET_SPEED;
 	get_tree().current_scene.add_child(proj);
 
 func zuper():
 	super();
-	
+	var stat: BombardiroStat = stat;
 	var action := BombardiroSwoopAction.new();
 	action.VICTIM = self;
-	action.dist = 100;
-	action.velocity = dir * 100 * stat_boost.speed_mul;
-	action.explosion_damage = 500;
-	action.explosion_count = 8;
+	action.dist = stat.SWOOP_DIST;
+	action.velocity = dir * stat.SWOOP_SPEED * stat_boost.speed_mul;
+	action.explosion_damage = stat.SWOOP_EXPLOSION_DAMAGE;
+	action.explosion_count = stat.SWOOP_EXPLOSION_COUNT;
 	get_tree().current_scene.add_child(action);
