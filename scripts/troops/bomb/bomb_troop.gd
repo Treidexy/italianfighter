@@ -5,11 +5,16 @@ extends Troop
 @export var POINTS: Node2D;
 @export var LEFT: Node2D;
 @export var RIGHT: Node2D;
+@export var MAIN_HINT_BAR: ProgressBar;
+@export var SUPER_HINT_BAR: ProgressBar;
 
 func _physics_process(delta: float) -> void:
 	super(delta);
+	var stat: BombStat = stat;
 	MAIN_HINT.rotation = dir.angle();
 	SUPER_HINT.rotation = dir.angle();
+	MAIN_HINT_BAR.size.x = stat.ROCKET_LIFE * stat.ROCKET_SPEED;
+	SUPER_HINT_BAR.size.x = stat.SWOOP_DIST;
 	
 func main():
 	super();
