@@ -92,7 +92,9 @@ position = Vector2(47, 10)
 
 [node name="BombardiroTroop" parent="." instance=ExtResource("7_17a3a")]
 position = Vector2(-44, 55)
+team = 1
 
 [node name="FruliTroop" parent="." instance=ExtResource("8_4b02c")]
+team = 1
 
 [connection signal="pressed" from="CanvasLayer/TouchScreenButton" to="PlayerCtrl" method="_on_button_pressed"]

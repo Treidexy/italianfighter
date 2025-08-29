@@ -5,7 +5,7 @@ var curse_life: float;
 
 func hit(victim: Troop):
 	super(victim);
-	if victim != FATHER:
+	if victim.team != FATHER.team:
 		return;
 	
 	for curse in victim.curses:

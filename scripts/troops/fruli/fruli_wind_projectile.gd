@@ -4,7 +4,7 @@ extends Projectile
 func hit(victim: Troop):
 	super(victim);
 	
-	if victim == FATHER:
+	if victim.team == FATHER.team:
 		return;
 	
 	var stat: FruliStat = FATHER.stat;

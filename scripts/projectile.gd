@@ -15,7 +15,7 @@ var damage: float = 0;
 
 func hit(victim: Troop):
 	# ik hacky right
-	if victim == FATHER:
+	if victim.team == FATHER.team:
 		return;
 	
 	FATHER.inflict(self, victim);

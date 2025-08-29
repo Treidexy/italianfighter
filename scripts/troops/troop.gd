@@ -2,6 +2,7 @@ class_name Troop
 extends CharacterBody2D
 
 var peer_id: int;
+@export var team: int;
 
 @export var NORMAL_STAT: Stat;
 @export var HYPER_STAT: Stat;

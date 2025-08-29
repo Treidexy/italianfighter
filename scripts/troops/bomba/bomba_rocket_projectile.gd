@@ -7,7 +7,7 @@ var explosion_damage: float;
 
 func hit(victim: Troop):
 	super(victim);
-	if victim == FATHER:
+	if victim.team == FATHER.team:
 		return;
 	die();
 func hit_wall(wall: Wall):

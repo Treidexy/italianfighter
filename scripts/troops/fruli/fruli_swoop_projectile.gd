@@ -11,7 +11,7 @@ func _physics_process(delta: float) -> void:
 func hit(victim: Troop):
 	super(victim);
 	
-	if victim == FATHER:
+	if victim.team == FATHER.team:
 		return;
 	
 	await get_tree().create_timer(0.1).timeout;
