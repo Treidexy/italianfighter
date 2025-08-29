@@ -24,9 +24,16 @@ var in_hyper: bool = false;
 
 var curses: Array[Curse] = [];
 
+var current_action: Action = null;
+var current_hotspot: Hotspot = null;
+var hotspot_progress: float = 0;
+var is_hotspot_king: bool :
+	set(value):
+		is_hotspot_king = value;
+		UI.CROWN.visible = value;
+
 #var in_snare: bool = false;
 #var in_silence: bool = false;
-var current_action: Action = null;
 var dir: Vector2 :
 	get:
 		return weighted_dir.normalized();
@@ -166,6 +173,8 @@ func _physics_process(delta: float) -> void:
 		_recovery_cooldown -= delta;
 	else:
 		heal_rel(stat.RECOVERY_RATE * delta);
+		
+	hotspot_progress += delta;
 
 ###
 

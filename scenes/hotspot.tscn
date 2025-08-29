@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://dy0mxgqumpgcd"]
+
+[ext_resource type="Texture2D" uid="uid://d27d4fmny001g" path="res://assets/circle.png" id="1_dkdtp"]
+[ext_resource type="Script" uid="uid://db0tuor1012oq" path="res://scripts/hotspot.gd" id="1_dlpc4"]
+[ext_resource type="Texture2D" uid="uid://dcoq7yjufcwi7" path="res://assets/flag.png" id="2_dlpc4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1qr6x"]
+radius = 40.0
+
+[node name="Hotspot" type="Area2D" node_paths=PackedStringArray("PROGRESS_BAR")]
+collision_layer = 8
+script = ExtResource("1_dlpc4")
+PROGRESS_BAR = NodePath("ProgressBar")
+duration = 5.0
+metadata/_custom_type_script = "uid://db0tuor1012oq"
+
+[node name="circle" type="Sprite2D" parent="."]
+modulate = Color(0.89, 0.9725, 1, 1)
+texture = ExtResource("1_dkdtp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1qr6x")
+
+[node name="Flag" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_dlpc4")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -10.0
+offset_top = -38.0
+offset_right = 40.0
+offset_bottom = -11.0
+grow_horizontal = 2
+scale = Vector2(0.4, 0.4)
+max_value = 1.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -8,3 +8,4 @@ extends Node2D
 @export var IN_SUPER_INDICATOR: Node;
 @export var CAN_HYPER_INDICATOR: Node;
 @export var IN_HYPER_INDICATOR: Node;
+@export var CROWN: Node;

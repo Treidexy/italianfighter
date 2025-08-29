@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://dw6selja8rroc"]
+[gd_scene load_steps=4 format=3 uid="uid://dw6selja8rroc"]
 
 [ext_resource type="Script" uid="uid://qw67q40gxsik" path="res://scripts/troops/troop_ui.gd" id="1_vq5un"]
 [ext_resource type="Texture2D" uid="uid://d27d4fmny001g" path="res://assets/circle.png" id="2_yw5vp"]
+[ext_resource type="Texture2D" uid="uid://c684y0clbjeds" path="res://assets/crown.png" id="3_yw5vp"]
 
-[node name="TroopUi" type="Node2D" node_paths=PackedStringArray("AMMO_BAR", "HEALTH_BAR", "HEALTH_LABEL", "CAN_SUPER_INDICATOR", "IN_SUPER_INDICATOR", "CAN_HYPER_INDICATOR", "IN_HYPER_INDICATOR")]
+[node name="TroopUi" type="Node2D" node_paths=PackedStringArray("AMMO_BAR", "HEALTH_BAR", "HEALTH_LABEL", "CAN_SUPER_INDICATOR", "IN_SUPER_INDICATOR", "CAN_HYPER_INDICATOR", "IN_HYPER_INDICATOR", "CROWN")]
 script = ExtResource("1_vq5un")
 AMMO_BAR = NodePath("AmmoBar")
 HEALTH_BAR = NodePath("HealthBar")
@@ -12,6 +13,7 @@ CAN_SUPER_INDICATOR = NodePath("CanSuperIndicator")
 IN_SUPER_INDICATOR = NodePath("InSuperIndicator")
 CAN_HYPER_INDICATOR = NodePath("CanHyperIndicator")
 IN_HYPER_INDICATOR = NodePath("InHyperIndicator")
+CROWN = NodePath("Crown")
 metadata/_custom_type_script = "uid://qw67q40gxsik"
 
 [node name="CircleSprite" type="Sprite2D" parent="."]
@@ -82,3 +84,10 @@ visible = false
 position = Vector2(0, -2)
 color = Color(1, 0, 1, 1)
 polygon = PackedVector2Array(-8, 3, 3, 8, 5, 2)
+
+[node name="Crown" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 0.75, 1)
+position = Vector2(0, -6)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_yw5vp")
