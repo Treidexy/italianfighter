@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://djgn26jj3ipmk"]
+
+[ext_resource type="Texture2D" uid="uid://d27d4fmny001g" path="res://assets/circle.png" id="1_guxnn"]
+[ext_resource type="PackedScene" uid="uid://kryx4h3tjpvp" path="res://scenes/wall.tscn" id="1_m70fh"]
+
+[sub_resource type="Gradient" id="Gradient_0a03i"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.36, 0.36, 0.36, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gsoaw"]
+gradient = SubResource("Gradient_0a03i")
+
+[node name="Hotpot" type="Node2D"]
+
+[node name="ground" type="Sprite2D" parent="."]
+scale = Vector2(10, 10)
+texture = SubResource("GradientTexture2D_gsoaw")
+
+[node name="hill" type="Sprite2D" parent="."]
+texture = ExtResource("1_guxnn")
+
+[node name="flag" type="Sprite2D" parent="."]
+position = Vector2(230, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_guxnn")
+
+[node name="flag2" type="Sprite2D" parent="."]
+position = Vector2(70, 170)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_guxnn")
+
+[node name="Wall" parent="." instance=ExtResource("1_m70fh")]
+position = Vector2(110, -10)
+
+[node name="Wall2" parent="." instance=ExtResource("1_m70fh")]
+position = Vector2(130, -10)
+
+[node name="Wall3" parent="." instance=ExtResource("1_m70fh")]
+position = Vector2(150, -10)
+
+[node name="Wall4" parent="." instance=ExtResource("1_m70fh")]
+position = Vector2(170, -10)
+
+[node name="Wall5" parent="." instance=ExtResource("1_m70fh")]
+position = Vector2(10, 70)
+
+[node name="Wall6" parent="." instance=ExtResource("1_m70fh")]
+position = Vector2(30, 70)
+
+[node name="Wall7" parent="." instance=ExtResource("1_m70fh")]
+position = Vector2(50, 70)
+
+[node name="Wall8" parent="." instance=ExtResource("1_m70fh")]
+position = Vector2(170, 90)
+
+[node name="Wall9" parent="." instance=ExtResource("1_m70fh")]
+position = Vector2(170, 110)
+
+[node name="Wall10" parent="." instance=ExtResource("1_m70fh")]
+position = Vector2(170, 130)
+
+[node name="Wall11" parent="." instance=ExtResource("1_m70fh")]
+position = Vector2(170, 150)
