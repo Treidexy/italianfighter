@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dcoq7yjufcwi7" path="res://assets/flag.png" id="2_dlpc4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1qr6x"]
-radius = 40.0
+radius = 37.0
 
 [node name="Hotspot" type="Area2D" node_paths=PackedStringArray("PROGRESS_BAR")]
 collision_layer = 8

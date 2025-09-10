@@ -9,3 +9,4 @@ extends Node2D
 @export var CAN_HYPER_INDICATOR: Node;
 @export var IN_HYPER_INDICATOR: Node;
 @export var CROWN: Node;
+@export var FLAG: Node;
