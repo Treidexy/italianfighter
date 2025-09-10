@@ -37,6 +37,9 @@ func _unclaim():
 func capture():
 	assert(king != null);
 	
+	if king.captured_hotspot != null:
+		king.captured_hotspot.uncapture();
+	
 	capturer = king;
 	king.has_crown = false;
 	king.has_flag = true;
