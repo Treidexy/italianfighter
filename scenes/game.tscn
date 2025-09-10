@@ -61,9 +61,10 @@ position = Vector2(887, 491)
 texture_normal = ExtResource("2_0tnpc")
 shape = SubResource("CircleShape2D_tefeu")
 
-[node name="PlayerCtrl" type="Node" parent="." node_paths=PackedStringArray("VICTIM")]
+[node name="PlayerCtrl" type="Node" parent="." node_paths=PackedStringArray("VICTIM", "CAMERA")]
 script = ExtResource("3_vtaks")
 VICTIM = NodePath("../CapuTroop")
+CAMERA = NodePath("../Camera2D")
 metadata/_custom_type_script = "uid://bmr36mnhgd4ds"
 
 [node name="CapuTroop" parent="." instance=ExtResource("5_iywne")]

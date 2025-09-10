@@ -9,11 +9,15 @@ enum MainOrSuper {
 }
 
 @export var VICTIM: Troop;
+@export var CAMERA: Camera2D;
 
 #var weighted_dir := Vector2(0, 0); # user TROOP.d instead
 var butt := MainOrSuper.NONE; # idk what to call ts
 
 func _physics_process(_delta: float) -> void:
+	# todo smoothing
+	CAMERA.global_position = VICTIM.global_position;
+	
 	if not VICTIM.can_move():
 		return;
 	
