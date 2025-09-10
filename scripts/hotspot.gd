@@ -9,17 +9,24 @@ var progress: float;
 var king: Troop;
 var capturer: Troop;
 
-func unclaim():
+func uncapture():
+	assert(capturer != null and king == null);
+	
+	capturer.has_flag = false;
+	capturer.captured_hotspot = null;
+	capturer = null;
+	_unclaim();
+func unking():
+	assert(capturer == null and king != null);
+	
+	king.has_crown = false;
+	king = null;
+	_unclaim();
+
+func _unclaim():
 	progress = 0;
 	PROGRESS_BAR.value = 0;
 	
-	if king != null:
-		king.has_crown = false;
-	if capturer != null:
-		capturer.has_flag = false;
-	
-	capturer = null;
-	king = null;
 	var o = get_overlapping_bodies().filter(func(x): x is Troop);
 	for body in o:
 		# not haxy
@@ -32,7 +39,7 @@ func capture():
 	king.has_crown = false;
 	king.has_flag = true;
 	king = null;
-	capturer.captures.append(self);
+	capturer.captured_hotspot = self;
 	print('captured');
 
 func _physics_process(delta: float) -> void:
@@ -60,4 +67,4 @@ func _on_body_exited(body: Node2D) -> void:
 		body.current_hotspot = null;
 		
 		if body == king:
-			unclaim();
+			unking();

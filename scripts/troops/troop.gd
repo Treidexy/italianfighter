@@ -23,14 +23,10 @@ var in_super: bool = false;
 var in_hyper: bool = false;
 
 var curses: Array[Curse] = [];
-# should they only be allowed to carry one flag at a time?
-var captures: Array[Hotspot] = [] :
-	set(value):
-		captures = value;
-		UI.FLAG.visible = value.size() > 0;
 
 var current_action: Action = null;
 var current_hotspot: Hotspot = null;
+var captured_hotspot: Hotspot = null;
 var has_crown: bool :
 	set(value):
 		has_crown = value;
@@ -101,7 +97,9 @@ func exflict(gluon):
 		die();
 
 	_recovery_cooldown = stat.RECOVERY_COOLDOWN;
-func die(): pass
+func die():
+	if captured_hotspot != null:
+		captured_hotspot.uncapture();
 func heal(amt: float):
 	hp += amt;
 	if hp > stat.MAX_HP:
