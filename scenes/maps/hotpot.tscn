@@ -35,42 +35,45 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_guxnn")
 
 [node name="Wall" parent="." instance=ExtResource("1_m70fh")]
-position = Vector2(50, -10)
-
-[node name="Wall2" parent="." instance=ExtResource("1_m70fh")]
-position = Vector2(70, -10)
-
-[node name="Wall3" parent="." instance=ExtResource("1_m70fh")]
-position = Vector2(90, -10)
-
-[node name="Wall4" parent="." instance=ExtResource("1_m70fh")]
 position = Vector2(110, -10)
 
+[node name="Wall2" parent="." instance=ExtResource("1_m70fh")]
+position = Vector2(130, -10)
+
+[node name="Wall3" parent="." instance=ExtResource("1_m70fh")]
+position = Vector2(150, -10)
+
+[node name="Wall4" parent="." instance=ExtResource("1_m70fh")]
+position = Vector2(170, -10)
+
 [node name="Wall5" parent="." instance=ExtResource("1_m70fh")]
-position = Vector2(10, 51)
+position = Vector2(10, 70)
 
 [node name="Wall6" parent="." instance=ExtResource("1_m70fh")]
-position = Vector2(30, 51)
+position = Vector2(30, 70)
+
+[node name="Wall7" parent="." instance=ExtResource("1_m70fh")]
+position = Vector2(50, 70)
 
 [node name="Wall8" parent="." instance=ExtResource("1_m70fh")]
-position = Vector2(69, 41)
+position = Vector2(170, 82)
 
 [node name="Wall9" parent="." instance=ExtResource("1_m70fh")]
-position = Vector2(69, 61)
+position = Vector2(170, 102)
 
 [node name="Wall10" parent="." instance=ExtResource("1_m70fh")]
-position = Vector2(69, 81)
+position = Vector2(170, 122)
 
 [node name="Wall11" parent="." instance=ExtResource("1_m70fh")]
-position = Vector2(69, 101)
+position = Vector2(170, 142)
 
 [node name="hill2" parent="." node_paths=PackedStringArray("required_precapture_options") instance=ExtResource("3_0a03i")]
 required_precapture_options = [NodePath("../Hotspot2"), NodePath("../Hotspot3")]
 
 [node name="Hotspot2" parent="." instance=ExtResource("3_0a03i")]
-position = Vector2(101, 34)
+position = Vector2(230, 50)
 scale = Vector2(0.5, 0.5)
 
 [node name="Hotspot3" parent="." instance=ExtResource("3_0a03i")]
-position = Vector2(30, 98)
+position = Vector2(70, 162)
 scale = Vector2(0.5, 0.5)
