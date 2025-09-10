@@ -4,7 +4,7 @@ extends Area2D
 @export var PROGRESS_BAR: ProgressBar;
 
 @export var duration: float;
-@export var required_precapture: Hotspot = null;
+@export var required_precapture_options: Array[Hotspot] = [];
 
 var progress: float;
 
@@ -56,8 +56,8 @@ func _on_body_entered(body: Node2D) -> void:
 		return;
 		
 	if body is Troop:
-		if required_precapture != null:
-			if body.captured_hotspot != required_precapture:
+		if required_precapture_options.size() > 0:
+			if not required_precapture_options.has(body.captured_hotspot):
 				return;
 		
 		body.current_hotspot = self;

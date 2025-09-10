@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://djgn26jj3ipmk"]
+[gd_scene load_steps=6 format=3 uid="uid://djgn26jj3ipmk"]
 
 [ext_resource type="Texture2D" uid="uid://d27d4fmny001g" path="res://assets/circle.png" id="1_guxnn"]
 [ext_resource type="PackedScene" uid="uid://kryx4h3tjpvp" path="res://scenes/wall.tscn" id="1_m70fh"]
+[ext_resource type="PackedScene" uid="uid://dy0mxgqumpgcd" path="res://scenes/hotspot.tscn" id="3_0a03i"]
 
 [sub_resource type="Gradient" id="Gradient_0a03i"]
 interpolation_mode = 1
@@ -18,47 +19,58 @@ scale = Vector2(10, 10)
 texture = SubResource("GradientTexture2D_gsoaw")
 
 [node name="hill" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("1_guxnn")
 
 [node name="flag" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(230, 50)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_guxnn")
 
 [node name="flag2" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(70, 170)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_guxnn")
 
 [node name="Wall" parent="." instance=ExtResource("1_m70fh")]
-position = Vector2(110, -10)
+position = Vector2(50, -10)
 
 [node name="Wall2" parent="." instance=ExtResource("1_m70fh")]
-position = Vector2(130, -10)
+position = Vector2(70, -10)
 
 [node name="Wall3" parent="." instance=ExtResource("1_m70fh")]
-position = Vector2(150, -10)
+position = Vector2(90, -10)
 
 [node name="Wall4" parent="." instance=ExtResource("1_m70fh")]
-position = Vector2(170, -10)
+position = Vector2(110, -10)
 
 [node name="Wall5" parent="." instance=ExtResource("1_m70fh")]
-position = Vector2(10, 70)
+position = Vector2(10, 51)
 
 [node name="Wall6" parent="." instance=ExtResource("1_m70fh")]
-position = Vector2(30, 70)
-
-[node name="Wall7" parent="." instance=ExtResource("1_m70fh")]
-position = Vector2(50, 70)
+position = Vector2(30, 51)
 
 [node name="Wall8" parent="." instance=ExtResource("1_m70fh")]
-position = Vector2(170, 90)
+position = Vector2(69, 41)
 
 [node name="Wall9" parent="." instance=ExtResource("1_m70fh")]
-position = Vector2(170, 110)
+position = Vector2(69, 61)
 
 [node name="Wall10" parent="." instance=ExtResource("1_m70fh")]
-position = Vector2(170, 130)
+position = Vector2(69, 81)
 
 [node name="Wall11" parent="." instance=ExtResource("1_m70fh")]
-position = Vector2(170, 150)
+position = Vector2(69, 101)
+
+[node name="hill2" parent="." node_paths=PackedStringArray("required_precapture_options") instance=ExtResource("3_0a03i")]
+required_precapture_options = [NodePath("../Hotspot2"), NodePath("../Hotspot3")]
+
+[node name="Hotspot2" parent="." instance=ExtResource("3_0a03i")]
+position = Vector2(101, 34)
+scale = Vector2(0.5, 0.5)
+
+[node name="Hotspot3" parent="." instance=ExtResource("3_0a03i")]
+position = Vector2(30, 98)
+scale = Vector2(0.5, 0.5)
