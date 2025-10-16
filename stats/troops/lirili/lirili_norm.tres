@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="LiriliStat" load_steps=2 format=3 uid="uid://c0ixacr1848wv"]
+
+[ext_resource type="Script" uid="uid://chx7w010kd6ub" path="res://scripts/troops/lirili/lirili_stat.gd" id="1_fyqwo"]
+
+[resource]
+script = ExtResource("1_fyqwo")
+SPEED = 50.0
+MAX_HP = 5000.0
+MAIN_COOLDOWN = 0.25
+MAIN_RELOAD = 1.2
+MAX_AMMO = 3
+MAX_SUPER_CHARGE = 5000.0
+MAX_HYPER_CHARGE = 20000.0
+HYPER_DURATION = 8.0
+RECOVERY_COOLDOWN = 3.0
+RECOVERY_RATE = 0.13
+metadata/_custom_type_script = "uid://chx7w010kd6ub"

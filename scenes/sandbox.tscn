@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://chm7rqxwcgkej"]
+[gd_scene load_steps=13 format=3 uid="uid://chm7rqxwcgkej"]
 
 [ext_resource type="Script" uid="uid://bj7tpy3tn8do7" path="res://scripts/game.gd" id="1_lpvoh"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="2_at5dv"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://2n5qb7ili84r" path="res://scenes/troops/fruli/fruli_troop.tscn" id="8_4b02c"]
 [ext_resource type="PackedScene" uid="uid://dy0mxgqumpgcd" path="res://scenes/hotspot.tscn" id="9_rvfw7"]
 [ext_resource type="PackedScene" uid="uid://5tinu4augvuv" path="res://scenes/bush.tscn" id="10_m5lhb"]
+[ext_resource type="PackedScene" uid="uid://cy0n08orjdq6v" path="res://scenes/troops/lirili/lirili_troop.tscn" id="11_qqy3k"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tefeu"]
 radius = 50.0
@@ -67,7 +68,7 @@ shape = SubResource("CircleShape2D_tefeu")
 
 [node name="PlayerCtrl" type="Node" parent="." node_paths=PackedStringArray("VICTIM", "CAMERA")]
 script = ExtResource("4_uacia")
-VICTIM = NodePath("../BombardiroTroop")
+VICTIM = NodePath("../LiriliTroop")
 CAMERA = NodePath("../Camera2D")
 metadata/_custom_type_script = "uid://bmr36mnhgd4ds"
 
@@ -105,5 +106,9 @@ position = Vector2(-65, -53)
 
 [node name="Bush" parent="." instance=ExtResource("10_m5lhb")]
 position = Vector2(49, 32)
+
+[node name="LiriliTroop" parent="." instance=ExtResource("11_qqy3k")]
+position = Vector2(-58, 14)
+team = 1
 
 [connection signal="pressed" from="CanvasLayer/TouchScreenButton" to="PlayerCtrl" method="_on_button_pressed"]

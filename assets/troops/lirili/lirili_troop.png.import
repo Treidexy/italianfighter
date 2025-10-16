@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmb0jls423wiw"
-path="res://.godot/imported/lirili-ram.png-56c81e3f2b1826f998835b4a0fbf62be.ctex"
+uid="uid://cc3j1hwhlnfkt"
+path="res://.godot/imported/lirili_troop.png-7fd99f9f08e60b9593e78a9c2b2af946.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/old/lirili-ram.png"
-dest_files=["res://.godot/imported/lirili-ram.png-56c81e3f2b1826f998835b4a0fbf62be.ctex"]
+source_file="res://assets/troops/lirili/lirili_troop.png"
+dest_files=["res://.godot/imported/lirili_troop.png-7fd99f9f08e60b9593e78a9c2b2af946.ctex"]
 
 [params]
 

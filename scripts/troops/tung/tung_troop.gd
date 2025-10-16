@@ -1,8 +1,8 @@
 class_name TungTroop
 extends Troop
 
-@export var SLASH: PackedScene = preload("res://scenes/troops/tung/tung_slash.tscn");
-@export var THROW: PackedScene = preload("res://scenes/troops/tung/tung_throw.tscn");
+@export var SLASH: PackedScene = preload("res://scenes/troops/tung/tung_slash_projectile.tscn");
+@export var THROW: PackedScene = preload("res://scenes/troops/tung/tung_throw_projectile.tscn");
 
 func _physics_process(delta: float) -> void:
 	super(delta);
