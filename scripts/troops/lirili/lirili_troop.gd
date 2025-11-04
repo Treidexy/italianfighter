@@ -23,14 +23,14 @@ func zuper():
 	proj.FATHER = self;
 	proj.life = 67;
 	proj.damage = 670;
-	proj.kb = 260;
+	proj.kb = 275;
 	get_tree().current_scene.add_child(proj);
 	
 	var action := LiriliChargeAction.new();
 	action.VICTIM = self;
 	action.projectile = proj;
 	action.dist = 100;
-	action.velocity = dir * 50;
+	action.velocity = dir * 80;
 	get_tree().current_scene.add_child(action);
 
 func hyper():
