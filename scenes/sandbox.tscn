@@ -68,7 +68,7 @@ shape = SubResource("CircleShape2D_tefeu")
 
 [node name="PlayerCtrl" type="Node" parent="." node_paths=PackedStringArray("VICTIM", "CAMERA")]
 script = ExtResource("4_uacia")
-VICTIM = NodePath("../LiriliTroop")
+VICTIM = NodePath("../FruliTroop")
 CAMERA = NodePath("../Camera2D")
 metadata/_custom_type_script = "uid://bmr36mnhgd4ds"
 
