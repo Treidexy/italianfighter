@@ -90,6 +90,14 @@ position = Vector2(77, 78)
 [node name="jerry" parent="." instance=ExtResource("5_yk7ts")]
 position = Vector2(139, -12)
 
+[node name="Wall3" parent="." instance=ExtResource("6_ajshl")]
+z_index = 10
+position = Vector2(91, 12)
+
+[node name="Wall2" parent="." instance=ExtResource("6_ajshl")]
+z_index = 10
+position = Vector2(69, 11)
+
 [node name="Wall" parent="." instance=ExtResource("6_ajshl")]
 z_index = 10
 position = Vector2(47, 10)

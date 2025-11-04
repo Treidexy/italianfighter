@@ -1,5 +1,5 @@
 class_name LiriliChargeAction
-extends DashAction
+extends SwoopAction
 
 var projectile: LiriliChargeProjectile;
 
