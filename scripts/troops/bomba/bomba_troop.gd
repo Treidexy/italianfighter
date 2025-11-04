@@ -33,7 +33,7 @@ func zuper():
 	var stat: BombaStat = stat;
 	var action := BombaSwoopAction.new();
 	action.VICTIM = self;
-	action.does_snare = in_hyper;
+	action.does_snare = !in_hyper; # todo, make curve
 	action.dist = stat.SWOOP_DIST;
 	action.velocity = dir * stat.SWOOP_SPEED * stat_boost.speed_mul;
 	action.explosion_damage = stat.SWOOP_EXPLOSION_DAMAGE;
