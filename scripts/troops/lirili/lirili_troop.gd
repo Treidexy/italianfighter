@@ -2,6 +2,7 @@ class_name LiriliTroop
 extends Troop
 
 @export var RAM_PROJECTILE := preload("res://scenes/troops/lirili/lirili_ram_projectile.tscn");
+@export var CHARGE_PROJECTILE := preload("res://scenes/troops/lirili/lirili_charge_projectile.tscn");
 
 func main():
 	super();
@@ -17,6 +18,20 @@ func main():
 
 func zuper():
 	super();
+	
+	var proj := CHARGE_PROJECTILE.instantiate();
+	proj.FATHER = self;
+	proj.life = 67;
+	proj.damage = 670;
+	proj.kb = 260;
+	get_tree().current_scene.add_child(proj);
+	
+	var action := LiriliChargeAction.new();
+	action.VICTIM = self;
+	action.projectile = proj;
+	action.dist = 100;
+	action.velocity = dir * 50;
+	get_tree().current_scene.add_child(action);
 
 func hyper():
 	super();

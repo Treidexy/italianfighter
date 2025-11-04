@@ -24,9 +24,9 @@ shape = SubResource("CircleShape2D_g2els")
 
 [node name="TroopUi" parent="." instance=ExtResource("3_7r63h")]
 
-[node name="Sprite" type="Sprite2D" parent="TroopUi"]
+[node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(0, -0.999999)
-scale = Vector2(0.2375, 0.240625)
+scale = Vector2(0.2, 0.202)
 texture = ExtResource("4_7w0n4")
 
 [node name="MainHint" type="Node2D" parent="."]

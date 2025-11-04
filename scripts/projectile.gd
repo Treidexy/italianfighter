@@ -7,6 +7,7 @@ var life: float = 6.9;
 var velocity: Vector2 = Vector2(0, 0);
 
 var kb: float = 0;
+var kb_life: float = 0.25;
 var damage: float = 0;
 
 @export var ray: RayCast2D;
@@ -27,7 +28,7 @@ func hit(victim: Troop):
 		var curse = KbAction.new();
 		curse.VICTIM = victim;
 		curse.force = d;
-		curse.life = 0.25;
+		curse.life = kb_life;
 		get_tree().root.add_child(curse);
 	victim.exflict(self);
 func hit_wall(_wall: Wall): pass

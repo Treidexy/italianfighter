@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqysv0oc7k2a5"]
+
+[ext_resource type="Script" uid="uid://b2jgc4mnywnw2" path="res://scripts/troops/lirili/lirili_charge_projectile.gd" id="1_xn61u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xn61u"]
+radius = 10.0499
+
+[node name="LiriliChargeProjectile" type="Area2D" node_paths=PackedStringArray("ray")]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_xn61u")
+ray = NodePath("RayCast2D")
+metadata/_custom_type_script = "uid://b2jgc4mnywnw2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xn61u")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+collision_mask = 4
+hit_from_inside = true
+collide_with_areas = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
