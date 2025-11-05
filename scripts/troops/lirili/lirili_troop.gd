@@ -13,7 +13,9 @@ func main():
 	proj.position = position;
 	proj.rotation = dir.angle();
 	proj.velocity = dir * 200;
-	proj.damage = 69;
+	proj.damage = 700;
+	proj.dot = 200;
+	proj.dot_life = 4;
 	get_tree().current_scene.add_child(proj);
 
 func zuper():
