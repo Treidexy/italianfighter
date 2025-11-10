@@ -1,7 +1,7 @@
 class_name Stat
 extends Resource
 
-@export var SPEED: float = 50;
+@export var SPEED: float = 75;
 @export var MAX_HP: float = 5000;
 @export var MAIN_COOLDOWN: float = .25;
 @export var MAIN_RELOAD: float = 1.2;

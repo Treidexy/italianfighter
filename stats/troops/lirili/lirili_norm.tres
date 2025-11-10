@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_fyqwo")
-SPEED = 50.0
+SPEED = 75.0
 MAX_HP = 5000.0
 MAIN_COOLDOWN = 0.25
 MAIN_RELOAD = 1.2
