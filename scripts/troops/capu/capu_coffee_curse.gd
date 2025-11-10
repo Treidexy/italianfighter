@@ -1,16 +1,17 @@
 class_name CapuCoffeeCurse
 extends Curse
 
-var heal_rate: float;
-var speed_mul: float;
-var reload_mul: float;
+var stat: CapuStat :
+	get: return FATHER.stat;
+var heal_rate: float :
+	get: return stat.COFFEE_HEAL_RATE;
+var speed_mul: float :
+	get: return stat.COFFEE_SPEED_MUL;
+var reload_mul: float :
+	get: return stat.COFFEE_RELOAD_MUL;
 
 func begin():
 	super();
-	var stat: CapuStat = FATHER.stat;
-	heal_rate = stat.COFFEE_HEAL_RATE;
-	speed_mul = stat.COFFEE_SPEED_MUL;
-	reload_mul = stat.COFFEE_RELOAD_MUL;
 	VICTIM.stat_boost.speed_mul *= speed_mul;
 	VICTIM.stat_boost.reload_mul *= reload_mul;
 	
