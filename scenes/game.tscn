@@ -10,9 +10,10 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_tefeu"]
 radius = 50.0
 
-[node name="Game" type="Node" node_paths=PackedStringArray("player")]
+[node name="Game" type="Node" node_paths=PackedStringArray("player", "map")]
 script = ExtResource("1_0tnpc")
 player = NodePath("PlayerCtrl")
+map = NodePath("Hotpot")
 metadata/_custom_type_script = "uid://bj7tpy3tn8do7"
 
 [node name="Camera2D" type="Camera2D" parent="."]

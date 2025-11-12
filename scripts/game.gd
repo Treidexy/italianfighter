@@ -2,6 +2,8 @@ class_name Game
 extends Node
 
 @export var player: PlayerCtrl;
+@export var map: Map;
+
 var troops: Dictionary[int, Troop] = {};
 
 var troop_presets := [
@@ -11,6 +13,12 @@ var troop_presets := [
 	preload("res://scenes/troops/bomba/bomba_troop.tscn"),
 	preload("res://scenes/troops/lirili/lirili_troop.tscn"),
 ];
+
+func _ready() -> void:
+	map.goal_hotspot.on_capture.connect(
+		func():
+			print(str(map.goal_hotspot.capturer.peer_id) + ' won!');
+	);
 
 func add_troop(id: int, choice: int) -> Troop:
 	if choice < 0 or choice > troop_presets.size():

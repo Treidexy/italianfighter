@@ -6,6 +6,8 @@ extends Area2D
 @export var duration: float;
 @export var required_precapture_options: Array[Hotspot] = [];
 
+signal on_capture();
+
 var progress: float;
 
 var king: Troop;
@@ -46,6 +48,8 @@ func capture():
 	king = null;
 	capturer.captured_hotspot = self;
 	print('captured');
+	
+	on_capture.emit();
 
 func _physics_process(delta: float) -> void:
 	if king != null:

@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://djgn26jj3ipmk"]
+[gd_scene load_steps=6 format=3 uid="uid://djgn26jj3ipmk"]
 
+[ext_resource type="Script" uid="uid://b7y0tr7vja8rk" path="res://scripts/map.gd" id="1_0a03i"]
 [ext_resource type="PackedScene" uid="uid://kryx4h3tjpvp" path="res://scenes/wall.tscn" id="1_m70fh"]
 [ext_resource type="PackedScene" uid="uid://dy0mxgqumpgcd" path="res://scenes/hotspot.tscn" id="3_0a03i"]
 
@@ -11,15 +12,18 @@ colors = PackedColorArray(0.36, 0.36, 0.36, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_gsoaw"]
 gradient = SubResource("Gradient_0a03i")
 
-[node name="Hotpot" type="Node2D"]
+[node name="Hotpot" type="Node2D" node_paths=PackedStringArray("goal_hotspot")]
+script = ExtResource("1_0a03i")
+goal_hotspot = NodePath("hill")
+metadata/_custom_type_script = "uid://b7y0tr7vja8rk"
 
 [node name="ground" type="Sprite2D" parent="."]
 scale = Vector2(10, 10)
 texture = SubResource("GradientTexture2D_gsoaw")
 
-[node name="hill2" parent="." node_paths=PackedStringArray("required_precapture_options") instance=ExtResource("3_0a03i")]
+[node name="hill" parent="." node_paths=PackedStringArray("required_precapture_options") instance=ExtResource("3_0a03i")]
 duration = 24.0
-required_precapture_options = [NodePath("../Node/Hotspot2"), NodePath("../Node/Hotspot3")]
+required_precapture_options = [NodePath("../Node/Hotspot2"), NodePath("../Node/Hotspot3"), NodePath("../Node2/Hotspot2"), NodePath("../Node2/Hotspot3"), NodePath("../Node3/Hotspot2"), NodePath("../Node3/Hotspot3"), NodePath("../Node4/Hotspot2"), NodePath("../Node4/Hotspot3")]
 
 [node name="Node" type="Node2D" parent="."]
 
