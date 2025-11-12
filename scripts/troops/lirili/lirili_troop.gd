@@ -7,32 +7,35 @@ extends Troop
 func main():
 	super();
 	
+	var stat: LiriliStat = stat;
 	var proj: LiriliRamProjectile = RAM_PROJECTILE.instantiate();
 	proj.FATHER = self;
 	proj.life = 0.1;
 	proj.position = position;
 	proj.rotation = dir.angle();
-	proj.velocity = dir * 200;
-	proj.damage = 700;
-	proj.dot = 200;
-	proj.dot_life = 4;
+	proj.velocity = dir * stat.RAM_SPEED;
+	proj.damage = stat.RAM_DAMAGE;
+	proj.dot = stat.RAM_DOT;
+	proj.dot_life = stat.RAM_DOT_LIFE;
 	get_tree().current_scene.add_child(proj);
 
 func zuper():
 	super();
 	
+	var stat: LiriliStat = stat;
+	
 	var proj := CHARGE_PROJECTILE.instantiate();
 	proj.FATHER = self;
-	proj.life = 67;
-	proj.damage = 670;
-	proj.kb = 300;
+	proj.life = 6;
+	proj.damage = stat.CHARGE_DAMAGE;
+	proj.kb = stat.CHARGE_KB;
 	get_tree().current_scene.add_child(proj);
 	
 	var action := LiriliChargeAction.new();
 	action.VICTIM = self;
 	action.projectile = proj;
-	action.dist = 100;
-	action.velocity = dir * 70;
+	action.dist = stat.CHARGE_DIST;
+	action.velocity = dir * stat.CHARGE_SPEED;
 	get_tree().current_scene.add_child(action);
 
 func hyper():
