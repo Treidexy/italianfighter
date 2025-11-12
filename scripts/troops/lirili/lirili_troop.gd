@@ -29,6 +29,8 @@ func zuper():
 	proj.life = 6;
 	proj.damage = stat.CHARGE_DAMAGE;
 	proj.kb = stat.CHARGE_KB;
+	proj.dot = stat.CHARGE_DOT;
+	proj.dot_life = stat.CHARGE_DOT_LIFE;
 	get_tree().current_scene.add_child(proj);
 	
 	var action := LiriliChargeAction.new();
@@ -40,3 +42,5 @@ func zuper():
 
 func hyper():
 	super();
+	
+	
