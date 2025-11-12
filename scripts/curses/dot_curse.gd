@@ -17,6 +17,7 @@ func begin():
 
 func tick_damage():
 	var gluon := Gluon.new();
+	gluon.FATHER = FATHER;
 	gluon.damage = dot;
 	FATHER.inflict(gluon, VICTIM);
 	VICTIM.exflict(gluon);
