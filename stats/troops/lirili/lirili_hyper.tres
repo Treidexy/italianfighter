@@ -1,16 +1,16 @@
-[gd_resource type="Resource" script_class="LiriliStat" load_steps=2 format=3 uid="uid://c0ixacr1848wv"]
+[gd_resource type="Resource" script_class="LiriliStat" load_steps=2 format=3 uid="uid://c7qcv6f7myep6"]
 
-[ext_resource type="Script" uid="uid://chx7w010kd6ub" path="res://scripts/troops/lirili/lirili_stat.gd" id="1_fyqwo"]
+[ext_resource type="Script" uid="uid://chx7w010kd6ub" path="res://scripts/troops/lirili/lirili_stat.gd" id="1_phkw6"]
 
 [resource]
-script = ExtResource("1_fyqwo")
-RAM_DAMAGE = 1200.0
+script = ExtResource("1_phkw6")
+RAM_DAMAGE = 1300.0
 RAM_SPEED = 120.0
 RAM_LIFE = 0.2
 CHARGE_DIST = 100.0
 CHARGE_SPEED = 80.0
 CHARGE_DAMAGE = 1200.0
-CHARGE_KB = 300.0
+CHARGE_KB = 400.0
 THORN_DOT = 250.0
 THORN_DOT_LIFE = 4.0
 SPEED = 75.0

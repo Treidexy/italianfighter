@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cy0n08orjdq6v"]
+[gd_scene load_steps=7 format=3 uid="uid://cy0n08orjdq6v"]
 
 [ext_resource type="Script" uid="uid://mrcrsg0oj3fi" path="res://scripts/troops/lirili/lirili_troop.gd" id="1_jq7wa"]
 [ext_resource type="Resource" uid="uid://c0ixacr1848wv" path="res://stats/troops/lirili/lirili_norm.tres" id="2_jq7wa"]
 [ext_resource type="PackedScene" uid="uid://dw6selja8rroc" path="res://scenes/troops/troop_ui.tscn" id="3_7r63h"]
+[ext_resource type="Resource" uid="uid://c7qcv6f7myep6" path="res://stats/troops/lirili/lirili_hyper.tres" id="3_ymfym"]
 [ext_resource type="Texture2D" uid="uid://cc3j1hwhlnfkt" path="res://assets/troops/lirili/lirili_troop.png" id="4_7w0n4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
@@ -13,7 +14,7 @@ collision_mask = 6
 motion_mode = 1
 script = ExtResource("1_jq7wa")
 NORMAL_STAT = ExtResource("2_jq7wa")
-HYPER_STAT = ExtResource("2_jq7wa")
+HYPER_STAT = ExtResource("3_ymfym")
 UI = NodePath("TroopUi")
 MAIN_HINT = NodePath("MainHint")
 SUPER_HINT = NodePath("SuperHint")
