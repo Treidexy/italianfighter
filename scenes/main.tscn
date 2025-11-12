@@ -5,12 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://crv4p83uqdkew" path="res://assets/make.png" id="2_sugp2"]
 [ext_resource type="Texture2D" uid="uid://dxcqurhjc7fue" path="res://assets/join.png" id="3_jyhfs"]
 
-[node name="Lobby" type="Node" node_paths=PackedStringArray("port_input", "ip_input", "connect_panel", "id_label")]
+[node name="Lobby" type="Node" node_paths=PackedStringArray("port_input", "ip_input", "connect_panel", "char_select", "id_label")]
 script = ExtResource("1_o5qli")
 default_addr = ExtResource("2_jyhfs")
 port_input = NodePath("ConnectPanel/port")
 ip_input = NodePath("ConnectPanel/ip")
 connect_panel = NodePath("ConnectPanel")
+char_select = NodePath("ConnectPanel/char_select")
 id_label = NodePath("CanvasLayer/Label")
 
 [node name="ConnectPanel" type="CanvasLayer" parent="."]
@@ -36,6 +37,23 @@ offset_top = 156.0
 offset_right = 601.0
 offset_bottom = 196.0
 placeholder_text = "ip address"
+
+[node name="char_select" type="OptionButton" parent="ConnectPanel"]
+offset_left = 471.0
+offset_top = 304.0
+offset_right = 598.0
+offset_bottom = 350.0
+item_count = 5
+popup/item_0/text = "Tung"
+popup/item_0/id = 0
+popup/item_1/text = "Capu"
+popup/item_1/id = 1
+popup/item_2/text = "Fruli"
+popup/item_2/id = 4
+popup/item_3/text = "Bomba"
+popup/item_3/id = 2
+popup/item_4/text = "Lirili"
+popup/item_4/id = 3
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

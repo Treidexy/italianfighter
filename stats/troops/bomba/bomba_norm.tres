@@ -1,17 +1,17 @@
-[gd_resource type="Resource" script_class="BombStat" load_steps=2 format=3 uid="uid://c0thpov46lvwm"]
+[gd_resource type="Resource" script_class="BombaStat" load_steps=2 format=3 uid="uid://c0thpov46lvwm"]
 
 [ext_resource type="Script" uid="uid://cx26sigcnuytb" path="res://scripts/troops/bomba/bomba_stat.gd" id="1_qpkyn"]
 
 [resource]
 script = ExtResource("1_qpkyn")
 ROCKET_SPEED = 80.0
-ROCKET_LIFE = 1.5
+ROCKET_LIFE = 1.8
 ROCKET_EXPLOSION_DAMAGE = 1400.0
 SWOOP_SPEED = 100.0
 SWOOP_DIST = 100.0
 SWOOP_EXPLOSION_COUNT = 6
 SWOOP_EXPLOSION_DAMAGE = 1600.0
-SPEED = 50.0
+SPEED = 75.0
 MAX_HP = 5000.0
 MAIN_COOLDOWN = 0.25
 MAIN_RELOAD = 1.2

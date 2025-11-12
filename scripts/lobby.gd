@@ -5,6 +5,7 @@ extends Node
 @export var port_input: TextEdit;
 @export var ip_input: TextEdit;
 @export var connect_panel: CanvasLayer;
+@export var char_select: OptionButton;
 
 @export var id_label: Label;
 @export var game_scene := preload("res://scenes/game.tscn");
@@ -57,11 +58,13 @@ func _on_connect():
 	var id = multiplayer.get_unique_id();
 	id_label.text = 'id = ' + str(id);
 	print("connected " + str(id));
-	game.player.VICTIM = game.add_troop(id);
+	var choice := char_select.selected;
+	game.player.VICTIM = game.add_troop(id, choice);
 
 func _on_connect1(id):
+	var choice := char_select.selected;
 	print("connected1 " + str(id));
-	game.add_troop(id);
+	game.add_troop(id, choice);
 
 func _on_disconnect():
 	print('disconnect');
