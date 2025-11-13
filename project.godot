@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="italianfighter"
-run/main_scene="uid://chm7rqxwcgkej"
+run/main_scene="uid://jsndkyydxmpr"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 

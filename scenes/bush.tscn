@@ -1,8 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://5tinu4augvuv"]
+[gd_scene load_steps=5 format=3 uid="uid://5tinu4augvuv"]
 
 [ext_resource type="Script" uid="uid://carmcnbty7caj" path="res://scripts/bush.gd" id="1_lad4k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uvhfp"]
+
+[sub_resource type="Gradient" id="Gradient_wykyb"]
+colors = PackedColorArray(0, 0.654902, 0, 1, 0, 0.654902, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lad4k"]
+gradient = SubResource("Gradient_wykyb")
+width = 20
+height = 20
+fill_from = Vector2(1, 1)
+fill_to = Vector2(0, 0)
 
 [node name="Bush" type="Area2D"]
 collision_layer = 4
@@ -10,18 +20,11 @@ collision_mask = 3
 script = ExtResource("1_lad4k")
 metadata/_custom_type_script = "uid://carmcnbty7caj"
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
-modulate = Color(0.283333, 1, 0, 1)
-offset_left = -12.0
-offset_top = -12.0
-offset_right = 12.0
-offset_bottom = 12.0
-min_value = 100.0
-value = 100.0
-show_percentage = false
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_uvhfp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_lad4k")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

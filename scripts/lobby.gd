@@ -8,7 +8,8 @@ extends Node
 @export var char_select: OptionButton;
 
 @export var id_label: Label;
-@export var game_scene := preload("res://scenes/hot_game.tscn");
+#@export var game_scene := preload("res://scenes/hot_game.tscn");
+@export var game_scene := preload("res://scenes/pit_game.tscn");
 
 var game: Game;
 

@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://dp7r2g5qn582p"]
+
+[ext_resource type="Script" uid="uid://cw3niixrwb4rn" path="res://scripts/games/pit_game.gd" id="1_1lcuu"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="2_vs8k1"]
+[ext_resource type="Texture2D" uid="uid://dt13r06u87fib" path="res://addons/virtual_joystick/textures/joystick_tip_arrows.png" id="3_sr7ae"]
+[ext_resource type="Script" uid="uid://bmr36mnhgd4ds" path="res://scripts/player.gd" id="4_a38ka"]
+[ext_resource type="PackedScene" uid="uid://l8fl2fi0pn02" path="res://scenes/maps/pit/forest.tscn" id="5_sr7ae"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fvtob"]
+radius = 50.0
+
+[node name="PitGame" type="Node" node_paths=PackedStringArray("player", "map")]
+script = ExtResource("1_1lcuu")
+player = NodePath("PlayerCtrl")
+map = NodePath("PitMap")
+metadata/_custom_type_script = "uid://cw3niixrwb4rn"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MoveStick" parent="CanvasLayer" instance=ExtResource("2_vs8k1")]
+offset_top = -300.0
+offset_bottom = 0.0
+action_left = "left"
+action_right = "right"
+action_up = "up"
+action_down = "down"
+metadata/_edit_use_anchors_ = true
+
+[node name="MainStick" parent="CanvasLayer" instance=ExtResource("2_vs8k1")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -300.0
+offset_top = -435.0
+offset_right = 0.0
+offset_bottom = -135.0
+grow_horizontal = 0
+action_left = "aim_main_left"
+action_right = "aim_main_right"
+action_up = "aim_main_up"
+action_down = "aim_main_down"
+metadata/_edit_use_anchors_ = true
+
+[node name="SuperStick" parent="CanvasLayer" instance=ExtResource("2_vs8k1")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -590.0
+offset_top = -300.0
+offset_right = -290.0
+offset_bottom = 0.0
+grow_horizontal = 0
+action_left = "aim_super_left"
+action_right = "aim_super_right"
+action_up = "aim_super_up"
+action_down = "aim_super_down"
+metadata/_edit_use_anchors_ = true
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(887, 491)
+texture_normal = ExtResource("3_sr7ae")
+shape = SubResource("CircleShape2D_fvtob")
+
+[node name="PlayerCtrl" type="Node" parent="." node_paths=PackedStringArray("CAMERA")]
+script = ExtResource("4_a38ka")
+CAMERA = NodePath("../Camera2D")
+metadata/_custom_type_script = "uid://bmr36mnhgd4ds"
+
+[node name="PitMap" parent="." instance=ExtResource("5_sr7ae")]

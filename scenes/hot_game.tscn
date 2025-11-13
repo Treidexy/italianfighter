@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dt13r06u87fib" path="res://addons/virtual_joystick/textures/joystick_tip_arrows.png" id="3_b6rtk"]
 [ext_resource type="Script" uid="uid://bmr36mnhgd4ds" path="res://scripts/player.gd" id="4_snsb6"]
 [ext_resource type="PackedScene" uid="uid://bobaid84s3dpw" path="res://scenes/troops/capu/capu_troop.tscn" id="5_xo05h"]
-[ext_resource type="PackedScene" uid="uid://djgn26jj3ipmk" path="res://scenes/maps/hotpot.tscn" id="6_cm186"]
+[ext_resource type="PackedScene" uid="uid://djgn26jj3ipmk" path="res://scenes/maps/hot/hotpot.tscn" id="6_cm186"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tefeu"]
 radius = 50.0
@@ -28,6 +28,7 @@ action_left = "left"
 action_right = "right"
 action_up = "up"
 action_down = "down"
+metadata/_edit_use_anchors_ = true
 
 [node name="MainStick" parent="CanvasLayer" instance=ExtResource("2_4twqw")]
 anchors_preset = 3
@@ -42,6 +43,7 @@ action_left = "aim_main_left"
 action_right = "aim_main_right"
 action_up = "aim_main_up"
 action_down = "aim_main_down"
+metadata/_edit_use_anchors_ = true
 
 [node name="SuperStick" parent="CanvasLayer" instance=ExtResource("2_4twqw")]
 anchors_preset = 3
@@ -56,6 +58,7 @@ action_left = "aim_super_left"
 action_right = "aim_super_right"
 action_up = "aim_super_up"
 action_down = "aim_super_down"
+metadata/_edit_use_anchors_ = true
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer"]
 position = Vector2(887, 491)

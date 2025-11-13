@@ -44,6 +44,13 @@ var dir: Vector2 :
 		return weighted_dir.normalized();
 var weighted_dir: Vector2 = Vector2.from_angle(0);
 
+var n_bushes: int = 0 :
+	get:
+		return n_bushes;
+	set(to):
+		n_bushes = to;
+		visible = n_bushes <= 0;
+
 var _main_cooldown: float;
 var _main_reload: float;
 var _main_ammo: int;

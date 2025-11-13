@@ -1,0 +1,246 @@
+[gd_scene load_steps=4 format=3 uid="uid://l8fl2fi0pn02"]
+
+[ext_resource type="Script" uid="uid://dqe4iao1tkgug" path="res://scripts/games/pit_map.gd" id="1_f2x83"]
+[ext_resource type="PackedScene" uid="uid://kryx4h3tjpvp" path="res://scenes/wall.tscn" id="2_kipgc"]
+[ext_resource type="PackedScene" uid="uid://5tinu4augvuv" path="res://scenes/bush.tscn" id="3_7dxff"]
+
+[node name="PitMap" type="Node2D"]
+script = ExtResource("1_f2x83")
+metadata/_custom_type_script = "uid://dqe4iao1tkgug"
+
+[node name="Bush2" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(-30, 10)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(12323, 0)
+
+[node name="Wall" parent="Node2D" instance=ExtResource("2_kipgc")]
+position = Vector2(159.027, 66.0459)
+
+[node name="Bush" parent="Node2D" instance=ExtResource("3_7dxff")]
+position = Vector2(139.027, 66.0459)
+
+[node name="Bush13" parent="Node2D" instance=ExtResource("3_7dxff")]
+position = Vector2(139.027, 26.0459)
+
+[node name="Bush12" parent="Node2D" instance=ExtResource("3_7dxff")]
+position = Vector2(139.027, 46.0459)
+
+[node name="Bush11" parent="Node2D" instance=ExtResource("3_7dxff")]
+position = Vector2(159.027, 46.0459)
+
+[node name="Bush3" parent="Node2D" instance=ExtResource("3_7dxff")]
+position = Vector2(119.027, 46.0459)
+
+[node name="Bush5" parent="Node2D" instance=ExtResource("3_7dxff")]
+position = Vector2(159.027, 26.0459)
+
+[node name="Bush9" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(-70, -50)
+
+[node name="Bush8" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(-70, -70)
+
+[node name="Bush7" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(-50, -50)
+
+[node name="Bush6" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(-50, -30)
+
+[node name="Bush4" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(-50, -10)
+
+[node name="Bush14" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(30, -30)
+
+[node name="Bush15" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(30, -50)
+
+[node name="Bush16" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(50, -50)
+
+[node name="Bush17" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(-10, -90)
+
+[node name="Bush18" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(-10, -109)
+
+[node name="Bush19" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(10, -110)
+
+[node name="Wall2" parent="." instance=ExtResource("2_kipgc")]
+position = Vector2(30, -90)
+
+[node name="Wall3" parent="." instance=ExtResource("2_kipgc")]
+position = Vector2(30, -110)
+
+[node name="Wall4" parent="." instance=ExtResource("2_kipgc")]
+position = Vector2(50, -110)
+
+[node name="Wall5" parent="." instance=ExtResource("2_kipgc")]
+position = Vector2(50, -130)
+
+[node name="Wall6" parent="." instance=ExtResource("2_kipgc")]
+position = Vector2(-90, -30)
+
+[node name="Bush20" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(-70, -30)
+
+[node name="Bush21" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(-90, -70)
+
+[node name="Bush22" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(-30, 70)
+
+[node name="Bush23" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(-50, 70)
+
+[node name="Bush24" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(-50, 50)
+
+[node name="Bush25" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(-70, 50)
+
+[node name="Bush26" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(-70, 70)
+
+[node name="Bush27" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(-70, 90)
+
+[node name="Bush28" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(-90, 70)
+
+[node name="Bush29" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(-110, 70)
+
+[node name="Bush30" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(-110, 50)
+
+[node name="Wall7" parent="." instance=ExtResource("2_kipgc")]
+position = Vector2(-90, 50)
+
+[node name="Wall8" parent="." instance=ExtResource("2_kipgc")]
+position = Vector2(-50, 110)
+
+[node name="Wall9" parent="." instance=ExtResource("2_kipgc")]
+position = Vector2(-30, 110)
+
+[node name="Wall10" parent="." instance=ExtResource("2_kipgc")]
+position = Vector2(-90, 130)
+
+[node name="Bush31" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(30, 10)
+
+[node name="Bush32" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(30, 30)
+
+[node name="Bush33" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(30, 50)
+
+[node name="Bush34" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(10, 50)
+
+[node name="Bush35" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(30, 70)
+
+[node name="Bush36" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(50, 10)
+
+[node name="Bush37" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(50, 30)
+
+[node name="Bush38" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(70, 10)
+
+[node name="Bush39" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(90, -10)
+
+[node name="Bush40" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(90, -30)
+
+[node name="Bush41" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(110, -30)
+
+[node name="Bush42" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(110, -10)
+
+[node name="Bush43" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(90, 10)
+
+[node name="Bush44" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(110, -50)
+
+[node name="Bush45" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(130, -70)
+
+[node name="Bush46" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(130, -90)
+
+[node name="Bush47" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(110, -90)
+
+[node name="Bush48" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(110, -110)
+
+[node name="Bush49" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(130, -50)
+
+[node name="Bush50" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(130, -30)
+
+[node name="Wall11" parent="." instance=ExtResource("2_kipgc")]
+position = Vector2(110, 30)
+
+[node name="Wall12" parent="." instance=ExtResource("2_kipgc")]
+position = Vector2(90, 50)
+
+[node name="Bush51" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(70, 110)
+
+[node name="Bush52" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(70, 130)
+
+[node name="Bush53" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(90, 110)
+
+[node name="Bush54" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(90, 130)
+
+[node name="Bush55" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(50, 130)
+
+[node name="Bush56" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(110, 110)
+
+[node name="Bush57" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(110, 90)
+
+[node name="Bush58" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(110, 130)
+
+[node name="Bush59" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(90, 150)
+
+[node name="Bush60" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(110, 150)
+
+[node name="Bush61" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(130, 150)
+
+[node name="Bush62" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(130, 130)
+
+[node name="Bush63" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(130, 110)
+
+[node name="Bush64" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(130, 90)
+
+[node name="Bush65" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(150, 130)
+
+[node name="Bush66" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(150, 110)
+
+[node name="Wall13" parent="." instance=ExtResource("2_kipgc")]
+position = Vector2(-90, 10)
