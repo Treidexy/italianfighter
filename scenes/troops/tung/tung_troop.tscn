@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://f5ltou2le1wf" path="res://assets/troops/tung/tung_slash.png" id="6_nra50"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yk7wj"]
+radius = 99.0
 
 [node name="TungTroop" type="CharacterBody2D" node_paths=PackedStringArray("UI", "MAIN_HINT", "SUPER_HINT")]
 z_index = 6
@@ -24,6 +25,7 @@ metadata/_custom_type_script = "uid://bxnfh3aap2eps"
 [node name="TroopUi" parent="." instance=ExtResource("2_yk7wj")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.1, 0.1)
 shape = SubResource("CircleShape2D_yk7wj")
 
 [node name="Sprite" type="Sprite2D" parent="."]

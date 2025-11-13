@@ -7,7 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://cu01knin8swh2" path="res://assets/troops/fruli/fruli_troop.png" id="4_mjjid"]
 [ext_resource type="Texture2D" uid="uid://8wss0rulaps8" path="res://assets/troops/fruli/fruli_wind.png" id="5_apfsc"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_c5i73"]
+radius = 99.0
 
 [node name="FruliTroop" type="CharacterBody2D" node_paths=PackedStringArray("SUPER_HINT_PROGRESS_BAR", "UI", "MAIN_HINT", "SUPER_HINT")]
 z_index = 6
@@ -25,7 +26,8 @@ metadata/_custom_type_script = "uid://bwh7apm66niea"
 [node name="TroopUi" parent="." instance=ExtResource("3_c5i73")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_g2els")
+scale = Vector2(0.1, 0.1)
+shape = SubResource("CircleShape2D_c5i73")
 
 [node name="Fruli" type="Sprite2D" parent="."]
 scale = Vector2(0.23, 0.23)

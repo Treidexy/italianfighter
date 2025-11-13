@@ -8,7 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://0m8v7e6mcb8v" path="res://assets/troops/capu/capu_slash.png" id="5_wuisp"]
 [ext_resource type="Texture2D" uid="uid://d27d4fmny001g" path="res://assets/circle.png" id="6_wuisp"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_yk7wj"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_2ayji"]
+radius = 99.0
 
 [node name="CapuTroop" type="CharacterBody2D" node_paths=PackedStringArray("UI", "MAIN_HINT", "SUPER_HINT")]
 z_index = 6
@@ -25,7 +26,8 @@ metadata/_custom_type_script = "uid://b512w8g2gj5nl"
 [node name="TroopUi" parent="." instance=ExtResource("4_6h6eu")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_yk7wj")
+scale = Vector2(0.1, 0.1)
+shape = SubResource("CircleShape2D_2ayji")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(0, 1.19209e-07)

@@ -6,7 +6,8 @@
 [ext_resource type="Resource" uid="uid://c7qcv6f7myep6" path="res://stats/troops/lirili/lirili_hyper.tres" id="3_ymfym"]
 [ext_resource type="Texture2D" uid="uid://cc3j1hwhlnfkt" path="res://assets/troops/lirili/lirili_troop.png" id="4_7w0n4"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ymfym"]
+radius = 99.0
 
 [node name="LiriliTroop" type="CharacterBody2D" node_paths=PackedStringArray("UI", "MAIN_HINT", "SUPER_HINT")]
 z_index = 6
@@ -20,10 +21,11 @@ MAIN_HINT = NodePath("MainHint")
 SUPER_HINT = NodePath("SuperHint")
 metadata/_custom_type_script = "uid://mrcrsg0oj3fi"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_g2els")
-
 [node name="TroopUi" parent="." instance=ExtResource("3_7r63h")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.1, 0.1)
+shape = SubResource("CircleShape2D_ymfym")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(0, -0.999999)

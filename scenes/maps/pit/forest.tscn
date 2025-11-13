@@ -11,29 +11,26 @@ metadata/_custom_type_script = "uid://dqe4iao1tkgug"
 [node name="Bush2" parent="." instance=ExtResource("3_7dxff")]
 position = Vector2(-30, 10)
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(12323, 0)
+[node name="Wall" parent="." instance=ExtResource("2_kipgc")]
+position = Vector2(10.027, 10.0459)
 
-[node name="Wall" parent="Node2D" instance=ExtResource("2_kipgc")]
-position = Vector2(159.027, 66.0459)
+[node name="Bush" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(-10, 10)
 
-[node name="Bush" parent="Node2D" instance=ExtResource("3_7dxff")]
-position = Vector2(139.027, 66.0459)
+[node name="Bush13" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(-10, -30)
 
-[node name="Bush13" parent="Node2D" instance=ExtResource("3_7dxff")]
-position = Vector2(139.027, 26.0459)
+[node name="Bush12" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(-10, -10)
 
-[node name="Bush12" parent="Node2D" instance=ExtResource("3_7dxff")]
-position = Vector2(139.027, 46.0459)
+[node name="Bush11" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(10, -10)
 
-[node name="Bush11" parent="Node2D" instance=ExtResource("3_7dxff")]
-position = Vector2(159.027, 46.0459)
+[node name="Bush3" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(-30, -10)
 
-[node name="Bush3" parent="Node2D" instance=ExtResource("3_7dxff")]
-position = Vector2(119.027, 46.0459)
-
-[node name="Bush5" parent="Node2D" instance=ExtResource("3_7dxff")]
-position = Vector2(159.027, 26.0459)
+[node name="Bush5" parent="." instance=ExtResource("3_7dxff")]
+position = Vector2(10, -30)
 
 [node name="Bush9" parent="." instance=ExtResource("3_7dxff")]
 position = Vector2(-70, -50)
@@ -241,6 +238,3 @@ position = Vector2(150, 130)
 
 [node name="Bush66" parent="." instance=ExtResource("3_7dxff")]
 position = Vector2(150, 110)
-
-[node name="Wall13" parent="." instance=ExtResource("2_kipgc")]
-position = Vector2(-90, 10)

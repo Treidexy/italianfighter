@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dw6selja8rroc" path="res://scenes/troops/troop_ui.tscn" id="3_xi232"]
 [ext_resource type="Texture2D" uid="uid://bomadwwjax6ny" path="res://assets/troops/bomba/bomba_troop.png" id="4_oitn6"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_j530p"]
+radius = 99.0
 
 [node name="BombaTroop" type="CharacterBody2D" node_paths=PackedStringArray("POINTS", "LEFT", "RIGHT", "MAIN_HINT_BAR", "SUPER_HINT_BAR", "UI", "MAIN_HINT", "SUPER_HINT")]
 z_index = 6
@@ -25,12 +26,13 @@ MAIN_HINT = NodePath("MainHint")
 SUPER_HINT = NodePath("SuperHint")
 metadata/_custom_type_script = "uid://dbknvgm7wbjv5"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_g2els")
-
 [node name="TroopUi" parent="." instance=ExtResource("3_xi232")]
 
-[node name="Sprite" type="Sprite2D" parent="TroopUi"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.1, 0.1)
+shape = SubResource("CircleShape2D_j530p")
+
+[node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(0, 4.76837e-07)
 scale = Vector2(0.2375, 0.240625)
 texture = ExtResource("4_oitn6")

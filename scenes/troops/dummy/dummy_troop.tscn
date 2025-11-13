@@ -5,7 +5,8 @@
 [ext_resource type="Resource" uid="uid://drm0rcesgaxg2" path="res://stats/troops/dummy/dummy.tres" id="2_yvucy"]
 [ext_resource type="Texture2D" uid="uid://cbcsy41riot3k" path="res://assets/troops/dummy/dummy.png" id="3_yvucy"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_rvun0"]
+radius = 99.0
 
 [node name="DummyTroop" type="CharacterBody2D" node_paths=PackedStringArray("UI", "MAIN_HINT", "SUPER_HINT")]
 z_index = 6
@@ -19,12 +20,13 @@ MAIN_HINT = NodePath("MainHint")
 SUPER_HINT = NodePath("SuperHint")
 metadata/_custom_type_script = "uid://i84pw8ci1i0j"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_g2els")
-
 [node name="TroopUi" parent="." instance=ExtResource("2_rvun0")]
 
-[node name="Sprite" type="Sprite2D" parent="TroopUi"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.1, 0.1)
+shape = SubResource("CircleShape2D_rvun0")
+
+[node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(0, 4.76837e-07)
 scale = Vector2(0.2375, 0.240625)
 texture = ExtResource("3_yvucy")
