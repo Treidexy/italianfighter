@@ -1,4 +1,4 @@
-class_name Map
-extends Node2D
+class_name HotMap
+extends Map
 
 @export var goal_hotspot: Hotspot;

@@ -1,27 +1,27 @@
 [gd_scene load_steps=8 format=3 uid="uid://can3foucqf1xq"]
 
-[ext_resource type="Script" uid="uid://bj7tpy3tn8do7" path="res://scripts/game.gd" id="1_0tnpc"]
-[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="1_gee14"]
-[ext_resource type="Texture2D" uid="uid://dt13r06u87fib" path="res://addons/virtual_joystick/textures/joystick_tip_arrows.png" id="2_0tnpc"]
-[ext_resource type="Script" uid="uid://bmr36mnhgd4ds" path="res://scripts/player.gd" id="3_vtaks"]
-[ext_resource type="PackedScene" uid="uid://bobaid84s3dpw" path="res://scenes/troops/capu/capu_troop.tscn" id="5_iywne"]
-[ext_resource type="PackedScene" uid="uid://djgn26jj3ipmk" path="res://scenes/maps/hotpot.tscn" id="6_p57ef"]
+[ext_resource type="Script" uid="uid://5wvdm4eu63u5" path="res://scripts/games/hot_game.gd" id="1_pewph"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="2_4twqw"]
+[ext_resource type="Texture2D" uid="uid://dt13r06u87fib" path="res://addons/virtual_joystick/textures/joystick_tip_arrows.png" id="3_b6rtk"]
+[ext_resource type="Script" uid="uid://bmr36mnhgd4ds" path="res://scripts/player.gd" id="4_snsb6"]
+[ext_resource type="PackedScene" uid="uid://bobaid84s3dpw" path="res://scenes/troops/capu/capu_troop.tscn" id="5_xo05h"]
+[ext_resource type="PackedScene" uid="uid://djgn26jj3ipmk" path="res://scenes/maps/hotpot.tscn" id="6_cm186"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tefeu"]
 radius = 50.0
 
 [node name="Game" type="Node" node_paths=PackedStringArray("player", "map")]
-script = ExtResource("1_0tnpc")
+script = ExtResource("1_pewph")
 player = NodePath("PlayerCtrl")
 map = NodePath("Hotpot")
-metadata/_custom_type_script = "uid://bj7tpy3tn8do7"
+metadata/_custom_type_script = "uid://5wvdm4eu63u5"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="MoveStick" parent="CanvasLayer" instance=ExtResource("1_gee14")]
+[node name="MoveStick" parent="CanvasLayer" instance=ExtResource("2_4twqw")]
 offset_top = -300.0
 offset_bottom = 0.0
 action_left = "left"
@@ -29,7 +29,7 @@ action_right = "right"
 action_up = "up"
 action_down = "down"
 
-[node name="MainStick" parent="CanvasLayer" instance=ExtResource("1_gee14")]
+[node name="MainStick" parent="CanvasLayer" instance=ExtResource("2_4twqw")]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_right = 1.0
@@ -43,7 +43,7 @@ action_right = "aim_main_right"
 action_up = "aim_main_up"
 action_down = "aim_main_down"
 
-[node name="SuperStick" parent="CanvasLayer" instance=ExtResource("1_gee14")]
+[node name="SuperStick" parent="CanvasLayer" instance=ExtResource("2_4twqw")]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_right = 1.0
@@ -59,17 +59,17 @@ action_down = "aim_super_down"
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer"]
 position = Vector2(887, 491)
-texture_normal = ExtResource("2_0tnpc")
+texture_normal = ExtResource("3_b6rtk")
 shape = SubResource("CircleShape2D_tefeu")
 
 [node name="PlayerCtrl" type="Node" parent="." node_paths=PackedStringArray("VICTIM", "CAMERA")]
-script = ExtResource("3_vtaks")
+script = ExtResource("4_snsb6")
 VICTIM = NodePath("../CapuTroop")
 CAMERA = NodePath("../Camera2D")
 metadata/_custom_type_script = "uid://bmr36mnhgd4ds"
 
-[node name="CapuTroop" parent="." instance=ExtResource("5_iywne")]
+[node name="CapuTroop" parent="." instance=ExtResource("5_xo05h")]
 
-[node name="Hotpot" parent="." instance=ExtResource("6_p57ef")]
+[node name="Hotpot" parent="." instance=ExtResource("6_cm186")]
 
 [connection signal="pressed" from="CanvasLayer/TouchScreenButton" to="PlayerCtrl" method="_on_button_pressed"]

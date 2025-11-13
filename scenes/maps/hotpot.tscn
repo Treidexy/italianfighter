@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://djgn26jj3ipmk"]
 
-[ext_resource type="Script" uid="uid://b7y0tr7vja8rk" path="res://scripts/map.gd" id="1_0a03i"]
+[ext_resource type="Script" uid="uid://cakue5o43f7ff" path="res://scripts/games/hot_map.gd" id="1_0a03i"]
 [ext_resource type="PackedScene" uid="uid://kryx4h3tjpvp" path="res://scenes/wall.tscn" id="1_m70fh"]
 [ext_resource type="PackedScene" uid="uid://dy0mxgqumpgcd" path="res://scenes/hotspot.tscn" id="3_0a03i"]
 
@@ -15,7 +15,7 @@ gradient = SubResource("Gradient_0a03i")
 [node name="Hotpot" type="Node2D" node_paths=PackedStringArray("goal_hotspot")]
 script = ExtResource("1_0a03i")
 goal_hotspot = NodePath("hill")
-metadata/_custom_type_script = "uid://b7y0tr7vja8rk"
+metadata/_custom_type_script = "uid://cakue5o43f7ff"
 
 [node name="ground" type="Sprite2D" parent="."]
 scale = Vector2(10, 10)
