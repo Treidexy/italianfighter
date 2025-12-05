@@ -15,11 +15,15 @@ var troop_presets := [
 ];
 
 func add_troop(id: int, choice: int) -> Troop:
+	# bc id(Random) = 0
+	choice = choice - 1;
+	
 	if choice < 0 or choice > troop_presets.size():
 		choice = randi_range(0, troop_presets.size());
 	var troop: Troop = troop_presets[choice].instantiate();
 	troop.name = 'player' + str(id);
 	troop.peer_id = id;
+	troop.team = id; # todo: change
 	troops[id] = troop;
 	
 	var spawn = map.spawns.pick_random();
