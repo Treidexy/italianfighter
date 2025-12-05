@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://djgn26jj3ipmk"]
+[gd_scene load_steps=7 format=3 uid="uid://djgn26jj3ipmk"]
 
 [ext_resource type="Script" uid="uid://cakue5o43f7ff" path="res://scripts/games/hot_map.gd" id="1_0a03i"]
 [ext_resource type="PackedScene" uid="uid://kryx4h3tjpvp" path="res://scenes/wall.tscn" id="1_m70fh"]
 [ext_resource type="PackedScene" uid="uid://dy0mxgqumpgcd" path="res://scenes/hotspot.tscn" id="3_0a03i"]
+[ext_resource type="PackedScene" uid="uid://5xr6dncw8hlv" path="res://scenes/spawn.tscn" id="4_568qo"]
 
 [sub_resource type="Gradient" id="Gradient_0a03i"]
 interpolation_mode = 1
@@ -12,9 +13,10 @@ colors = PackedColorArray(0.36, 0.36, 0.36, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_gsoaw"]
 gradient = SubResource("Gradient_0a03i")
 
-[node name="Hotpot" type="Node2D" node_paths=PackedStringArray("goal_hotspot")]
+[node name="Hotpot" type="Node2D" node_paths=PackedStringArray("goal_hotspot", "spawns")]
 script = ExtResource("1_0a03i")
 goal_hotspot = NodePath("hill")
+spawns = [NodePath("Spawn")]
 metadata/_custom_type_script = "uid://cakue5o43f7ff"
 
 [node name="ground" type="Sprite2D" parent="."]
@@ -208,3 +210,6 @@ duration = 6.0
 position = Vector2(70, 162)
 scale = Vector2(0.5, 0.5)
 duration = 6.0
+
+[node name="Spawn" parent="." instance=ExtResource("4_568qo")]
+position = Vector2(-110, 70)

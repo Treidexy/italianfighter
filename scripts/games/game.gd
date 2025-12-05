@@ -21,6 +21,10 @@ func add_troop(id: int, choice: int) -> Troop:
 	troop.name = 'player' + str(id);
 	troop.peer_id = id;
 	troops[id] = troop;
+	
+	var spawn = map.spawns.pick_random();
+	troop.position = spawn.position;
+	
 	add_child(troop, true);
 	return troop;
 func remove_troop(id):

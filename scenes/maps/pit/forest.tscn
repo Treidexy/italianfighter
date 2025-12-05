@@ -1,12 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://l8fl2fi0pn02"]
+[gd_scene load_steps=5 format=3 uid="uid://l8fl2fi0pn02"]
 
 [ext_resource type="Script" uid="uid://dqe4iao1tkgug" path="res://scripts/games/pit_map.gd" id="1_f2x83"]
 [ext_resource type="PackedScene" uid="uid://kryx4h3tjpvp" path="res://scenes/wall.tscn" id="2_kipgc"]
 [ext_resource type="PackedScene" uid="uid://5tinu4augvuv" path="res://scenes/bush.tscn" id="3_7dxff"]
+[ext_resource type="PackedScene" uid="uid://5xr6dncw8hlv" path="res://scenes/spawn.tscn" id="4_eirne"]
 
-[node name="PitMap" type="Node2D"]
+[node name="PitMap" type="Node2D" node_paths=PackedStringArray("spawns")]
 script = ExtResource("1_f2x83")
+spawns = [NodePath("Spawn")]
 metadata/_custom_type_script = "uid://dqe4iao1tkgug"
+
+[node name="Spawn" parent="." instance=ExtResource("4_eirne")]
+position = Vector2(10, 110)
 
 [node name="Bush2" parent="." instance=ExtResource("3_7dxff")]
 position = Vector2(-30, 10)

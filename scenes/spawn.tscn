@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://5xr6dncw8hlv"]
+
+[ext_resource type="Script" uid="uid://byqsjf65oevr2" path="res://scripts/spawn.gd" id="1_auhge"]
+[ext_resource type="Texture2D" uid="uid://d27d4fmny001g" path="res://assets/circle.png" id="2_48w1d"]
+
+[node name="Spawn" type="Node2D"]
+script = ExtResource("1_auhge")
+metadata/_custom_type_script = "uid://byqsjf65oevr2"
+
+[node name="CircleSprite" type="Sprite2D" parent="."]
+modulate = Color(0, 1, 1, 1)
+position = Vector2(3.8743e-07, 2.38419e-07)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_48w1d")
+
+[node name="CircleSprite2" type="Sprite2D" parent="."]
+modulate = Color(0.784314, 1, 1, 1)
+position = Vector2(3.8743e-07, 2.38419e-07)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_48w1d")
