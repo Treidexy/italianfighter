@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://chm7rqxwcgkej"]
+[gd_scene load_steps=14 format=3 uid="uid://chm7rqxwcgkej"]
 
 [ext_resource type="Script" uid="uid://bj7tpy3tn8do7" path="res://scripts/games/game.gd" id="1_lpvoh"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="2_at5dv"]
 [ext_resource type="Texture2D" uid="uid://dt13r06u87fib" path="res://addons/virtual_joystick/textures/joystick_tip_arrows.png" id="3_jcd4p"]
+[ext_resource type="Script" uid="uid://cxmn20wahh6eh" path="res://scripts/bot.gd" id="4_i1hvo"]
 [ext_resource type="Script" uid="uid://bmr36mnhgd4ds" path="res://scripts/player.gd" id="4_uacia"]
 [ext_resource type="PackedScene" uid="uid://by2muutbj07bm" path="res://scenes/troops/dummy/dummy_troop.tscn" id="5_yk7ts"]
 [ext_resource type="PackedScene" uid="uid://kryx4h3tjpvp" path="res://scenes/wall.tscn" id="6_ajshl"]
@@ -17,7 +18,7 @@ radius = 50.0
 
 [node name="Game" type="Node" node_paths=PackedStringArray("player")]
 script = ExtResource("1_lpvoh")
-player = NodePath("PlayerCtrl")
+player = NodePath("Player")
 metadata/_custom_type_script = "uid://bj7tpy3tn8do7"
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -66,9 +67,15 @@ position = Vector2(887, 491)
 texture_normal = ExtResource("3_jcd4p")
 shape = SubResource("CircleShape2D_tefeu")
 
-[node name="PlayerCtrl" type="Node" parent="." node_paths=PackedStringArray("VICTIM", "CAMERA")]
+[node name="Bot" type="Node" parent="." node_paths=PackedStringArray("VICTIM", "TARGET")]
+script = ExtResource("4_i1hvo")
+VICTIM = NodePath("../BombardiroTroop")
+TARGET = NodePath("../FruliTroop")
+metadata/_custom_type_script = "uid://cxmn20wahh6eh"
+
+[node name="Player" type="Node" parent="." node_paths=PackedStringArray("VICTIM", "CAMERA")]
 script = ExtResource("4_uacia")
-VICTIM = NodePath("../LiriliTroop")
+VICTIM = NodePath("../FruliTroop")
 CAMERA = NodePath("../Camera2D")
 metadata/_custom_type_script = "uid://bmr36mnhgd4ds"
 
@@ -119,4 +126,4 @@ position = Vector2(49, 32)
 position = Vector2(-58, 14)
 team = 1
 
-[connection signal="pressed" from="CanvasLayer/TouchScreenButton" to="PlayerCtrl" method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TouchScreenButton" to="Player" method="_on_button_pressed"]

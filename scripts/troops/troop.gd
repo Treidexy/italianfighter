@@ -64,6 +64,15 @@ var _recovery_cooldown: float = 0;
 
 ###
 
+# At some point we will move the can_move, can_main etc checks to here...
+func move(dir: Vector2):
+	_sync(_move_rpc, dir);
+	
+	dir = dir.normalized();
+	velocity = dir * stat.SPEED * stat_boost.speed_mul;
+	# should prolly move
+	move_and_slide();
+	
 func main():
 	_sync(_main_rpc, weighted_dir);
 	
@@ -200,6 +209,9 @@ func _sync(fn, arg0 = null, arg1 = null) -> void:
 			fn.rpc(arg0);
 		else:
 			fn.rpc(arg0, arg1);
+@rpc("any_peer", "call_remote", "reliable")
+func _move_rpc(dir):
+	move(dir);
 @rpc("any_peer", "call_remote", "reliable")
 func _main_rpc(weighted_dir):
 	self.weighted_dir = weighted_dir;

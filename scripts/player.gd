@@ -28,10 +28,10 @@ func _physics_process(_delta: float) -> void:
 	
 	var dx := Input.get_axis("left", "right");
 	var dy := Input.get_axis("up", "down");
-	var d := Vector2(dx, dy).normalized();
+	var d := Vector2(dx, dy);
 	
-	VICTIM.velocity = d * VICTIM.stat.SPEED * VICTIM.stat_boost.speed_mul;
-	VICTIM.move_and_slide();
+	if VICTIM.can_move():
+		VICTIM.move(d);
 	
 	var ts_butt = MainOrSuper.NONE;
 	
