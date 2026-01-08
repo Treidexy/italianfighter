@@ -50,7 +50,7 @@ var n_bushes: int = 0 :
 	set(to):
 		n_bushes = to;
 		# totsy not haxy
-		visible = n_bushes <= 0 or (PlayerCtrl.MINE and team == PlayerCtrl.MINE.VICTIM.team);
+		visible = n_bushes <= 0 or (Player.MINE and team == Player.MINE.VICTIM.team);
 
 var _main_cooldown: float;
 var _main_reload: float;

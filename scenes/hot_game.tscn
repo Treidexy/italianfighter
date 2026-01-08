@@ -12,7 +12,7 @@ radius = 50.0
 
 [node name="Game" type="Node" node_paths=PackedStringArray("player", "map")]
 script = ExtResource("1_pewph")
-player = NodePath("PlayerCtrl")
+player = NodePath("Player")
 map = NodePath("Hotpot")
 metadata/_custom_type_script = "uid://5wvdm4eu63u5"
 
@@ -65,7 +65,7 @@ position = Vector2(887, 491)
 texture_normal = ExtResource("3_b6rtk")
 shape = SubResource("CircleShape2D_tefeu")
 
-[node name="PlayerCtrl" type="Node" parent="." node_paths=PackedStringArray("VICTIM", "CAMERA")]
+[node name="Player" type="Node" parent="." node_paths=PackedStringArray("VICTIM", "CAMERA")]
 script = ExtResource("4_snsb6")
 VICTIM = NodePath("../CapuTroop")
 CAMERA = NodePath("../Camera2D")
@@ -75,4 +75,4 @@ metadata/_custom_type_script = "uid://bmr36mnhgd4ds"
 
 [node name="Hotpot" parent="." instance=ExtResource("6_cm186")]
 
-[connection signal="pressed" from="CanvasLayer/TouchScreenButton" to="PlayerCtrl" method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TouchScreenButton" to="Player" method="_on_button_pressed"]

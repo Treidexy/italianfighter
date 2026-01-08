@@ -1,4 +1,4 @@
-class_name PlayerCtrl
+class_name Player
 extends Node
 
 # very creative name ik
@@ -11,7 +11,7 @@ enum MainOrSuper {
 @export var VICTIM: Troop;
 @export var CAMERA: Camera2D;
 
-static var MINE: PlayerCtrl;
+static var MINE: Player;
 
 #var weighted_dir := Vector2(0, 0); # user TROOP.d instead
 var butt := MainOrSuper.NONE; # idk what to call ts
