@@ -6,7 +6,8 @@ extends Node
 
 var troops: Dictionary[int, Troop] = {};
 
-var troop_presets := [
+# todo: move to right place
+static var TROOP_PRESETS := [
 	preload("res://scenes/troops/tung/tung_troop.tscn"),
 	preload("res://scenes/troops/capu/capu_troop.tscn"),
 	preload("res://scenes/troops/fruli/fruli_troop.tscn"),
@@ -16,11 +17,9 @@ var troop_presets := [
 
 func add_troop(id: int, choice: int) -> Troop:
 	# bc id(Random) = 0
-	choice = choice - 1;
+	assert(choice >= 0 and choice < TROOP_PRESETS.size());
 	
-	if choice < 0 or choice > troop_presets.size():
-		choice = randi_range(0, troop_presets.size());
-	var troop: Troop = troop_presets[choice].instantiate();
+	var troop: Troop = TROOP_PRESETS[choice].instantiate();
 	troop.name = 'player' + str(id);
 	troop.peer_id = id;
 	troop.team = id; # todo: change

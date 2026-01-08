@@ -11,8 +11,13 @@ enum MainOrSuper {
 @export var VICTIM: Troop;
 @export var CAMERA: Camera2D;
 
+static var MINE: PlayerCtrl;
+
 #var weighted_dir := Vector2(0, 0); # user TROOP.d instead
 var butt := MainOrSuper.NONE; # idk what to call ts
+
+func _ready() -> void:
+	MINE = self;
 
 func _physics_process(_delta: float) -> void:
 	# todo smoothing

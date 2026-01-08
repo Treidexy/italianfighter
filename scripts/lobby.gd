@@ -8,8 +8,10 @@ extends Node
 @export var char_select: OptionButton;
 
 @export var id_label: Label;
-@export var game_scene := preload("res://scenes/hot_game.tscn");
-#@export var game_scene := preload("res://scenes/pit_game.tscn");
+#@export var game_scene := preload("res://scenes/hot_game.tscn");
+@export var game_scene := preload("res://scenes/pit_game.tscn");
+
+var selected_char: int = 0;
 
 var game: Game;
 
@@ -25,9 +27,16 @@ func _ready() -> void:
 		default_addr = Addr.new();
 	port_input.text = str(default_addr.port);
 	ip_input.text = default_addr.ip;
+	
+func select():
+	selected_char = char_select.selected - 1;
+	
+	if selected_char < 0 or selected_char > Game.TROOP_PRESETS.size():
+		selected_char = randi_range(1, Game.TROOP_PRESETS.size());
 
 func make():
 	print('make');
+	select();
 	connect_panel.queue_free();
 	var peer = ENetMultiplayerPeer.new();
 	var error = peer.create_server(int(port_input.text));
@@ -42,6 +51,7 @@ func make():
 
 func join():
 	print('join');
+	select();
 	connect_panel.queue_free();
 	var peer = ENetMultiplayerPeer.new();
 	var error = peer.create_client(ip_input.text, int(port_input.text));
@@ -59,11 +69,11 @@ func _on_connect():
 	var id = multiplayer.get_unique_id();
 	id_label.text = 'id = ' + str(id);
 	print("connected " + str(id));
-	var choice := char_select.selected;
+	var choice := selected_char;
 	game.player.VICTIM = game.add_troop(id, choice);
 
 func _on_connect1(id):
-	var choice := char_select.selected;
+	var choice := selected_char;
 	print("connected1 " + str(id));
 	game.add_troop(id, choice);
 
