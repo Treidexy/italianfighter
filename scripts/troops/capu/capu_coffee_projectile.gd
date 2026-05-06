@@ -1,8 +1,6 @@
 class_name CapuCoffeeProjectile
 extends Projectile
 
-var curse_life: float;
-
 func hit(victim: Troop):
 	super(victim);
 	if victim.team != FATHER.team:
@@ -15,5 +13,9 @@ func hit(victim: Troop):
 	var curse = CapuCoffeeCurse.new();
 	curse.FATHER = FATHER;
 	curse.VICTIM = victim;
-	curse.life = FATHER.stat.COFFEE_CURSE_DURATION;
+	var stat: CapuStat = FATHER.stat;
+	curse.life = stat.COFFEE_CURSE_DURATION;
+	curse.heal_rate = stat.COFFEE_HEAL_RATE;
+	curse.speed_mul = stat.COFFEE_SPEED_MUL;
+	curse.reload_mul = stat.COFFEE_RELOAD_MUL;
 	get_tree().root.add_child(curse);
