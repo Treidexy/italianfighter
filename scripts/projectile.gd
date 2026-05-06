@@ -59,7 +59,7 @@ func _on_body_entered(body: Node2D) -> void:
 	ray.force_raycast_update();
 	var result = ray.get_collider();
 	if result != null:
-		print(result.name);
+		print('projectile ray: ', result.name);
 		return;
 	if body is Troop:
 		#print("hit " + str(body));

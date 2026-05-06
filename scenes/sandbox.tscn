@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://chm7rqxwcgkej"]
+[gd_scene load_steps=15 format=3 uid="uid://chm7rqxwcgkej"]
 
 [ext_resource type="Script" uid="uid://bj7tpy3tn8do7" path="res://scripts/games/game.gd" id="1_lpvoh"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="2_at5dv"]
@@ -15,6 +15,9 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tefeu"]
 radius = 50.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i1hvo"]
+radius = 74.0068
 
 [node name="Game" type="Node" node_paths=PackedStringArray("player")]
 script = ExtResource("1_lpvoh")
@@ -67,15 +70,23 @@ position = Vector2(887, 491)
 texture_normal = ExtResource("3_jcd4p")
 shape = SubResource("CircleShape2D_tefeu")
 
-[node name="Bot" type="Node" parent="." node_paths=PackedStringArray("VICTIM", "TARGET")]
+[node name="Bot" type="Node" parent="." node_paths=PackedStringArray("VICTIM", "DODGE", "TARGET")]
 script = ExtResource("4_i1hvo")
 VICTIM = NodePath("../BombardiroTroop")
+DODGE = NodePath("Dodge")
 TARGET = NodePath("../FruliTroop")
 metadata/_custom_type_script = "uid://cxmn20wahh6eh"
 
+[node name="Dodge" type="Area2D" parent="Bot"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bot/Dodge"]
+shape = SubResource("CircleShape2D_i1hvo")
+
 [node name="Player" type="Node" parent="." node_paths=PackedStringArray("VICTIM", "CAMERA")]
 script = ExtResource("4_uacia")
-VICTIM = NodePath("../FruliTroop")
+VICTIM = NodePath("../BombaTroop")
 CAMERA = NodePath("../Camera2D")
 metadata/_custom_type_script = "uid://bmr36mnhgd4ds"
 
@@ -125,5 +136,7 @@ position = Vector2(49, 32)
 [node name="LiriliTroop" parent="." instance=ExtResource("11_qqy3k")]
 position = Vector2(-58, 14)
 team = 1
+
+[node name="BombaTroop" parent="." instance=ExtResource("7_17a3a")]
 
 [connection signal="pressed" from="CanvasLayer/TouchScreenButton" to="Player" method="_on_button_pressed"]
