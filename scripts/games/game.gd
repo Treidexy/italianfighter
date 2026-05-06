@@ -1,7 +1,7 @@
 class_name Game
 extends Node
 
-@export var player: Player;
+#@export var player: Player;
 @export var map: Map;
 
 var troops: Dictionary[int, Troop] = {};

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://chm7rqxwcgkej"]
+[gd_scene load_steps=16 format=3 uid="uid://chm7rqxwcgkej"]
 
 [ext_resource type="Script" uid="uid://bj7tpy3tn8do7" path="res://scripts/games/game.gd" id="1_lpvoh"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="2_at5dv"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dy0mxgqumpgcd" path="res://scenes/hotspot.tscn" id="9_rvfw7"]
 [ext_resource type="PackedScene" uid="uid://5tinu4augvuv" path="res://scenes/bush.tscn" id="10_m5lhb"]
 [ext_resource type="PackedScene" uid="uid://cy0n08orjdq6v" path="res://scenes/troops/lirili/lirili_troop.tscn" id="11_qqy3k"]
+[ext_resource type="PackedScene" uid="uid://bobaid84s3dpw" path="res://scenes/troops/capu/capu_troop.tscn" id="13_cg56h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tefeu"]
 radius = 50.0
@@ -19,9 +20,8 @@ radius = 50.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_i1hvo"]
 radius = 74.0068
 
-[node name="Game" type="Node" node_paths=PackedStringArray("player")]
+[node name="Game" type="Node"]
 script = ExtResource("1_lpvoh")
-player = NodePath("Player")
 metadata/_custom_type_script = "uid://bj7tpy3tn8do7"
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -86,7 +86,7 @@ shape = SubResource("CircleShape2D_i1hvo")
 
 [node name="Player" type="Node" parent="." node_paths=PackedStringArray("VICTIM", "CAMERA")]
 script = ExtResource("4_uacia")
-VICTIM = NodePath("../BombaTroop")
+VICTIM = NodePath("../CapuTroop")
 CAMERA = NodePath("../Camera2D")
 metadata/_custom_type_script = "uid://bmr36mnhgd4ds"
 
@@ -125,6 +125,7 @@ position = Vector2(-44, 55)
 team = 1
 
 [node name="FruliTroop" parent="." instance=ExtResource("8_4b02c")]
+position = Vector2(-20, -14)
 team = 1
 
 [node name="Hotspot" parent="." instance=ExtResource("9_rvfw7")]
@@ -138,5 +139,10 @@ position = Vector2(-58, 14)
 team = 1
 
 [node name="BombaTroop" parent="." instance=ExtResource("7_17a3a")]
+position = Vector2(12, -16)
+
+[node name="CapuTroop" parent="." instance=ExtResource("13_cg56h")]
+position = Vector2(2, 43)
+team = 1
 
 [connection signal="pressed" from="CanvasLayer/TouchScreenButton" to="Player" method="_on_button_pressed"]

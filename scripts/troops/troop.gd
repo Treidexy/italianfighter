@@ -168,6 +168,13 @@ func _ready() -> void:
 	var sb1 = StyleBoxFlat.new();
 	sb1.bg_color = Color(255, 255, 0);
 	UI.AMMO_BAR.add_theme_stylebox_override("fill", sb1);
+	
+	if self == Player.MINE.VICTIM:
+		UI.recolor(Color.GREEN);
+	elif team == Player.MINE.VICTIM.team:
+		UI.recolor(Color.CYAN);
+	else:
+		UI.recolor(Color.RED);
 
 func _physics_process(delta: float) -> void:
 	_sync(_info_rpc, position, rel_hp);

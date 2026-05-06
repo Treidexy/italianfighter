@@ -1,6 +1,7 @@
 class_name TroopUi
 extends Node2D
 
+@export var CIRCLE: Sprite2D;
 @export var AMMO_BAR: ProgressBar;
 @export var HEALTH_BAR: ProgressBar;
 @export var HEALTH_LABEL: RichTextLabel;
@@ -10,3 +11,6 @@ extends Node2D
 @export var IN_HYPER_INDICATOR: Node;
 @export var CROWN: Node;
 @export var FLAG: Node;
+
+func recolor(to: Color):
+	CIRCLE.modulate = to;
